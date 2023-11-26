@@ -127,10 +127,9 @@ function signup(event) {
     usernameError.style.display = "block";
     return;
   }
-  console.log("here 8");
-  console.log("User created: ", username);
+  
   users[username] = password;
-  window.location.href = "shop.html";
+  localStorage.setItem("users", JSON.stringify(users));
   // Clear the form (or redirect the user, show a success message, etc.)
   document.getElementById("signup-username").value = "";
   document.getElementById("signup-password").value = "";
