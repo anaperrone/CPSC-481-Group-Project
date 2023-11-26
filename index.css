@@ -178,6 +178,115 @@ body {
     top: 20px;
 }
 
+.search-container {
+    position: relative;
+    margin-top: 100px; /* Move it down the page by adjusting the margin */
+    margin-right: 240px;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    border: 2px solid #a291f4; /* Lavender purple border color */
+    border-radius: 20px; /* Rounded edges */
+    font-size: 16px;
+    width: 650px; /* Make it wider by adjusting the width */
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #a291f4; /* Lavender purple color */
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .dropdown-container {
+    position: absolute;
+    top: 50%;
+    right: -250px; /* Adjust the right positioning to move it to the right of the search bar */
+    transform: translateY(-50%);
+  }
+  
+  .diet-dropdown {
+    padding: 8px;
+    border: 2px solid #a291f4; /* Lavender purple border color */
+    border-radius: 20px; /* Rounded edges */
+    font-size: 16px;
+    height: 47px;
+    color: #a291f4; /* Lavender purple color */
+  }
+  
+  /* Style the arrow on the right side of the dropdown */
+  .diet-dropdown::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    margin-left: 8px; /* Adjust spacing between text and arrow */
+  }
+
+  .card {
+    width: 150px;
+    height: 126px;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 10px; /* Adjust the value as needed for desired roundness */
+  }
+  
+  .image-container {
+    height: 90px;
+    overflow: hidden;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .details-container {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .author {
+    font-weight: bold;
+  }
+  
+  .rating {
+    color: #f1c40f; /* Star color */
+  }
+
+  .category-container {
+    display: flex;
+    margin-left: 90px;
+    margin-top: 36px; /* Adjust the value to control the spacing between categories */
+  }
+
+  #Appetizers {
+    /* Adjust the values to set the exact position of the title */
+    position: absolute;
+    top: 155px;
+    left: 92px;
+  }
+
+  #MainDishes {
+    /* Adjust the values to set the exact position of the title */
+    position: absolute;
+    top: 320px;
+    left: 92px;
+  }
+
+  #Desserts {
+    /* Adjust the values to set the exact position of the title */
+    position: absolute;
+    top: 485px;
+    left: 92px;
+  }
+
 /* Here is all the content associated with the "About Us" page/button */
 
 #about-content {
