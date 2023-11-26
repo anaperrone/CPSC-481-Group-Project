@@ -63,6 +63,115 @@ body {
     font-weight: 900;
 }
 
+/* This is all the necessary components for the profile button */
+
+#profile-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 216px;
+    height: 46px;
+    border-radius: 10px;
+    position: absolute;
+    top: 90px;
+    left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+#profile-button {
+    color: black;
+}
+
+#profile-button.active {
+    background: linear-gradient(to bottom right, #9747FF, #0500FF);
+    color: white;
+}
+
+#profile-icon {
+    fill: currentColor;
+    padding: 9px 15px 0px 13px;
+}
+
+#profile-title {
+    padding-top: 12px;
+    font-weight: 900;
+}
+
+/* This is all the necessary components for the favorites button */
+
+#favorites-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 216px;
+    height: 46px;
+    border-radius: 10px;
+    position: absolute;
+    top: 155px;
+    left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+#favorites-button {
+    color: black;
+}
+
+#favorites-button.active {
+    background: linear-gradient(to bottom right, #9747FF, #0500FF);
+    color: white;
+}
+
+#favorites-icon {
+    fill: currentColor;
+    padding: 8px 12px 0px 10px;
+}
+
+#favorites-title {
+    padding-top: 12px;
+    font-weight: 900;
+}
+
+/* This is all the necessary components for the create recipe button */
+
+#create-recipe-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 216px;
+    height: 46px;
+    border-radius: 10px;
+    position: absolute;
+    top: 220px;
+    left: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+#create-recipe-button {
+    color: black;
+}
+
+#create-recipe-button.active {
+    background: linear-gradient(to bottom right, #9747FF, #0500FF);
+    color: white;
+}
+
+#create-recipe-icon {
+    fill: black;
+    padding: 6px 12px 0px 10px;
+}
+
+#create-recipe-button.active #create-recipe-icon {
+    fill: white;
+}
+
+#create-recipe-title {
+    padding-top: 12px;
+    font-weight: 900;
+}
+
 /* This is all the necessary components for the about button */
 
 #about-button {
@@ -74,7 +183,7 @@ body {
     height: 46px;
     border-radius: 10px;
     position: absolute;
-    top: 90px;
+    top: 285px;
     left: 25px;
     display: flex;
     flex-direction: row;
@@ -95,9 +204,9 @@ body {
     font-weight: 900;
 }
 
-/* This is all the necessary components for the login button */
+/* This is all the necessary components for the logout button */
 
-#login-button {
+#logout-button {
     background-color: black;
     color: white;
     border: none;
@@ -112,9 +221,12 @@ body {
     flex-direction: row;
 }
 
-#login-title {
+#logout-icon {
+    padding: 6px 15px 0px 45px;
+}
+
+#logout-title {
     padding-top: 12px;
-    padding-left: 35px;
     font-weight: 900;
 }
 
@@ -146,6 +258,9 @@ body {
 }
 
 #home-button:hover,
+#profile-button:hover,
+#favorites-button:hover,
+#create-recipe-button:hover,
 #about-button:hover {
     background: linear-gradient(to bottom right, rgba(151, 71, 255, 0.3), rgba(5, 0, 255, 0.3));
 }
@@ -172,6 +287,54 @@ body {
 }
 
 #home-h1 {
+    font-size: 35px;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+}
+
+/* Here is all the content associated with the "Profile" page/button */
+
+#profile-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#profile-h1 {
+    font-size: 35px;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+}
+
+/* Here is all the content associated with the "Favorites" page/button */
+
+#favorites-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#favorites-h1 {
+    font-size: 35px;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+}
+
+/* Here is all the content associated with the "Create Recipe" page/button */
+
+#create-recipe-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#create-recipe-h1 {
     font-size: 35px;
     font-weight: 900;
     position: absolute;
