@@ -316,6 +316,7 @@ body {
     flex-direction: column;
     align-content: center;
     align-items: center;
+    margin-top: 70px;
 }
 
 #favorites-h1 {
@@ -386,16 +387,16 @@ body {
   }
 
   .card {
-    width: 150px;
-    height: 126px;
-    margin-right: 100px;
+    width: 180px;
+    height: 150px;
+    margin-right: 70px;
     border: 1px solid #ccc;
     overflow: hidden;
     border-radius: 10px; /* Adjust the value as needed for desired roundness */
   }
   
   .image-container {
-    height: 90px;
+    height: 110px;
     overflow: hidden;
   }
   
@@ -408,18 +409,32 @@ body {
   .details-container {
     padding: 8px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    position: relative; /* Make the container relative for absolute positioning */
     background-color: #fff;
   }
   
   .author {
     font-weight: bold;
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+}
+
+  .title {
+    font-weight: bold;
+    color: #333; /* Adjust the color as needed */
+    margin-top: 10px;
+    margin-left: -8px;
+}
   
-  .rating {
+.rating {
     color: #f1c40f; /* Star color */
-  }
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
   .category-container {
     display: flex;
@@ -430,21 +445,21 @@ body {
   #Appetizers {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 155px;
+    top: 77px;
     left: 92px;
   }
 
   #MainDishes {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 320px;
+    top: 268px;
     left: 92px;
   }
 
   #Desserts {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 485px;
+    top: 455px;
     left: 92px;
   }
 
