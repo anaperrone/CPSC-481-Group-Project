@@ -1,6 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Target the container where you want to append the cards
+    // Event listener for search bar
+    const searchInput = document.querySelector('.search-bar');
     const cardsContainer = document.getElementById('cards-container');
+
+    searchInput.addEventListener('input', function () {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredRecipes = MeasurementArr.filter((recipe) =>
+            recipe.title && recipe.title.toLowerCase().includes(searchTerm)
+        );
+    
+        // Clear existing cards
+        cardsContainer.innerHTML = '';
+    
+        // Group and append filtered cards
+        const filteredCategories = {};
+        filteredRecipes.forEach((data) => {
+            if (!filteredCategories[data.category]) {
+                filteredCategories[data.category] = [];
+            }
+            filteredCategories[data.category].push(createCard(data));
+        });
+    
+        for (const category in filteredCategories) {
+            const categoryContainer = document.createElement('div');
+            categoryContainer.classList.add('category-container');
+    
+            filteredCategories[category].forEach((card) => {
+                categoryContainer.appendChild(card);
+            });
+    
+            cardsContainer.appendChild(categoryContainer);
+        }
+    });
+    
 
     const textMeasurement = '[{"title":"Fried Chicken", "favourites":"True", "star":"3", "category": "Appetizers", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"}, {"favourites":"True", "star":"2", "category": "Appetizers", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"favourites":"True", "star":"1", "category": "MainDishes", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"favourites":"False", "star":"4", "category": "MainDishes", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"}, {"title":"Mike", "favourites":"True", "star":"5", "category": "Dessert", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"favourites":"True", "star":"5", "category": "Dessert", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"favourites":"False", "star":"4", "category": "Appetizers", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"}, {"favourites":"False", "star":"3", "category": "Appetizers", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"favourites":"True", "star":"2", "category": "MainDishes", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"star":"1", "category": "MainDishes", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"}, {"favourites":"True", "star":"5", "category": "Dessert", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""}, {"favourites":"True", "star":"4", "category": "Dessert", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": ""} ]';
     const MeasurementArr = JSON.parse(textMeasurement);
@@ -81,4 +113,5 @@ document.addEventListener('DOMContentLoaded', function () {
         const emptyStars = '☆'.repeat(5 - starValue); // Unicode character for an empty star
         return filledStars + emptyStars;
     }
+
 });
