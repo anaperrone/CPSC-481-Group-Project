@@ -78,10 +78,10 @@
             <h2 id="help-title">Help Center</h2>          
         </button>
     </div>
-    <div class="main-panel">
+
+    <div class="main-panel" style="overflow-y:scroll; overflow-x: hidden;" >
         <div id="home-content" class="content">
             <h1 id="home-h1">EasyCook</h1>
-            <!--
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search for recipe (e.g. Sweet and sour pork)">
                 <div class="dropdown-container">
@@ -93,25 +93,57 @@
                       <option value="vegetarian">Vegetarian</option>
                     </select>
                   </div>
-                  <div class="search-icon">&#128269;</div>
+                  <div class="search-icon">&#128269;</div> 
             </div>
             <div id="cards-container"></div>
             <h2 id="Appetizers">Appetizers</h2>
             <h2 id="MainDishes">Main Dishes</h2>
             <h2 id="Desserts">Desserts</h2>
             <script src="mainpage.js"></script>
-        -->
         </div>
-        <div id="profile-content" class="content">
+
+
+        <div class="content" id="profile-content">
             <h1 id="profile-h1">Profile</h1>
+
+            <div class="userInfo" id="profile-user">
+                <div id="profile-image">
+                    <img src="JS_CSS_PortfolioProject-master/img/hero.png" alt="">
+                </div>
+                <h2 id="profile-h2">Pam Beesly (User name) </h2>  <span class="edit-profile">edit</span>
+                <h3 id="profile-h3">Cooking Level: MasterChef</h3>  <div class="crown-icon">&#128081;</div>  
+                <h3 id="profile-h3">pam.bees@gmail.com</h3> <div class="email-icon">&#9993;</div> 
+            </div>
+
+            <div class="objects" id="profile-objects">
+                <h4 id="profile-h4">My Recipes</h4>
+                <hr width = "150px", id="profile-line">
+                <div class="userRecipes" id="MyRecipe">
+
+                    
+                </div>
+
+                <h4 id="profile-h4">Private Recipes</h4>
+                <hr width = "150px", id="profile-line">
+                <div class="PrivRecipes" id="PersonalRecipe">
+
+        
+                </div>
+
+                
+                <h4 id="profile-h4">Friends</h4>
+                <hr width = "150px", id="profile-line">
+                <div class="Friends" id="Friend">
+
+        
+                </div>
+            </div>
         </div>
+
+
         <div id="favorites-content" class="content">
             <h1 id="favorites-h1">Favorites</h1>
-            <div id="cards-container"></div>
-            <h1 id="Appetizers">Appetizers</h2>
-            <h1 id="MainDishes">Main Dishes</h2>
-            <h1 id="Desserts">Desserts</h2>
-            <script src="favourites.js"></script>
+            
         </div>
         <div id="create-recipe-content" class="content">
             <h1 id="create-recipe-h1">Create New Recipe</h1>
