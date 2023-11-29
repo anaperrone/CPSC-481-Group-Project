@@ -247,18 +247,32 @@ body {
   .details-container {
     padding: 8px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    position: relative; /* Make the container relative for absolute positioning */
     background-color: #fff;
   }
   
   .author {
     font-weight: bold;
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+}
+
+  .title {
+    font-weight: bold;
+    color: #333; /* Adjust the color as needed */
+    margin-top: 10px;
+    margin-left: -8px;
+}
   
-  .rating {
+.rating {
     color: #f1c40f; /* Star color */
-  }
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
   .category-container {
     display: flex;
