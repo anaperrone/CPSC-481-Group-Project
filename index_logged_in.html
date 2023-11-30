@@ -81,12 +81,13 @@
     <div class="main-panel">
         <div id="home-content" class="content">
             <h1 id="home-h1">EasyCook</h1>
-            <!--
+            
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search for recipe (e.g. Sweet and sour pork)">
                 <div class="dropdown-container">
                     <select class="diet-dropdown">
                       <option value="" disabled selected>Dietary restrictions</option>
+                      <option value="">None</option>
                       <option value="lactose-free">Lactose-free</option>
                       <option value="gluten-free">Gluten-free</option>
                       <option value="vegan">Vegan</option>
@@ -96,21 +97,30 @@
                   <div class="search-icon">&#128269;</div>
             </div>
             <div id="cards-container"></div>
+
             <h2 id="Appetizers">Appetizers</h2>
             <h2 id="MainDishes">Main Dishes</h2>
             <h2 id="Desserts">Desserts</h2>
-            <script src="mainpage.js"></script>
-        -->
+            <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
+            <button id="moveRightAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
+
+            <button id="moveLeftMain" type="button" onclick="buttonScrollMain()"></button>
+            <button id="moveRightMain" type="button" onclick="buttonScrollMain()"></button>
+
+            <button id="moveLeftDessert" type="button" onclick="buttonScrollDessert()"></button>
+            <button id="moveRightDessert" type="button" onclick="buttonScrollDessert()"></button>
+        
+        <script src="mainpage.js"></script>
         </div>
         <div id="profile-content" class="content">
             <h1 id="profile-h1">Profile</h1>
         </div>
         <div id="favorites-content" class="content">
             <h1 id="favorites-h1">Favorites</h1>
-            <div id="cards-container"></div>
-            <h1 id="Appetizers">Appetizers</h2>
-            <h1 id="MainDishes">Main Dishes</h2>
-            <h1 id="Desserts">Desserts</h2>
+            <div id="cards-container-favourites"></div>
+            <h1 id="Appetizers-favourites">Appetizers</h2>
+            <h1 id="MainDishes-favourites">Main Dishes</h2>
+            <h1 id="Desserts-favourites">Desserts</h2>
             <script src="favourites.js"></script>
         </div>
         <div id="create-recipe-content" class="content">
