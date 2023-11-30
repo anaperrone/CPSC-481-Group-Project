@@ -274,6 +274,11 @@ body {
     right: 0;
 }
 
+#cards-container {
+  margin: 0 auto; /* Center the container horizontally */
+  overflow-x: scroll; /* Enable horizontal scrolling if needed */
+}
+
   .category-container {
     display: flex;
     margin-left: 90px;
