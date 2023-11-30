@@ -178,6 +178,61 @@ body {
     top: 20px;
 }
 
+#moveLeftAppetizer, #moveRightAppetizer, #moveLeftMain, #moveRightMain, #moveLeftDessert, #moveRightDessert {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: #a291f4;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+#moveLeftAppetizer {
+  top: -424px;
+  left: -485px;
+}
+
+#moveRightAppetizer {
+  top: -474px;
+  left: 474px;
+}
+
+#moveLeftMain {
+  top: -355px;
+  left: -485px;
+}
+
+#moveRightMain {
+  top: -405px;
+  left: 474px;
+}
+
+#moveLeftDessert {
+  top: -291px;
+  left: -485px;
+}
+
+#moveRightDessert {
+  top: -341px;
+  left: 474px;
+}
+
+#moveLeftAppetizer::before, #moveRightAppetizer::before, #moveLeftMain::before, #moveRightMain::before, #moveLeftDessert::before, #moveRightDessert::before {
+  content: '<';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+#moveRightAppetizer::before, #moveRightMain::before, #moveRightDessert::before {
+  content: '>';
+}
+
 .search-container {
     position: relative;
     margin-top: 100px; /* Move it down the page by adjusting the margin */
@@ -225,8 +280,8 @@ body {
   }
 
   .card {
-    width: 150px;
-    height: 126px;
+    min-width: 150px;
+    min-height: 126px;
     margin-right: 100px;
     border: 1px solid #ccc;
     overflow: hidden;
@@ -276,33 +331,36 @@ body {
 
 #cards-container {
   margin: 0 auto; /* Center the container horizontally */
-  overflow-x: scroll; /* Enable horizontal scrolling if needed */
+  margin-top: -9px;
 }
 
   .category-container {
     display: flex;
-    margin-left: 90px;
+    margin-left: -10px;
     margin-top: 36px; /* Adjust the value to control the spacing between categories */
+    overflow-x: scroll;
+    overflow: hidden;
+    width: 908px;
   }
 
   #Appetizers {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 155px;
+    top: 148px;
     left: 92px;
   }
 
   #MainDishes {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 320px;
+    top: 318px;
     left: 92px;
   }
 
   #Desserts {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 485px;
+    top: 483px;
     left: 92px;
   }
 

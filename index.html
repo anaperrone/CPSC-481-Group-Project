@@ -54,9 +54,18 @@
                   <div class="search-icon">&#128269;</div>
             </div>
             <div id="cards-container"></div>
+
             <h2 id="Appetizers">Appetizers</h2>
             <h2 id="MainDishes">Main Dishes</h2>
             <h2 id="Desserts">Desserts</h2>
+            <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
+            <button id="moveRightAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
+
+            <button id="moveLeftMain" type="button" onclick="buttonScrollMain()"></button>
+            <button id="moveRightMain" type="button" onclick="buttonScrollMain()"></button>
+
+            <button id="moveLeftDessert" type="button" onclick="buttonScrollDessert()"></button>
+            <button id="moveRightDessert" type="button" onclick="buttonScrollDessert()"></button>
         </div>
         <div id="about-content" class="content">
             <div id="about-center-align">
@@ -74,11 +83,6 @@
                 <li>Interact with other users, learning from all levels of culinary expertise.</li>
             </ul>
             <img src="assets/about_page_img.png" alt="picture of chef using flour" id="about-img">
-        </div>
-        <div id="categoryContainerTest">
-            <div id="cardsInThisDiv" style="background-color:blanchedalmond; width: 300px; height: 60px; overflow-x: scroll; overflow: hidden;"> cardcardcardcardcardcardcardcardcardcardcardcardcardcardcardcardcardcardcard</div>
-            <button id="moveLeft" type="button" onclick="buttonScroll()" style="width: 50px; height: 50px;">left</button>
-            <button id="moveRight" type="button" onclick="buttonScroll()"  style="width: 50px; height: 50px;">right</button>
         </div>
     </div>
     <script src="script.js"></script>
