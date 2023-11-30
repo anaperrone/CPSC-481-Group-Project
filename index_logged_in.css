@@ -340,7 +340,7 @@ body {
     top: 20px;
 }
 
-#moveLeftAppetizer, #moveRightAppetizer, #moveLeftMain, #moveRightMain, #moveLeftDessert, #moveRightDessert {
+#moveLeftAppetizer, #moveRightAppetizer, #moveLeftMain, #moveRightMain, #moveLeftDessert, #moveRightDessert, #moveLeftAppetizer-favourites, #moveRightAppetizer-favourites, #moveLeftMain-favourites, #moveRightMain-favourites, #moveLeftDessert-favourites, #moveRightDessert-favourites {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -381,8 +381,39 @@ body {
     top: -341px;
     left: 474px;
   }
+
+#moveLeftAppetizer-favourites {
+    top: -480px;
+    left: -480px;
+  }
   
-  #moveLeftAppetizer::before, #moveRightAppetizer::before, #moveLeftMain::before, #moveRightMain::before, #moveLeftDessert::before, #moveRightDessert::before {
+  #moveRightAppetizer-favourites {
+    top: -530px;
+    left: 507px;
+  }
+  
+  #moveLeftMain-favourites {
+    top: -390px;
+    left: -480px;
+  }
+  
+  #moveRightMain-favourites {
+    top: -440px;
+    left: 507px;
+  }
+  
+  #moveLeftDessert-favourites {
+    top: -303px;
+    left: -480px;
+  }
+  
+  #moveRightDessert-favourites {
+    top: -355px;
+    left: 507px;
+  }
+
+  
+  #moveLeftAppetizer::before, #moveRightAppetizer::before, #moveLeftMain::before, #moveRightMain::before, #moveLeftDessert::before, #moveRightDessert::before, #moveLeftAppetizer-favourites::before, #moveRightAppetizer-favourites::before, #moveLeftMain-favourites::before, #moveRightMain-favourites::before, #moveLeftDessert-favourites::before, #moveRightDessert-favourites::before {
     content: '<';
     position: absolute;
     top: 50%;
@@ -391,7 +422,7 @@ body {
     font-weight: bold;
   }
   
-  #moveRightAppetizer::before, #moveRightMain::before, #moveRightDessert::before {
+  #moveRightAppetizer::before, #moveRightMain::before, #moveRightDessert::before, #moveRightAppetizer-favourites::before, #moveRightMain-favourites::before, #moveRightDessert-favourites::before {
     content: '>';
   }
   
@@ -533,8 +564,8 @@ body {
     
     */
   .card-favourites {
-    width: 180px;
-    height: 150px;
+    min-width: 180px;
+    min-height: 150px;
     margin-right: 70px;
     border: 1px solid #ccc;
     overflow: hidden;
@@ -580,7 +611,10 @@ body {
     display: flex;
     margin-left: 90px;
     margin-top: 36px; /* Adjust the value to control the spacing between categories */
-  }
+    overflow-x: scroll;
+    overflow: hidden;
+    width: 1000px;
+}
 
   #Appetizers-favourites {
     /* Adjust the values to set the exact position of the title */
