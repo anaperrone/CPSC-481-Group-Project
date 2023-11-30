@@ -122,3 +122,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+
+function buttonScroll(){
+
+    const buttonRight = document.getElementById('moveRight');
+    const buttonLeft = document.getElementById('moveLeft');
+
+    buttonRight.onclick = function () {
+      document.getElementById('cardsInThisDiv').scrollLeft += 20;
+    };
+    buttonLeft.onclick = function () {
+      document.getElementById('cardsInThisDiv').scrollLeft -= 20;
+    };
+
+}
