@@ -191,33 +191,39 @@ body {
 }
 
 #moveLeftAppetizer {
-  top: -424px;
-  left: -485px;
+  top: 235px;
+  left: 357px;
+  z-index: 2;
 }
 
 #moveRightAppetizer {
-  top: -474px;
-  left: 474px;
+  top: 235px;
+  left: 1267px;
+  z-index: 2;
 }
 
 #moveLeftMain {
-  top: -355px;
-  left: -485px;
+  top: 404px;
+  left: 257px;
+  z-index: 2;
 }
 
 #moveRightMain {
-  top: -405px;
-  left: 474px;
+  top: 404px;
+  left: 1167px;
+  z-index: 2;
 }
 
 #moveLeftDessert {
-  top: -291px;
-  left: -485px;
+  top: 567px;
+  left: 157px;
+  z-index: 2;
 }
 
 #moveRightDessert {
-  top: -341px;
-  left: 474px;
+  top: 567px;
+  left: 1067px;
+  z-index: 2;
 }
 
 #moveLeftAppetizer::before, #moveRightAppetizer::before, #moveLeftMain::before, #moveRightMain::before, #moveLeftDessert::before, #moveRightDessert::before {

@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add 'active' class to home button and remove from about button
         homeButton.classList.add("active");
         aboutButton.classList.remove("active");
+
+        showArrows();
     });
 
     aboutButton.addEventListener("click", function () {
@@ -30,5 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add 'active' class to about button and remove from home button
         aboutButton.classList.add("active");
         homeButton.classList.remove("active");
+
+        hideArrows();
     });
 });
+
+function hideArrows() {
+    document.getElementById("moveLeftAppetizer").style.display = "none";
+    document.getElementById("moveRightAppetizer").style.display = "none";
+    document.getElementById("moveLeftMain").style.display = "none";
+    document.getElementById("moveRightMain").style.display = "none";
+    document.getElementById("moveLeftDessert").style.display = "none";
+    document.getElementById("moveRightDessert").style.display = "none";
+}
+
+function showArrows() {
+    document.getElementById("moveLeftAppetizer").style.display = "block";
+    document.getElementById("moveRightAppetizer").style.display = "block";
+    document.getElementById("moveLeftMain").style.display = "block";
+    document.getElementById("moveRightMain").style.display = "block";
+    document.getElementById("moveLeftDessert").style.display = "block";
+    document.getElementById("moveRightDessert").style.display = "block";
+}

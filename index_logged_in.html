@@ -6,6 +6,14 @@
     <title>Cooking Instructor</title>
 </head>
 <body>
+    <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
+    <button id="moveRightAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
+
+    <button id="moveLeftMain" type="button" onclick="buttonScrollMain()"></button>
+    <button id="moveRightMain" type="button" onclick="buttonScrollMain()"></button>
+
+    <button id="moveLeftDessert" type="button" onclick="buttonScrollDessert()"></button>
+    <button id="moveRightDessert" type="button" onclick="buttonScrollDessert()"></button>
     <div class="side-panel">
         <button id="home-button">
             <svg id="home-icon" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +89,6 @@
     <div class="main-panel">
         <div id="home-content" class="content">
             <h1 id="home-h1">EasyCook</h1>
-            
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search for recipe (e.g. Sweet and sour pork)">
                 <div class="dropdown-container">
@@ -101,15 +108,6 @@
             <h2 id="Appetizers">Appetizers</h2>
             <h2 id="MainDishes">Main Dishes</h2>
             <h2 id="Desserts">Desserts</h2>
-            <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
-            <button id="moveRightAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
-
-            <button id="moveLeftMain" type="button" onclick="buttonScrollMain()"></button>
-            <button id="moveRightMain" type="button" onclick="buttonScrollMain()"></button>
-
-            <button id="moveLeftDessert" type="button" onclick="buttonScrollDessert()"></button>
-            <button id="moveRightDessert" type="button" onclick="buttonScrollDessert()"></button>
-        
         <script src="mainpage.js"></script>
         </div>
         <div id="profile-content" class="content">
