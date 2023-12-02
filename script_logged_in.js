@@ -124,3 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("moveRightDessert").style.display = "block";
     }
 });
+const logoutButton = document.getElementById("logout-button");
+
+// Add a click event listener to the logout button
+logoutButton.addEventListener("click", function () {
+  // Redirect to the index.html page when the logout button is clicked
+  window.location.href = "index.html";
+});
