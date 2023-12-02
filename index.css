@@ -252,7 +252,7 @@ body {
 
 .search-container {
     position: relative;
-    margin-top: 100px; /* Move it down the page by adjusting the margin */
+    margin-top: 80px; /* Move it down the page by adjusting the margin */
     margin-right: 240px;
   }
   
@@ -297,13 +297,13 @@ body {
   }
 
   .card {
-    min-width: 150px;
+    min-width: 190px;
     min-height: 126px;
-    margin-right: 100px;
+    margin-right: 46px;
     border: 1px solid #ccc;
     overflow: hidden;
     border-radius: 10px; /* Adjust the value as needed for desired roundness */
-  }
+}
   
   .image-container {
     height: 90px;
@@ -348,13 +348,13 @@ body {
 
 #cards-container {
   margin: 0 auto; /* Center the container horizontally */
-  margin-top: -9px;
+  margin-top: -7px;
 }
 
   .category-container {
     display: flex;
     margin-left: -10px;
-    margin-top: 36px; /* Adjust the value to control the spacing between categories */
+    margin-top: 40px; /* Adjust the value to control the spacing between categories */
     overflow-x: scroll;
     overflow: hidden;
     width: 908px;
@@ -363,23 +363,23 @@ body {
   #Appetizers {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 148px;
-    left: 92px;
-  }
+    top: 130px;
+    left: 30px;
+}
 
-  #MainDishes {
+#MainDishes {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 318px;
-    left: 92px;
-  }
-
-  #Desserts {
+    top: 300px;
+    left: 30px;
+}
+  
+#Desserts {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
-    top: 483px;
-    left: 92px;
-  }
+    top: 475px;
+    left: 30px;
+}
 
 /* Here is all the content associated with the "About Us" page/button */
 
