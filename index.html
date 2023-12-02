@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>Cooking Instructor</title>
+    <title>EasyCook</title>
 </head>
 <body>
     <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
@@ -30,6 +30,12 @@
         <button id="login-button">
             <h2 id="login-title">Login / Sign Up</h2>          
         </button>
+        <script>
+            document.getElementById('login-button').addEventListener('click', function() {
+                var destinationPage = 'authentication.html';
+                window.location.href = destinationPage;
+            });
+        </script>
         <button id="help-button">
             <svg id="help-icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_293_267)">
