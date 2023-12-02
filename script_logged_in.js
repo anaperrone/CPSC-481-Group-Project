@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
+
+        showArrows();
     });
 
     profileButton.addEventListener("click", function () {
@@ -52,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
+
+        hideArrows();
     });
 
     favoritesButton.addEventListener("click", function () {
@@ -66,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesButton.classList.add("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
+
+        hideArrows();
     });
 
     createRecipeButton.addEventListener("click", function () {
@@ -80,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.add("active");
         aboutButton.classList.remove("active");
+
+        hideArrows();
     });
 
     aboutButton.addEventListener("click", function () {
@@ -94,5 +102,25 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.add("active");
+
+        hideArrows();
     });
+
+    function hideArrows() {
+        document.getElementById("moveLeftAppetizer").style.display = "none";
+        document.getElementById("moveRightAppetizer").style.display = "none";
+        document.getElementById("moveLeftMain").style.display = "none";
+        document.getElementById("moveRightMain").style.display = "none";
+        document.getElementById("moveLeftDessert").style.display = "none";
+        document.getElementById("moveRightDessert").style.display = "none";
+    }
+
+    function showArrows() {
+        document.getElementById("moveLeftAppetizer").style.display = "block";
+        document.getElementById("moveRightAppetizer").style.display = "block";
+        document.getElementById("moveLeftMain").style.display = "block";
+        document.getElementById("moveRightMain").style.display = "block";
+        document.getElementById("moveLeftDessert").style.display = "block";
+        document.getElementById("moveRightDessert").style.display = "block";
+    }
 });
