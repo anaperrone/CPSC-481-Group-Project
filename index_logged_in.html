@@ -111,9 +111,51 @@
             <h2 id="Desserts">Desserts</h2>
         <script src="mainpage.js"></script>
         </div>
-        <div id="profile-content" class="content">
+
+
+
+        <div class="content" id="profile-content">
             <h1 id="profile-h1">Profile</h1>
+
+            <div class="userInfo" id="profile-user">
+                <div id="profile-image">
+                    <img src="assets/hero.png" alt="">
+                </div>
+                <h2 id="profile-h2">Pam Beesly (User name) </h2>  <span class="edit-profile">edit</span>
+                <h3 id="profile-h3">Cooking Level: MasterChef</h3>  <div class="crown-icon">&#128081;</div>  
+                <h3 id="profile-h3">pam.bees@gmail.com</h3> <div class="email-icon">&#9993;</div> 
+            </div>
+
+            <div class="objects" id="profile-objects">
+                <h4 id="profile-h4">My Recipes</h4>
+                <hr width = "150px", id="profile-line">
+                <div class="userRecipes" id="MyRecipe">
+
+                    <input type="text" placeholder="Search" name="textbox" id="textbox1">
+                    <button type="button" id="retrieveMovies">Load a movie</button>
+
+                </div>
+
+                <h4 id="profile-h4">Private Recipes</h4>
+                <hr width = "150px", id="profile-line">
+                <div class="PrivRecipes" id="PersonalRecipe">
+
+        
+                </div>
+
+                
+                <h4 id="profile-h4">Friends</h4>
+                <hr width = "150px", id="profile-line">
+                <div class="Friends" id="Friend">
+
+        
+                </div>
+            </div>
+            <script src="profile.js"></script>
         </div>
+
+
+
         <div id="favorites-content" class="content">
             <h1 id="favorites-h1">Favorites</h1>
             <div id="cards-container-favourites"></div>
