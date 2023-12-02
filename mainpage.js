@@ -135,10 +135,10 @@ function buttonScrollAppetizer(direction) {
     const buttonLeft = document.getElementById('moveLeftAppetizer');
 
     buttonRight.onclick = function () {
-        categoryContainers.scrollLeft += 252;
+        categoryContainers.scrollLeft += 238;
     };
     buttonLeft.onclick = function () {
-        categoryContainers.scrollLeft -= 252;
+        categoryContainers.scrollLeft -= 238;
     };
 }
 
@@ -149,10 +149,10 @@ function buttonScrollMain(direction) {
     const buttonLeft = document.getElementById('moveLeftMain');
 
     buttonRight.onclick = function () {
-        categoryContainers.scrollLeft += 252;
+        categoryContainers.scrollLeft += 238;
     };
     buttonLeft.onclick = function () {
-        categoryContainers.scrollLeft -= 252;
+        categoryContainers.scrollLeft -= 238;
     };
 }
 
@@ -163,9 +163,9 @@ function buttonScrollDessert(direction) {
     const buttonLeft = document.getElementById('moveLeftDessert');
 
     buttonRight.onclick = function () {
-        categoryContainers.scrollLeft += 252;
+        categoryContainers.scrollLeft += 238;
     };
     buttonLeft.onclick = function () {
-        categoryContainers.scrollLeft -= 252;
+        categoryContainers.scrollLeft -= 238;
     };
 }

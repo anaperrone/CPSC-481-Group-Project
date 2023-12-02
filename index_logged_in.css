@@ -435,9 +435,9 @@ body {
 }
   
 .card {
-    min-width: 150px;
+    min-width: 190px;
     min-height: 126px;
-    margin-right: 100px;
+    margin-right: 46px;
     border: 1px solid #ccc;
     overflow: hidden;
     border-radius: 10px; /* Adjust the value as needed for desired roundness */
@@ -641,12 +641,12 @@ img {
 }
 
 .card-favourites {
-min-width: 180px;
-min-height: 150px;
-margin-right: 70px;
-border: 1px solid #ccc;
-overflow: hidden;
-border-radius: 10px; /* Adjust the value as needed for desired roundness */
+    min-width: 180px;
+    min-height: 150px;
+    margin-right: 70px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 10px; /* Adjust the value as needed for desired roundness */
 }
   
 .image-container-favourites {
