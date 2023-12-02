@@ -749,6 +749,7 @@ img {
 }
 
 #recipe-title-input {
+    font-family: 'Inter';
     border: 1px solid black;
     border-radius: 10px;
     padding: 8px;
@@ -881,6 +882,7 @@ input:checked + .slider:before {
 }
 
 #recipe-description-input {
+    font-family: 'Inter';
     border: 1px solid black;
     border-radius: 10px;
     padding: 8px;
@@ -890,8 +892,8 @@ input:checked + .slider:before {
     top: 465px;
     left: 350px;
     white-space: pre-wrap; /* Allow text to wrap */
-    overflow-y: auto; /* Add vertical scroll when content exceeds the height */
-    resize: vertical; /* Allow vertical resizing */
+    overflow-y: auto;
+    resize: none;
 }
 
 #recipe-category-question {
@@ -923,6 +925,7 @@ input:checked + .slider:before {
 }
 
 #recipe-ingredients-input {
+    font-family: 'Inter';
     border: 1px solid black;
     border-radius: 10px;
     padding: 8px;
@@ -985,6 +988,7 @@ input:checked + .slider:before {
 }
 
 .measurement-input {
+    font-family: 'Inter';
     border: 1px solid black;
     border-radius: 10px;
     padding: 4px;
@@ -1039,6 +1043,7 @@ input:checked + .slider:before {
 }
 
 .recipe-step-input {
+    font-family: 'Inter';
     border: 1px solid black;
     border-radius: 10px;
     padding: 4px;
@@ -1061,6 +1066,7 @@ input:checked + .slider:before {
 }
 
 #prep-time-input {
+    font-family: 'Inter';
     position: absolute;
     top: 1365px;
     left: 100px;
@@ -1080,6 +1086,7 @@ input:checked + .slider:before {
 }
 
 #cook-time-input {
+    font-family: 'Inter';
     position: absolute;
     top: 1465px;
     left: 100px;
@@ -1099,6 +1106,7 @@ input:checked + .slider:before {
 }
 
 #cook-total-input {
+    font-family: 'Inter';
     position: absolute;
     top: 1565px;
     left: 100px;
