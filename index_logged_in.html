@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="index_logged_in.css">
-    <title>Cooking Instructor</title>
+    <title>EasyCook</title>
 </head>
 <body>
     <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
@@ -132,6 +132,86 @@
         </div>
         <div id="create-recipe-content" class="content">
             <h1 id="create-recipe-h1">Create New Recipe</h1>
+            <form>
+                <h2 id="recipe-title">Recipe Title:</h2>
+                <input type="text" id="recipe-title-input" name="recipe-title" placeholder="Enter recipe title here..."><br>
+                <div class="visibility-toggle">
+                    <label class="toggle">
+                        <input type="checkbox" id="toggleBtn">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="toggleText">Private recipe</span>
+                </div>
+                <h2 id="recipe-description">Recipe Description:</h2>
+                <input type="text" id="recipe-description-input" name="recipe-description" placeholder="Enter description here...">
+                <h2 id="recipe-ingredients">Recipe Ingredients:</h2>
+                <input type="text" id="recipe-ingredients-input" placeholder="Enter an ingredient then hit return, do this for all recipe ingredients...">
+                <div id="ingredients-list">
+                    <!-- Ingredients will be dynamically added here as tags -->
+                </div>
+                <h2 id="recipe-measurements">Enter Recipe Measurements:</h2>
+                <ul id="measurements-list">
+                    <!-- Ingredients with input fields for measurements -->
+                </ul>
+                <h2 id="recipe-instructions">Enter Recipe Instructions:</h2>
+                <div id="instructions-list">
+                    <button id="add-step-button">
+                        <svg id="add-step-icon" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_138_1120)">
+                            <path d="M11.6844 9V5H9.72152V9H5.79581V11H9.72152V15H11.6844V11H15.6101V9H11.6844ZM10.7029 20C8.10004 20 5.60374 18.9464 3.76321 17.0711C1.92267 15.1957 0.888672 12.6522 0.888672 10C0.888672 7.34784 1.92267 4.8043 3.76321 2.92893C5.60374 1.05357 8.10004 0 10.7029 0C13.3059 0 15.8021 1.05357 17.6427 2.92893C19.4832 4.8043 20.5172 7.34784 20.5172 10C20.5172 12.6522 19.4832 15.1957 17.6427 17.0711C15.8021 18.9464 13.3059 20 10.7029 20Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_138_1120">
+                            <rect width="19.6285" height="20" fill="white" transform="translate(0.888672)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <h2 id="add-step-title">Add New Step</h2>   
+                    </button>
+                    <!-- Numbered recipe step inputs will be added here -->
+                </div>
+                <h2 id="recipe-cover">Enter a Recipe Cover Picture:</h2>
+                <div class="recipe-cover-drop-zone" ondrop="handleDrop(event, this)" ondragover="allowDrop(event)">
+                    <svg width="50" height="50" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.2502 37.9167L35.0002 26.25L43.7502 39.375V35H55.4168V14.5833C55.4168 11.3663 52.8006 8.75 49.5835 8.75H11.6668C8.44975 8.75 5.8335 11.3663 5.8335 14.5833V49.5833C5.8335 52.8004 8.44975 55.4167 11.6668 55.4167H35.0002V43.75H14.5835L23.3335 32.0833L26.2502 37.9167Z" fill="black"/>
+                        <path d="M55.4168 40.8335H49.5835V49.5835H40.8335V55.4168H49.5835V64.1668H55.4168V55.4168H64.1668V49.5835H55.4168V40.8335Z" fill="black"/>
+                     </svg>
+                    Drag file to upload<br> or
+                    <input type="file" accept="image/*" class="recipe-image-input" onchange="handleImageUpload(this)">
+                </div>
+                <h2 id="recipe-category-question">How would you categorize your recipe?</h2>
+                <select id="recipe-category-select" name="recipe-category">
+                    <option value="option1">Appetizer</option>
+                    <option value="option2">Main Dish</option>
+                    <option value="option3">Dessert</option>
+                </select>
+                <h2 id="recipe-restriction-question">Does your recipe satisfy any dietary restrictions?</h2>
+                <div id="recipe-restriction-checkboxes">
+                    <label>
+                        <input type="checkbox" id="restriction-option1" name="recipe-restriction[]" value="lactose">
+                        Lactose Free
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" id="restriction-option2" name="recipe-restriction[]" value="gluten">
+                        Gluten Free
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" id="restriction-option3" name="recipe-restriction[]" value="vegan">
+                        Vegan
+                    </label>
+                
+                    <label>
+                        <input type="checkbox" id="restriction-option4" name="recipe-restriction[]" value="kosher">
+                        Kosher
+                    </label>
+                </div>
+                <h2 id="recipe-restriction-message">Don't worry we will double check this for you!</h2>
+                <button id="draft-button">Save Draft</button>
+                <button id="publish-button">PUBLISH</button>
+                <div id="spacer"></div>
+            </form>
         </div>
         <div id="about-content" class="content">
             <div id="about-center-align">
