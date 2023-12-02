@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var favoritesButton = document.getElementById("favorites-button");
     var createRecipeButton = document.getElementById("create-recipe-button");
     var aboutButton = document.getElementById("about-button");
+    var helpButton = document.getElementById("help-button");
     var homeContent = document.getElementById("home-content");
     var profileContent = document.getElementById("profile-content");
     var favoritesContent = document.getElementById("favorites-content");
     var createRecipeContent = document.getElementById("create-recipe-content");
     var aboutContent = document.getElementById("about-content");
+    var helpContent = document.getElementById("help-content");
 
     // Initial state - show home content, hide about content
     homeContent.style.display = "flex";
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     favoritesContent.style.display = "none";
     createRecipeContent.style.display = "none";
     aboutContent.style.display = "none";
+    helpContent.style.display = "none";
 
     // Add 'active' class to home button and remove from about button
     homeButton.classList.add("active");
@@ -24,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     favoritesButton.classList.remove("active");
     createRecipeButton.classList.remove("active");
     aboutButton.classList.remove("active");
+    helpButton.classList.remove("active");
 
     // Add click event listeners to the buttons
     homeButton.addEventListener("click", function () {
@@ -32,12 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesContent.style.display = "none";
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
+        helpContent.style.display = "none";
 
         homeButton.classList.add("active");
         profileButton.classList.remove("active");
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
+        helpButton.classList.remove("active");
 
         showArrows();
     });
@@ -48,12 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesContent.style.display = "none";
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
+        helpContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.add("active");
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
+        helpButton.classList.remove("active");
 
         hideArrows();
     });
@@ -64,12 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesContent.style.display = "flex";
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
+        helpContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
         favoritesButton.classList.add("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
+        helpButton.classList.remove("active");
 
         hideArrows();
     });
@@ -80,12 +90,14 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesContent.style.display = "none";
         createRecipeContent.style.display = "flex";
         aboutContent.style.display = "none";
+        helpContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.add("active");
         aboutButton.classList.remove("active");
+        helpButton.classList.remove("active");
 
         hideArrows();
     });
@@ -96,12 +108,32 @@ document.addEventListener("DOMContentLoaded", function () {
         favoritesContent.style.display = "none";
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "flex";
+        helpContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
         favoritesButton.classList.remove("active");
         createRecipeButton.classList.remove("active");
         aboutButton.classList.add("active");
+        helpButton.classList.remove("active");
+
+        hideArrows();
+    });
+
+    helpButton.addEventListener("click", function () {
+        homeContent.style.display = "none";
+        profileContent.style.display = "none";
+        favoritesContent.style.display = "none";
+        createRecipeContent.style.display = "none";
+        aboutContent.style.display = "none";
+        helpContent.style.display = "flex";
+
+        homeButton.classList.remove("active");
+        profileButton.classList.remove("active");
+        favoritesButton.classList.remove("active");
+        createRecipeButton.classList.remove("active");
+        aboutButton.classList.remove("active");
+        helpButton.classList.add("active");
 
         hideArrows();
     });
