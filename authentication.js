@@ -52,7 +52,7 @@ function login(event) {
 
   if (users.hasOwnProperty(username)) {
     if (users[username] === password) {
-      window.location.href = "shop.html";
+      window.location.href = "index_logged_in.html";
     } else {
       passwordError.textContent = "Password is invalid";
       passwordError.style.display = "block";
@@ -130,6 +130,7 @@ function signup(event) {
   
   users[username] = password;
   localStorage.setItem("users", JSON.stringify(users));
+  window.location.href = "index_logged_in.html";
   // Clear the form (or redirect the user, show a success message, etc.)
   document.getElementById("signup-username").value = "";
   document.getElementById("signup-password").value = "";
