@@ -40,18 +40,6 @@ function CQButton(clicked) {
         }    
 } 
 
-{/* <tr>
-<td>
-    <div class="comment-question-group">
-        <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: December 3, 2023 </div>
-        <div class="user" style="display: inline-flex;"></div>
-        <div style="display:inline;"> Rachel Green: </div>
-            Question                                        
-    </div>
-</td>
-</tr>
-const result_row = document.getElementById("comment-table"); */}
-
 const date = new Date();
 
 let day = date.getDate();
@@ -83,9 +71,10 @@ function insert_result_comment(){
         let alignDiv2 = document.createElement('div');
         let userNameDiv = document.createElement('div');
         let replyDiv = document.createElement('a');
-        replyDiv.href="";
-        replyDiv.innerHTML="Reply";
+        replyDiv.onclick="";
         replyDiv.className="replyLink";
+        replyDiv.innerHTML="Reply";
+        replyDiv.style.bottom="10px";
 
 
         new_div.className='comment-question-group';
@@ -101,13 +90,16 @@ function insert_result_comment(){
         userNameDiv.innerHTML="Sheldon Cooper: "
         alignDiv.append(userNameDiv);
         alignDiv2.append(input);
+        userDiv.style.bottom="5px"
+        alignDiv.style.bottom="10px";
+        alignDiv2.style.bottom="10px";
         // new_div.append(input);
         
-        new_div.append(dateDiv);
-        new_div.append(userDiv);
-        new_div.append(alignDiv);
-        new_div.append(alignDiv2);
-        new_div.append(replyDiv);
+        new_div.appendChild(dateDiv);
+        new_div.appendChild(userDiv);
+        new_div.appendChild(alignDiv);
+        new_div.appendChild(alignDiv2);
+        new_div.appendChild(replyDiv);
 
         new_td.appendChild(new_div);
         cell1.appendChild(new_td);
@@ -120,14 +112,6 @@ function insert_result_comment(){
     }
 }
 
-// {    <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
-// <div class="alignTextBesidePFP">
-//     <div style="display: inline;"> Jan Levinson: </div>
-// </div>
-// <div class="alignTextBesidePFP">
-//     If I were to bake it in the oven how long would I keep it in there?  
-// </div>
-// <a href="" class="replyLink">Reply</a>}
 
 const inputQuestionField = document.getElementById("inputQuestion");
 const result_row_question = document.getElementById("question-table");
@@ -138,7 +122,7 @@ function insert_result_question(){
         input.className='text-CQ';
         let new_row = document.createElement("tr");
         let new_td = document.createElement("td");
-        var cell1 = new_row.insertCell(0);
+        // var cell1 = new_row.insertCell(0);
 
         let new_div = document.createElement('div');
         let dateDiv = document.createElement('div');
@@ -150,6 +134,7 @@ function insert_result_question(){
         replyDiv.href="";
         replyDiv.innerHTML="Reply";
         replyDiv.className="replyLink";
+        replyDiv.style.bottom="9px";
 
 
         new_div.className='comment-question-group';
@@ -165,6 +150,9 @@ function insert_result_question(){
         userNameDiv.innerHTML="Sheldon Cooper: "
         alignDiv.append(userNameDiv);
         alignDiv2.append(input);
+        alignDiv.style.bottom="10px";
+
+        alignDiv2.style.bottom="10px";
         // new_div.append(input);
         
         new_div.append(dateDiv);
@@ -174,7 +162,7 @@ function insert_result_question(){
         new_div.append(replyDiv);
 
         new_td.appendChild(new_div);
-        cell1.appendChild(new_td);
+        new_row.appendChild(new_td);
         result_row_question.appendChild(new_row);
         inputField.value="";
     }
@@ -221,11 +209,9 @@ function cupsToGrams(textMeasurement){
         var outerNumderId = "number"+i;
         var outerNumderDiv = document.getElementById(outerNumderId);
         var outerUnit=document.getElementById(outerUnitId);
-        console.log(outerUnitId);
        
         if(outerUnit.innerHTML!=" "){
             if(outerUnit.innerHTML== " cup " || outerUnit.innerHTML== " cups "){
-                console.log("REACHED");
                 
                 var conversionIs = parseFloat(outerNumderDiv.innerHTML)*250;
                 outerNumderDiv.innerHTML=conversionIs;
@@ -384,4 +370,16 @@ function endFollowAlongClicked(arrSize){
     startButton.style.display="block";
     startText.style.display="block";
 
+}
+function displayReply(){
+    let elem = document.getElementById("replySam");
+    if(elem.style.display=="none"){
+        elem.style.display="block";
+        replyMj.style.display="block";
+    }
+    else{
+        elem.style.display="none";
+        replyMj.style.display="none";
+
+    }
 }
