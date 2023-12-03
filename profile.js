@@ -2,12 +2,18 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var text = 0
-
     // --------------------------------  profile page 1 ---------------------------------------------------------
-    const cardsContainer1 = document.getElementById('MyRecipe');  
-    const cardsContainer2 = document.getElementById('PersonalRecipe');
-    const cardsContainer3 = document.getElementById('Friend');
+    var cardsContainer1 = document.getElementById('MyRecipe');  
+
+    var cardsContainer2 = document.getElementById('PersonalRecipe');
+    cardsContainer2.style.display = "none";
+    var cardsContainer3 = document.getElementById('Friend');
+    cardsContainer3.style.display = "none";
+
+    // var button2 = document.getElementById('private-button');
+    // button2.style.display = "none";
+    // var button3 = document.getElementById('friend-button');
+    // button3.style.display = "none";
     // -----------------------------------------------------------------------------------------------------------   
 
 
@@ -16,20 +22,29 @@ document.addEventListener('DOMContentLoaded', function () {
         return resp.json();
     })
     .then(function(data1) {
-        document.getElementById("retrieveMovies").onclick = function(){
-            text = document.getElementById("textbox1").value;
-            //makeCards({"star":text, "category": "Appetizers", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"});
-            data1[data1.length + 1] = {"star":text, "category": "Friend", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"};
-            const boxes = Array.from(document.getElementsByClassName('category-container'));
+        document.getElementById("private-button").onclick = function(){
+            cardsContainer1.style.display = "none";
+            cardsContainer3.style.display = "none";
+            cardsContainer2.style.display = "block";
 
-            boxes.forEach(box => {
-            box.remove();
-});
-            makeCards(data1);
         } 
+
+        document.getElementById("myrecipe-button").onclick = function(){
+            cardsContainer1.style.display = "block";
+            cardsContainer3.style.display = "none";
+            cardsContainer2.style.display = "none";
+        } 
+
+        document.getElementById("friend-button").onclick = function(){
+            cardsContainer1.style.display = "none";
+            cardsContainer3.style.display = "block";
+            cardsContainer2.style.display = "none";
+        } 
+
         makeCards(data1);
 
     });
+
 
 
 
@@ -48,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const category in categories) {
             if (["MyRecipe"].includes(category)){    
                 const categoryContainer = document.createElement('div');
-                categoryContainer.classList.add('category-container');
+                categoryContainer.classList.add('category-container1');
 
                 categories[category].forEach((card) => {
                     categoryContainer.appendChild(card);
@@ -61,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const category in categories) {
             if (["PersonalRecipe"].includes(category)){    
                 const categoryContainer = document.createElement('div');
-                categoryContainer.classList.add('category-container');
+                categoryContainer.classList.add('category-container1');
 
                 categories[category].forEach((card) => {
                     categoryContainer.appendChild(card);
@@ -74,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const category in categories) {
             if (["Friend"].includes(category)){    
                 const categoryContainer = document.createElement('div');
-                categoryContainer.classList.add('category-container');
+                categoryContainer.classList.add('category-container1');
 
                 categories[category].forEach((card) => {
                     categoryContainer.appendChild(card);
