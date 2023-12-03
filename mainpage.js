@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!categories[data.category]) {
             categories[data.category] = [];
         }
-        console.log(data);
         categories[data.category].push(createCard(data));
     });
 
@@ -130,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function buttonScrollAppetizer(direction) {
     const categoryContainers = document.getElementById('cards-container').getElementsByClassName('category-container')[0];
+    console.log(categoryContainers);
 
     const buttonRight = document.getElementById('moveRightAppetizer');
     const buttonLeft = document.getElementById('moveLeftAppetizer');

@@ -121,3 +121,94 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 });
+
+function addToMainPage() {
+    var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    var selectedRestrictions = [];
+    dietaryRestrictions.forEach(function (checkbox) {
+        selectedRestrictions.push(checkbox.value);
+    });
+    const restrictions = selectedRestrictions.join(',');
+
+    var categorySelect = document.getElementById('recipe-category-select');
+    var selectedOption = categorySelect.options[categorySelect.selectedIndex];
+
+    const title = document.getElementById("recipe-title-input").value;
+    const category = selectedOption.value;
+    const author = document.getElementById("profile-h2").textContent;
+    const href = (author + title).replace(/\s+/g, '') + ".html";
+    const image = document.getElementById("uploaded-image").src;
+    //console.log(image);
+
+    const data = {"dietaryRestrictions":restrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
+    
+    const card = createNewCard(data);
+    
+    document.getElementById("home-button").click();
+    if(category == "Appetizers"){
+        document.getElementById('cards-container').getElementsByClassName('category-container')[0].appendChild(card);
+    } else if(category == "MainDishes"){
+        document.getElementById('cards-container').getElementsByClassName('category-container')[1].appendChild(card);
+    } else{
+        document.getElementById('cards-container').getElementsByClassName('category-container')[2].appendChild(card);
+    }
+}
+
+
+
+
+
+    function getNewStarRating(starValue) {
+        const filledStars = '★'.repeat(starValue); // Unicode character for a filled star
+        const emptyStars = '☆'.repeat(5 - starValue); // Unicode character for an empty star
+        return filledStars + emptyStars;
+    }
+
+    function createNewCard(data) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const cardLink = document.createElement('a');
+        cardLink.href = data.href || '#'; // Set a default link if 'href' is not provided
+        cardLink.target = '_blank'; // Open the link in a new tab/window
+
+        // Image container
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('image-container');
+        const image = document.createElement('img');
+        image.src = data.image;
+        image.alt = 'Image';
+        imageContainer.appendChild(image);
+
+        // Details container
+        const detailsContainer = document.createElement('div');
+        detailsContainer.classList.add('details-container');
+
+        // Author name
+        const author = document.createElement('div');
+        author.classList.add('author');
+        author.textContent = data.author;
+
+        const title = document.createElement('div');
+        title.classList.add('title');
+        title.textContent = data.title;
+
+        // Star rating (you can customize this part based on your needs)
+        const rating = document.createElement('div');
+        rating.classList.add('rating');
+        rating.innerHTML = getNewStarRating(data.star); //'&#9733;&#9733;&#9733;&#9733;&#9733;';
+
+        // Append elements to the details container
+        detailsContainer.appendChild(author);
+        detailsContainer.appendChild(title);
+        detailsContainer.appendChild(rating);
+
+        // Append image container and details container to the card link
+        cardLink.appendChild(imageContainer);
+        cardLink.appendChild(detailsContainer);
+
+        // Append the card link to the main card container
+        card.appendChild(cardLink);
+
+        return card;
+    }

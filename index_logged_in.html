@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png"/>
 </head>
 <body>
+    <script src="script_logged_in.js"></script>
     <button id="moveLeftAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
     <button id="moveRightAppetizer" type="button" onclick="buttonScrollAppetizer()"></button>
 
@@ -225,7 +226,7 @@
 
         <div id="create-recipe-content" class="content">
             <h1 id="create-recipe-h1">Create New Recipe</h1>
-            <form>
+            <!--<form id="createRecipeForm">-->
                 <h2 id="recipe-title">Recipe Title:</h2>
                 <input type="text" id="recipe-title-input" name="recipe-title" placeholder="Enter recipe title here..."><br>
                 <div class="visibility-toggle">
@@ -281,9 +282,9 @@
                 <input type="text" id="recipe-description-input" name="recipe-description" placeholder="Enter description here...">
                 <h2 id="recipe-category-question">How would you categorize your recipe?</h2>
                 <select id="recipe-category-select" name="recipe-category">
-                    <option value="option1">Appetizer</option>
-                    <option value="option2">Main Dish</option>
-                    <option value="option3">Dessert</option>
+                    <option value="Appetizers">Appetizer</option>
+                    <option value="MainDishes">Main Dish</option>
+                    <option value="Desserts">Dessert</option>
                 </select>
                 <h2 id="recipe-ingredients">Recipe Ingredients:</h2>
                 <input type="text" id="recipe-ingredients-input" placeholder="Enter an ingredient then hit return, do this for all recipe ingredients...">
@@ -341,9 +342,9 @@
                 </div>
                 <h2 id="recipe-restriction-message">Don't worry we will double check this for you!</h2>
                 <button id="draft-button">Save Draft</button>
-                <button id="publish-button">PUBLISH</button>
+                <button id="publish-button" onclick="addToMainPage()">PUBLISH</button>
                 <div class="spacer"></div>
-            </form>
+            <!--</form>-->
             <script src="create_recipe.js"></script>
         </div>
 
@@ -403,7 +404,7 @@
         </div>
         
     </div>
-    <script src="script_logged_in.js"></script>
+    
 </body>
 </html>
 
