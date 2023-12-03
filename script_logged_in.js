@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var favoritesButton = document.getElementById("favorites-button");
     var createRecipeButton = document.getElementById("create-recipe-button");
     var aboutButton = document.getElementById("about-button");
+    var addFriendButton = document.getElementById("main-friend-button");
     var helpButton = document.getElementById("help-button");
     var homeContent = document.getElementById("home-content");
     var profileContent = document.getElementById("profile-content");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var createRecipeContent = document.getElementById("create-recipe-content");
     var aboutContent = document.getElementById("about-content");
     var helpContent = document.getElementById("help-content");
+    var addFriendContent = document.getElementById("main-friend-content");
 
     // Initial state - show home content, hide about content
     homeContent.style.display = "flex";
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     createRecipeContent.style.display = "none";
     aboutContent.style.display = "none";
     helpContent.style.display = "none";
+    addFriendContent.style.display = "none";
 
     // Add 'active' class to home button and remove from about button
     homeButton.classList.add("active");
@@ -28,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     createRecipeButton.classList.remove("active");
     aboutButton.classList.remove("active");
     helpButton.classList.remove("active");
+    addFriendButton.classList.remove("active");
 
     // Add click event listeners to the buttons
     homeButton.addEventListener("click", function () {
@@ -37,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
         helpContent.style.display = "none";
+        addFriendContent.style.display = "none";
 
         homeButton.classList.add("active");
         profileButton.classList.remove("active");
@@ -44,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
         helpButton.classList.remove("active");
+        addFriendButton.classList.remove("active");
 
         showArrows();
     });
@@ -55,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
         helpContent.style.display = "none";
+        addFriendContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.add("active");
@@ -62,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
         helpButton.classList.remove("active");
+        addFriendButton.classList.remove("active");
 
         hideArrows();
     });
@@ -73,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
         helpContent.style.display = "none";
+        addFriendContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
@@ -80,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
         helpButton.classList.remove("active");
+        addFriendButton.classList.remove("active");
 
         hideArrows();
     });
@@ -91,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeContent.style.display = "flex";
         aboutContent.style.display = "none";
         helpContent.style.display = "none";
+        addFriendContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
@@ -98,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeButton.classList.add("active");
         aboutButton.classList.remove("active");
         helpButton.classList.remove("active");
+        addFriendButton.classList.remove("active");
 
         hideArrows();
     });
@@ -109,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "flex";
         helpContent.style.display = "none";
+        addFriendContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
@@ -116,6 +129,27 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeButton.classList.remove("active");
         aboutButton.classList.add("active");
         helpButton.classList.remove("active");
+        addFriendButton.classList.remove("active");
+
+        hideArrows();
+    });
+
+    addFriendButton.addEventListener("click", function () {
+        homeContent.style.display = "none";
+        profileContent.style.display = "none";
+        favoritesContent.style.display = "none";
+        createRecipeContent.style.display = "none";
+        aboutContent.style.display = "none";
+        helpContent.style.display = "none";
+        addFriendContent.style.display = "flex";
+
+        homeButton.classList.remove("active");
+        profileButton.classList.remove("active");
+        favoritesButton.classList.remove("active");
+        createRecipeButton.classList.remove("active");
+        aboutButton.classList.remove("active");
+        helpButton.classList.remove("active");
+        addFriendButton.classList.add("active");
 
         hideArrows();
     });
@@ -127,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeContent.style.display = "none";
         aboutContent.style.display = "none";
         helpContent.style.display = "flex";
+        addFriendContent.style.display = "none";
 
         homeButton.classList.remove("active");
         profileButton.classList.remove("active");
@@ -134,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createRecipeButton.classList.remove("active");
         aboutButton.classList.remove("active");
         helpButton.classList.add("active");
+        addFriendButton.classList.remove("active");
 
         const data = {"dietaryRestrictions":"lactose-free", "title":"Reg Chicken", "favourites":"True", "star":"3", "category": "Appetizers", "image": "https://imageio.forbes.com/specials-images/imageserve/65072bc1a50c29d7592250c0/Healthy-food--Healthy-eating-background--Fruit--vegetable--berry---Vegetarian-eating-/960x0.jpg?format=jpg&width=960","author": "Author 1", "href": "https://www.facebook.com"};
         const card = createNewCard(data);
