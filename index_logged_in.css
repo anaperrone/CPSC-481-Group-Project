@@ -175,6 +175,38 @@ body {
     font-weight: 900;
 }
 
+/* This is all the necessary components for the community button */
+
+#community-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 216px;
+    height: 46px;
+    border-radius: 10px;
+    position: absolute;
+    top: 285px;
+    left: 25px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+
+#community-button.active {
+    background: linear-gradient(to bottom right, #9747FF, #0500FF);
+    color: white;
+}
+
+#community-icon {
+    fill: currentColor;
+    padding: 9px 15px 0px 13px;
+}
+
+#community-title {
+    padding-top: 12px;
+    font-weight: 900;
+}
+
 /* This is all the necessary components for the about button */
 
 #about-button {
@@ -186,7 +218,7 @@ body {
     height: 46px;
     border-radius: 10px;
     position: absolute;
-    top: 285px;
+    top: 350px;
     left: 25px;
     display: flex;
     flex-direction: row;
@@ -203,40 +235,6 @@ body {
 }
 
 #about-title {
-    padding-top: 12px;
-    font-weight: 900;
-}
-
-/* Friend Button */
-#main-friend-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    width: 216px;
-    height: 46px;
-    border-radius: 10px;
-    position: absolute;
-    top: 350px;
-    left: 25px;
-    display: flex;
-    flex-direction: row;
-}
-
-#main-friend-button {
-    color: black;
-}
-
-#main-friend-button.active {
-    background: linear-gradient(to bottom right, #9747FF, #0500FF);
-    color: white;
-}
-
-#main-friend-icon {
-    fill: currentColor;
-    padding: 9px 15px 0px 13px;
-}
-
-#main-friend-title {
     padding-top: 12px;
     font-weight: 900;
 }
@@ -310,7 +308,7 @@ body {
 #create-recipe-button:hover,
 #about-button:hover, 
 #help-button:hover,
-#main-friend-button:hover {
+#community-button:hover {
     background: linear-gradient(to bottom right, rgba(151, 71, 255, 0.3), rgba(5, 0, 255, 0.3));
 }
 
@@ -1304,6 +1302,38 @@ input:checked + .slider:before {
     width: 100px;
 }
 
+/* Here is all the content associated with the "Community" page/button */
+
+#community-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#community-h1 {
+    font-size: 35px;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+}
+
+#community-h4 {
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top: 140px;
+    left: 95px;
+}
+
+#community-line {
+    position: absolute;
+    top: 170px;
+    left: 95px;
+    background-color: #000000;
+    height: 3px;
+}
+
 /* Here is all the content associated with the "About Us" page/button */
 
 #about-content {
@@ -1388,39 +1418,6 @@ input:checked + .slider:before {
     position: absolute;
     top: 285px;
     left: 570px;
-}
-
-
-/* Here is all the content associated with the "Community" page/button */
-
-#main-friend-content {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-}
-
-#main-friend-h1 {
-    font-size: 35px;
-    font-weight: 900;
-    position: absolute;
-    top: 20px;
-}
-
-#main-friend-h4 {
-    font-size: 30px;
-    font-weight: 600;
-    position: absolute;
-    top: 140px;
-    left: 95px;
-}
-
-#main-friend-line {
-    position: absolute;
-    top: 170px;
-    left: 95px;
-    background-color: #000000;
-    height: 3px;
 }
 
 /* Here is all the content associated with the "Help" page/button */
