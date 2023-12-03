@@ -11,6 +11,7 @@ h1 {
     text-align: center;
     font-size: 50px;
     margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
 }
 
 h2 {
@@ -19,6 +20,8 @@ h2 {
     margin: 0;
     margin-top: 25px;
     margin-bottom: 0;
+    font-family: 'Inter', sans-serif;
+
 }
 
 .tags {
@@ -29,11 +32,10 @@ h2 {
     display: inline-block;
     text-align: center;
     font-size: 17px;
+    font-family: 'Inter', sans-serif;
     padding: 7px;
     border: 2px solid black;
     border-color: rgb(0, 0, 0);
-
-
     margin: 5px;
     width: fit-content;
 
@@ -65,12 +67,14 @@ h2 {
 
 .measurementPara {
     font-size: 22.5px;
+    font-family: 'Inter', sans-serif;
     padding-left: 80px;
 }
 
 .instructionStepPara {
     /* position: relative; */
     font-size: 25px;
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
     padding-left: 80px;
 }
@@ -78,6 +82,7 @@ h2 {
 .instructionPara {
     /* position: relative; */
     font-size: 22.5px;
+    font-family: 'Inter', sans-serif;
     padding-left: 120px;
     padding-bottom: 20px;
     padding-top: 10px;
@@ -87,6 +92,7 @@ h2 {
 
 .forSubPara {
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     padding-left: 80px;
     padding-right: 5px;
     display: inline-block;
@@ -104,6 +110,7 @@ h2 {
 
 .unitAlign {
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     padding-right: 5px;
     display: inline-block;
 
@@ -151,6 +158,8 @@ h2 {
     /* Pointer/hand icon */
     /*    float: left;  /* Float the buttons side by side */
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
+
     border: 2px solid black;
 
 }
@@ -274,6 +283,7 @@ h2 {
 
 .start-button-text {
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     display: inline-block;
     padding-left: 10px;
     padding-top: 5px;
@@ -301,6 +311,7 @@ h2 {
     margin-top: 30px;
     border-radius: 15px;
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     border: 3px solid blueviolet;
     display: inline;
 }
@@ -316,6 +327,7 @@ h2 {
 
     border-radius: 15px;
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     border: 3px solid blueviolet;
     display: inline;
     outline: none;
@@ -362,6 +374,7 @@ h2 {
     margin-top: 15px;
     margin-bottom: 7.5px;
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     vertical-align: center;
     color: comment-qrgb(0, 0, 0);
     
@@ -385,6 +398,7 @@ h2 {
     margin-top: 10px;
     margin-bottom: 7.5px;
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
     vertical-align: center;
     color: comment-qrgb(0, 0, 0);
     
@@ -412,9 +426,15 @@ h2 {
     bottom: 2px;
     color: blueviolet;
     padding-bottom: 0;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+
+
 }
 .text-CQ {
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
+
     color: white;
     display: inline-block;
     padding: 15px;
@@ -422,7 +442,6 @@ h2 {
 
 .user {
     content: "";
-    /* background-image: url(images/user.png); */
     background-size: 100% 100%;
     display: flex;
     vertical-align: middle;
@@ -448,13 +467,10 @@ h2 {
     object-fit: fill;
     border-radius: 50%;
     overflow: hidden;
-    /*size of your image*/
     height: 32px;
     width: 32px;
-
     position: relative;
-    /* bottom: 4px; */
-    /* top: 5px; */
+
 }
 
 .align-table {
@@ -504,7 +520,6 @@ h2 {
 
 .scrollbar {
     margin-top: 20px;
-
     background-color: rgb(255, 255, 255);
     width: 810px;
     height: 400px;
@@ -530,19 +545,20 @@ h2 {
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 17px;
     border: none;
     outline: none;
     color: rgb(0, 0, 0);
     padding-top: 5px;
     background-color: inherit;
-    font-family: inherit;
+    font-family: 'Inter', sans-serif;
     margin: 0;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
+    font-family: 'Inter', sans-serif;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -579,12 +595,13 @@ h2 {
 
 .dropdownSub .dropbtn {
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
+
     border: none;
     outline: none;
     color: rgb(0, 0, 0);
     padding-top: 5px;
     background-color: inherit;
-    font-family: inherit;
     margin: 0;
 }
 
@@ -631,7 +648,13 @@ h2 {
 }
 
 .comment-question-dates{
-position:inline; text-align: right; vertical-align:top; font-size: 15px;  margin-bottom: 7px;
+    position:inline; 
+    text-align: right;
+    vertical-align:top;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif; 
+    margin: none;
+    padding: none;
 }
 
 .replyLink{
@@ -641,6 +664,7 @@ position:inline; text-align: right; vertical-align:top; font-size: 15px;  margin
     vertical-align: bottom;
     text-align: right;
     padding-right: 3px;
+    padding-top: 4px;
 }
 .alignTextBesidePFP{
     display: inline-flex; vertical-align: middle;
@@ -650,4 +674,26 @@ position:inline; text-align: right; vertical-align:top; font-size: 15px;  margin
     display: inline-flex; 
     /* vertical-align: middle; */
     /* margin-top: 6px; */
+}
+.cookTimeAlign{
+    margin: 0.2em 0;
+     font-size: 25px;
+     font-family: 'Inter', sans-serif;
+     justify-content: center; 
+     font-weight:bold; 
+     margin-bottom: 10px;
+}
+.cookTimeAlignInner{
+    margin: 0.2em 0;
+     font-size: 20px; 
+    font-family: 'Inter', sans-serif; 
+    display:flex;
+     justify-content: center;
+}
+
+
+.subDropdown{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+
 }

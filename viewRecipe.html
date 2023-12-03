@@ -15,10 +15,10 @@
         <body style="background-color: whitesmoke;">
             <title> Honey Garlic Chicken </title>
             <nav style="position: fixed; top:2px; left: 0; right: 0;">
-                <a href="">
+                <a onclick="history.back()" style="cursor: pointer;">
                     <img src ="assets/left arrow icon.png" alt="Go back" width="35px" height="35px"/>
                 </a>
-                <a href="">
+                <a href="index_logged_in.html">
                     <img src ="assets/home.png" alt="Go Home" width="30px" height="30px" class="homeIcon"/>
                 </a>
                 <a href="">
@@ -28,11 +28,11 @@
             </nav>
         <div class="outerbox">
             <h1> Honey Garlic Chicken</h1>
-            <div style="text-align: center; font-size: 23px; margin-bottom: 5px;">
+            <div style="text-align: center; font-size: 23px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
                 <p style="display: inline;"> Author:</p>
-                <a href="nourlyet"> random Author</a>
+                <a href="nourlyet"> David Johnson</a>
             </div>
-            <div style="text-align: center; font-size: 20px; margin-bottom: 20px;">
+            <div style="text-align: center; font-size: 20px; font-family: 'Inter', sans-serif; margin-bottom: 20px;">
                 <p style="display: inline;"> Date Posted: November 25, 2023</p>
             </div>
             <!-- <img src="assets/spicy-honey-garlic-chicken.webp" alt= "Garlic Honey Chicken" width="500" height="400" class="center"> -->
@@ -43,8 +43,8 @@
                 <table style="display: flex; justify-content: center; margin-top: 20px;">
                     <td>
                         <div style="margin-right:40px; margin-left: 90px;">
-                            <p style="margin: 0.2em 0; font-size: 25px; margin-right: 40px; font-weight:bold; margin-top: 11px; display: flex; justify-content: center; margin-bottom: 0;"> Rating</p>
-                            <div>
+                            <p style="margin: 0.2em 0; font-size: 25px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; display: flex; justify-content: center; margin-bottom: 0;"> Rating</p>
+                            <div style="padding-top:7px;">
                                 <img src="assets/filledStarRating.png" width="30px" height="30px">
                                 <img src="assets/filledStarRating.png" width="30px" height="30px">
                                 <img src="assets/filledStarRating.png" width="30px" height="30px">
@@ -55,27 +55,27 @@
                     </td>
                     <td>
                         <div style="margin-right:40px; margin-left: 40px;">
-                            <p style="margin: 0.2em 0; font-size: 25px; justify-content: center; font-weight:bold; margin-bottom: 10px;">Prep Time </p>
-                            <p style="margin: 0.2em 0; font-size: 20px; display:flex; justify-content: center;">25 minutes</p>
+                            <p class="cookTimeAlign">Prep Time </p>
+                            <p class="cookTimeAlignInner">25 minutes</p>
                         </div>
                     </td>
                     <td>
                         <div style="margin-right:40px; margin-left: 40px;">
-                            <p style="margin: 0.2em 0; font-size: 25px; justify-content: center; font-weight:bold; margin-bottom: 10px;">Cook Time </p>
-                            <p style="margin: 0.2em 0; font-size: 20px; display:flex; justify-content: center;">20 minutes</p>
+                            <p class="cookTimeAlign">Cook Time </p>
+                            <p class="cookTimeAlignInner">20 minutes</p>
                         </div>
                     </td>
                     <td>
                         <div style="margin-right:80px; margin-left: 40px;">
-                            <p style="margin: 0.2em 0; font-size: 25px; justify-content: center; font-weight:bold; margin-bottom: 10px;">Total Time </p>
-                            <p style="margin: 0.2em 0; font-size: 20px; display:flex; justify-content: center;">45 minutes</p>
+                            <p class="cookTimeAlign">Total Time </p>
+                            <p class="cookTimeAlignInner">45 minutes</p>
                         </div>
                     </td>
                 </table>
             </div>
 
             <!-- <p style="display: flex; justify-content: center;"> Recipe Description</p> -->
-            <div style="width: 800px; height: 100px; background-color: rgb(255, 255, 255); font-size: 20px; margin-top: 10px;" class="center">
+            <div style="width: 800px; height: 100px; background-color: rgb(255, 255, 255); font-size: 20px; font-family: 'Inter', sans-serif;margin-top: 10px;" class="center">
 
                 <p> long paragraph long paragraph long paragraph long paragraph long paragraph long paragraphlong paragraphlong paragraphlong paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph </p>
 
@@ -88,7 +88,7 @@
                 <div id="tagParent" style="display: inline-block;">
                 </div>
                 <script>
-                    const tagText = '[ "Non-Vegatarian", "idk", "random"]';
+                    const tagText = '[ "Non-Vegatarian"]';
                     const tagArr = JSON.parse(tagText);
                     let divTagParent=document.getElementById("tagParent");
                     
@@ -181,7 +181,7 @@
                                 addFirst.value=MeasurementArr[i].ingredient;
                                 addFirst.innerHTML=MeasurementArr[i].ingredient;
                                 dropdownElement.append(addFirst);
-
+                                dropdownElement.className="subDropdown";
                                 for(var j=0; j < MeasurementArr[i].sub.length; j++){
                                     var testDiv = document.createElement('option');
                         
@@ -346,7 +346,7 @@
 
                                         This was so good. I made this for dinner and everybody loved it!
                                         </div>
-                                        <a onclick="displayReply()"  class="replyLink">Replies</a>  
+                                        <a onclick="displayReply()"  class="replyLink">Replies/Reply</a>  
 
                                     </div>
                                 </td>
@@ -394,7 +394,7 @@
                                             I loved this Recipe!   
                                         </div> 
                                         <!-- <a onclick=""  class="replyLink">Replies</a>   -->
-                                    
+                                        <a onclick=""  class="replyLink">Replies/Reply</a>  
                                     </div>
                                 </td>
                             </tr>
@@ -411,7 +411,7 @@
                                             Great. 
                                         </div> 
                                         <!-- <a onclick=""  class="replyLink">Replies</a>   -->
-                                       
+                                        <a onclick=""  class="replyLink">Replies/Reply</a>  
                                     </div>
                                 </td>
                             </tr>
@@ -427,8 +427,7 @@
                                             <div class="alignTextBesidePFP" >
                                             Amazing cant wait to make it again!  
                                             </div>  
-                                            <a onclick=""  class="replyLink">Replies</a>  
-                                    
+                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
                                     </div>
                                 </td>
                             </tr>
@@ -451,7 +450,7 @@
                                             <div class="alignTextBesidePFP">
                                                 If I were to bake it in the oven how long would I keep it in there?  
                                             </div>
-                                            <a onclick=""  class="replyLink">Replies</a>  
+                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
                                 </tr>
@@ -464,7 +463,7 @@
                                                 <div style="display:inline;"> Dwight Schrute: </div>  
                                             </div> 
                                             <div class="alignTextBesidePFP">Does this go well with leftover rice?</div>
-                                            <a onclick=""  class="replyLink">Replies</a>  
+                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
                                 </tr>
@@ -472,26 +471,27 @@
                                 <tr>
                                     <td>
                                         <div class="comment-question-group">
-                                            <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: December 3, 2023 </div>
+                                            <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; font-family: 'Inter', sans-serif;  margin: none; padding: none;"> Date: December 3, 2023 </div>
                                             <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Rachel Green: </div>  
                                             </div> 
                                             <div class="alignTextBesidePFP"> Question </div>
+                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <div class="comment-question-group">
-                                            <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: December 3, 2023 </div>
+                                            <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px;  font-family: 'Inter', sans-serif; margin: none; padding: none;"> Date: December 3, 2023 </div>
                                             <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Rachel Green: </div>
                                                 
                                             </div> 
                                                 <div class="alignTextBesidePFP">Question</div>  
-                                                <a onclick=""  class="replyLink">Replies</a>  
+                                                <a onclick=""  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
                                 </tr>
@@ -507,14 +507,14 @@
                     <input type="text" id="inputQuestion" placeholder="Type your Question here..." class="inputField" style="display: none;">
                     <button type="button" id="submitQuestion" onclick="insert_result_question()"class="submit-button"  style="display: none;"></button>
                 </form>     <!-- </div> -->
-                <p id="errorCharMsg"; style=" color: brown; font-size: 20px; padding-left:250px; display: none;"> Comment must be more then 3 characters!</p>
-                <p id="errorCharMsgQuestion"; style=" color: brown; font-size: 20px; padding-left:250px; display: none;"> Question must be more then 15 characters!</p>
+                <p id="errorCharMsg"; style=" color: brown; font-size: 20px; font-family: 'Inter', sans-serif; padding-left:250px; display: none;"> Comment must be more then 3 characters!</p>
+                <p id="errorCharMsgQuestion"; style=" color: brown; font-size: 20px;  font-family: 'Inter', sans-serif; padding-left:250px; display: none;"> Question must be more then 15 characters!</p>
 
             </div>
             
             <div style="display: flex; justify-content: center;">
                
-                <p style="font-size: 30px;">
+                <p style="font-size: 30px;  font-family: 'Inter', sans-serif;">
                     Favourite This Recipe?
                 </p> 
 

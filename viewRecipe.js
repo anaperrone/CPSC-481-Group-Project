@@ -73,8 +73,8 @@ function insert_result_comment(){
         let replyDiv = document.createElement('a');
         replyDiv.onclick="";
         replyDiv.className="replyLink";
-        replyDiv.innerHTML="Reply";
-        replyDiv.style.bottom="10px";
+        replyDiv.innerHTML="Replies/Reply";
+        // replyDiv.style.bottom="10px";
 
 
         new_div.className='comment-question-group';
@@ -90,10 +90,8 @@ function insert_result_comment(){
         userNameDiv.innerHTML="Sheldon Cooper: "
         alignDiv.append(userNameDiv);
         alignDiv2.append(input);
-        userDiv.style.bottom="5px"
-        alignDiv.style.bottom="10px";
-        alignDiv2.style.bottom="10px";
-        // new_div.append(input);
+        alignDiv.style.top="5px";
+        alignDiv2.style.top="5px";
         
         new_div.appendChild(dateDiv);
         new_div.appendChild(userDiv);
@@ -122,7 +120,7 @@ function insert_result_question(){
         input.className='text-CQ';
         let new_row = document.createElement("tr");
         let new_td = document.createElement("td");
-        // var cell1 = new_row.insertCell(0);
+        var cell1 = new_row.insertCell(0);
 
         let new_div = document.createElement('div');
         let dateDiv = document.createElement('div');
@@ -131,10 +129,10 @@ function insert_result_question(){
         let alignDiv2 = document.createElement('div');
         let userNameDiv = document.createElement('div');
         let replyDiv = document.createElement('a');
-        replyDiv.href="";
-        replyDiv.innerHTML="Reply";
+        replyDiv.onclick="";
         replyDiv.className="replyLink";
-        replyDiv.style.bottom="9px";
+        replyDiv.innerHTML="Replies/Reply";
+        // replyDiv.style.bottom="10px";
 
 
         new_div.className='comment-question-group';
@@ -150,19 +148,17 @@ function insert_result_question(){
         userNameDiv.innerHTML="Sheldon Cooper: "
         alignDiv.append(userNameDiv);
         alignDiv2.append(input);
-        alignDiv.style.bottom="10px";
-
-        alignDiv2.style.bottom="10px";
-        // new_div.append(input);
+        alignDiv.style.top="5px";
+        alignDiv2.style.top="5px";
         
-        new_div.append(dateDiv);
-        new_div.append(userDiv);
-        new_div.append(alignDiv);
-        new_div.append(alignDiv2);
-        new_div.append(replyDiv);
+        new_div.appendChild(dateDiv);
+        new_div.appendChild(userDiv);
+        new_div.appendChild(alignDiv);
+        new_div.appendChild(alignDiv2);
+        new_div.appendChild(replyDiv);
 
         new_td.appendChild(new_div);
-        new_row.appendChild(new_td);
+        cell1.appendChild(new_td);
         result_row_question.appendChild(new_row);
         inputField.value="";
     }
