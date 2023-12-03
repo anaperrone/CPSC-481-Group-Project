@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardsContainer = document.getElementById('cards-container');
     const dietDropdown = document.querySelector('.diet-dropdown');
 
-    searchInput.addEventListener('input', function () {
+    function updateCards(){
         const searchTerm = searchInput.value.toLowerCase();
         const selectedDiet = dietDropdown.value;
     
@@ -37,7 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
             cardsContainer.appendChild(categoryContainer);
         }
-    });
+    }
+
+    searchInput.addEventListener('input', updateCards);
+    dietDropdown.addEventListener('change', updateCards);
     
     
 
@@ -129,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function buttonScrollAppetizer(direction) {
     const categoryContainers = document.getElementById('cards-container').getElementsByClassName('category-container')[0];
-    console.log(categoryContainers);
 
     const buttonRight = document.getElementById('moveRightAppetizer');
     const buttonLeft = document.getElementById('moveLeftAppetizer');
