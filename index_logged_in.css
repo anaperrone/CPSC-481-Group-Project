@@ -647,14 +647,14 @@ img {
 .crown-icon {
     position: absolute;
     top: 165px;
-    right: 420px;
+    right: 380px;
     font-size: 18px;
   }
 
   .email-icon {
     position: absolute;
     top: 195px;
-    right: 460px;
+    right: 420px;
     font-size: 25px;
   }
   
@@ -663,24 +663,25 @@ img {
     background-color: #a291f4;
     position: absolute;
     top: 130px;
-    right: 300px;
+    right: 400px;
     font-size: 18px;
   }
 
   #myrecipe-button {
-    background-color: transparent;
+    background-color: gray;
+    border-color: transparent;
     cursor: pointer;
-    width: 216px;
+    width: 300px;
     height: 46px;
-    border-radius: 10px;
     position: absolute;
     top: 260px;
     left: 95px;
     display: flex;
     flex-direction: row;
-    color: #000000;
-    border-color: #000000;
     margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }
 
 
@@ -690,20 +691,26 @@ img {
 
 }
 
+#myrecipe-button:hover {
+    background: linear-gradient(to bottom right, white, gray);
+
+}
+
 #private-button {
-    background-color: transparent;
+    background-color: gray;
     cursor: pointer;
-    width: 216px;
+    width: 300px;
     height: 46px;
-    border-radius: 10px;
+    border-color: transparent;
     position: absolute;
     top: 260px;
     left: 395px;
     display: flex;
     flex-direction: row;
-    color: #000000;
-    border-color: #000000;
     margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }
 
 
@@ -713,26 +720,37 @@ img {
 
 }
 
+#private-button:hover {
+    background: linear-gradient(to bottom right, white, gray);
+
+}
+
 #friend-button {
-    background-color: transparent;
+    background-color: gray;
+    border-color: transparent;
     cursor: pointer;
-    width: 216px;
+    width: 300px;
     height: 46px;
-    border-radius: 10px;
     position: absolute;
     top: 260px;
     left: 695px;
     display: flex;
     flex-direction: row;
-    color: #000000;
-    border-color: #000000;
     margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
 }
 
 
    #friend-button.active {
     background: linear-gradient(to bottom right, #9747FF, #0500FF);
     color: white;
+
+}
+
+#friend-button:hover {
+    background: linear-gradient(to bottom right, white, gray);
 
 }
 
@@ -745,6 +763,55 @@ img {
     width: 908px;
     transition: all 0.4s ease-in-out;
 }
+
+.category-container2 {
+    display: flex;
+    flex-direction: column;
+    margin: 60px; /* Adjust the value to control the spacing between categories */
+    margin-left: -450px;
+    overflow-y: scroll;
+    overflow: visible;
+    width: 300px;
+    transition: all 0.4s ease-in-out;
+    
+}
+
+.friend-search-container {
+    position: relative;
+    margin-top: 80px; /* Move it down the page by adjusting the margin */
+    margin-right: 240px;
+}
+    
+.friend-search-bar {
+    padding: 10px;
+    border: 2px solid #a291f4; /* Lavender purple border color */
+    border-radius: 20px; /* Rounded edges */
+    font-size: 16px;
+    width: 650px; /* Make it wider by adjusting the width */
+}
+    
+.friend-search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #a291f4; /* Lavender purple color */
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.card-community {
+    width: 110px;
+    height: 110px;
+    margin: 20px;
+    /* border: 1px solid #ccc; */
+    overflow: hidden;
+    border-radius: 10px; /* Adjust the value as needed for desired roundness */
+}
+
+.card-community:hover {
+    border: 1px solid black;
+  }
 /* Here is all the content associated with the "Favorites" page/button */
 
 #favorites-content {

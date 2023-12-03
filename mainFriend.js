@@ -5,16 +5,32 @@ document.addEventListener('DOMContentLoaded', function () {
     var text = 0
 
     // --------------------------------  profile page 1 ---------------------------------------------------------
-    var cardsContainer3 = document.getElementById('main-friend');
+    var cardsContainer3 = document.getElementById('community-content');
 
     // -----------------------------------------------------------------------------------------------------------   
 
 
-    var MeasurementArr = fetch("./data.json")
+    var MeasurementArr = fetch("./community.json")
     .then(function(resp) {
         return resp.json();
     })
     .then(function(data1) {
+        var data2 = [];
+        document.getElementById("friend-search-button").onclick = function(){
+            var userSearched = document.getElementById("friend-search").value;
+            console.log(userSearched );
+
+            const data2 = data1.filter(({author}) => author === userSearched);
+
+            const boxes = document.querySelectorAll('.category-container2');
+
+            boxes.forEach(box => {
+                box.remove();
+            });
+            makeCards(data2);
+
+        } 
+
         makeCards(data1);
 
     });
@@ -38,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const category in categories) {
             if (["Friend"].includes(category)){    
                 const categoryContainer = document.createElement('div');
-                categoryContainer.classList.add('category-container1');
+                categoryContainer.classList.add('category-container2');
 
                 categories[category].forEach((card) => {
                     categoryContainer.appendChild(card);
@@ -53,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to create a card element
     function createCard(data) {
         const card = document.createElement('div');
-        card.classList.add('card');
+        card.classList.add('card-community');
 
         const cardLink = document.createElement('a');
         cardLink.href = data.href || '#'; // Set a default link if 'href' is not provided

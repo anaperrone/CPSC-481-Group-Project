@@ -25,19 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("private-button").onclick = function(){
             cardsContainer1.style.display = "none";
             cardsContainer3.style.display = "none";
-            cardsContainer2.style.display = "block";
+            cardsContainer2.style.display = "FLEX";
 
         } 
 
         document.getElementById("myrecipe-button").onclick = function(){
-            cardsContainer1.style.display = "block";
+            cardsContainer1.style.display = "flex";
             cardsContainer3.style.display = "none";
             cardsContainer2.style.display = "none";
         } 
 
         document.getElementById("friend-button").onclick = function(){
             cardsContainer1.style.display = "none";
-            cardsContainer3.style.display = "block";
+            cardsContainer3.style.display = "flex";
             cardsContainer2.style.display = "none";
         } 
 
