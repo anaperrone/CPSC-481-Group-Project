@@ -821,21 +821,21 @@ img {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
     top: 77px;
-    left: 92px;
+    left: 30px;
 }
 
 #MainDishes-favourites {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
     top: 268px;
-    left: 92px;
+    left: 30px;
 }
 
 #Desserts-favourites {
     /* Adjust the values to set the exact position of the title */
     position: absolute;
     top: 455px;
-    left: 92px;
+    left: 30px;
 }
 
 /* Here is all the content associated with the "Create Recipe" page/button */
