@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var helpContent = document.getElementById("help-content");
     var communityContent = document.getElementById("community-content");
 
+    const logoutButton = document.getElementById("logout-button");
+
+    // Add a click event listener to the logout button
+    logoutButton.addEventListener("click", function () {
+    // Redirect to the index.html page when the logout button is clicked
+    window.location.href = "index.html";
+    });
+
     // Initial state - show home content, hide about content
     homeContent.style.display = "flex";
     profileContent.style.display = "none";
