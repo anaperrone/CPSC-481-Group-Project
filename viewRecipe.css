@@ -382,7 +382,7 @@ h2 {
 .comment-question-group {
     box-shadow: 5px 5px 5px 5px rgba(230, 230, 230, 0.735);
     width: 750px;
-    height: 73px;
+    height: auto;
     /* align-items:end; */
 
     background-color: white;
@@ -404,7 +404,7 @@ h2 {
 .reply-group {
     box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.735);
     width: 600px;
-    height: 73px;
+    height: auto;
     float: right;
     
     /* align-items:end; */
@@ -415,9 +415,7 @@ h2 {
     margin-bottom: 7.5px;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
-    vertical-align: center;
-    color: comment-qrgb(0, 0, 0);
-    
+    vertical-align: center;    
     padding-left: 5px;
     padding-right: 5px;
     border: 2px solid black;
@@ -476,18 +474,18 @@ h2 {
 }
 .userCompleted {
     content: "";
-    /* background-image: url(images/user.png); */
-    background: url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg);
-    object-fit: contain;
     background-size: 100% 100%;
+    background: url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg);
     display: flex;
     vertical-align: middle;
-/* object-fit: fill; */
+    object-fit:fill;
     border-radius: 50%;
     overflow: hidden;
     height: 32px;
     width: 32px;
     position: relative;
+    top: 2px;
+    background-size: cover;  background-repeat: no-repeat;
 
 }
 

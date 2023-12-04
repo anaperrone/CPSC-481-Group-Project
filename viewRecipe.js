@@ -67,9 +67,11 @@ function insert_result_comment(){
         let new_div = document.createElement('div');
         let dateDiv = document.createElement('div');
         let userDiv = document.createElement('div');
+
         let alignDiv = document.createElement('div');
-        let alignDiv2 = document.createElement('div');
         let userNameDiv = document.createElement('div');
+        let alignDiv2 = document.createElement('div');
+        
         let replyDiv = document.createElement('a');
         replyDiv.onclick="";
         replyDiv.className="replyLink";
@@ -79,19 +81,21 @@ function insert_result_comment(){
 
         new_div.className='comment-question-group';
         dateDiv.className='comment-question-dates';
-        alignDiv.className="alignTextBesidePFPInsert";
-        alignDiv2.className="alignTextBesidePFPInsert";
+        alignDiv.className="alignTextBesidePFP";
+        alignDiv2.style.marginTop="10px";
 
         dateDiv.innerHTML="Date " + currentDate;
         userDiv.className='userCompleted';
         userDiv.style.display="inline-flex";
-        // userNameDiv.style.display="inline";
+        
         userNameDiv.style.paddingLeft="5px";
-        userNameDiv.innerHTML="Sheldon Cooper: "
+        userNameDiv.style.display="inline";
+        userNameDiv.innerHTML="Sheldon Cooper"
         alignDiv.append(userNameDiv);
         alignDiv2.append(input);
         alignDiv.style.top="5px";
-        alignDiv2.style.top="5px";
+        // alignDiv2.style.top="5px";
+        userNameDiv.style.top="10px";
         
         new_div.appendChild(dateDiv);
         new_div.appendChild(userDiv);
@@ -106,17 +110,17 @@ function insert_result_comment(){
         errorCharMsg.style.display='none';
     }
     else{
+        inputField.value="";
         errorCharMsg.style.display='block';
     }
 }
-
 
 const inputQuestionField = document.getElementById("inputQuestion");
 const result_row_question = document.getElementById("question-table");
 
 function insert_result_question(){
     let input = inputQuestionField.value;
-    if(input.length >= 3){
+    if(input.length >= 10){
         input.className='text-CQ';
         let new_row = document.createElement("tr");
         let new_td = document.createElement("td");
@@ -125,9 +129,11 @@ function insert_result_question(){
         let new_div = document.createElement('div');
         let dateDiv = document.createElement('div');
         let userDiv = document.createElement('div');
+
         let alignDiv = document.createElement('div');
-        let alignDiv2 = document.createElement('div');
         let userNameDiv = document.createElement('div');
+        let alignDiv2 = document.createElement('div');
+        
         let replyDiv = document.createElement('a');
         replyDiv.onclick="";
         replyDiv.className="replyLink";
@@ -137,19 +143,21 @@ function insert_result_question(){
 
         new_div.className='comment-question-group';
         dateDiv.className='comment-question-dates';
-        alignDiv.className="alignTextBesidePFPInsert";
-        alignDiv2.className="alignTextBesidePFPInsert";
+        alignDiv.className="alignTextBesidePFP";
+        alignDiv2.style.marginTop="10px";
 
         dateDiv.innerHTML="Date " + currentDate;
         userDiv.className='userCompleted';
         userDiv.style.display="inline-flex";
-        // userNameDiv.style.display="inline";
+        
         userNameDiv.style.paddingLeft="5px";
-        userNameDiv.innerHTML="Sheldon Cooper: "
+        userNameDiv.style.display="inline";
+        userNameDiv.innerHTML="Sheldon Cooper"
         alignDiv.append(userNameDiv);
         alignDiv2.append(input);
         alignDiv.style.top="5px";
-        alignDiv2.style.top="5px";
+        // alignDiv2.style.top="5px";
+        userNameDiv.style.top="10px";
         
         new_div.appendChild(dateDiv);
         new_div.appendChild(userDiv);
@@ -160,10 +168,13 @@ function insert_result_question(){
         new_td.appendChild(new_div);
         cell1.appendChild(new_td);
         result_row_question.appendChild(new_row);
-        inputField.value="";
+        inputQuestionField.value="";
+        errorCharMsgQuestion.style.display='none';
+
     }
     else{
         errorCharMsgQuestion.style.display='block';
+        inputQuestionField.value="";
     }
     
 }
