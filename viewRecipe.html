@@ -15,7 +15,7 @@
         <body style="background-color: whitesmoke;">
             <title> Honey Garlic Chicken </title>
             <nav style="position: fixed; top:2px; left: 0; right: 0;">
-                <a onclick="history.back()" style="cursor: pointer;">
+                <a onclick="window.history.go(-1); return false;" style="cursor: pointer;">
                     <img src ="assets/left arrow icon.png" alt="Go back" width="35px" height="35px"/>
                 </a>
                 <a href="index_logged_in.html">
@@ -30,7 +30,7 @@
             <h1> Honey Garlic Chicken</h1>
             <div style="text-align: center; font-size: 23px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
                 <p style="display: inline;"> Author:</p>
-                <a href="nourlyet"> David Johnson</a>
+                <a href=""> David Johnson</a>
             </div>
             <div style="text-align: center; font-size: 20px; font-family: 'Inter', sans-serif; margin-bottom: 20px;">
                 <p style="display: inline;"> Date Posted: November 25, 2023</p>
@@ -74,21 +74,16 @@
                 </table>
             </div>
 
-            <!-- <p style="display: flex; justify-content: center;"> Recipe Description</p> -->
             <div style="width: 800px; height: 100px; background-color: rgb(255, 255, 255); font-size: 20px; font-family: 'Inter', sans-serif;margin-top: 10px;" class="center">
 
-                <p> long paragraph long paragraph long paragraph long paragraph long paragraph long paragraphlong paragraphlong paragraphlong paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph </p>
+                <p> A quick and easy dish. </p>
 
             </div>
-
-
-
-
             <h2>Tags: 
                 <div id="tagParent" style="display: inline-block;">
                 </div>
                 <script>
-                    const tagText = '[ "Non-Vegatarian"]';
+                    const tagText = '[ "Non-Vegetarian"]';
                     const tagArr = JSON.parse(tagText);
                     let divTagParent=document.getElementById("tagParent");
                     
@@ -135,10 +130,8 @@
                         <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="cupsToGrams">Cups to Grams</a>
                         <a onclick="cupsToMl(texMeasurement)" style="display: none;" id="cupsToMl">Cups to Milliliters</a>
                         <a onclick="mlToCups(texMeasurement)" style="display: none;" id="mlToCups">Milliliters to Cups</a>
-
-                        <!-- <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="lbToKilo">lb to kg</a>
-                        <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="kiloToLb">kg to lb</a>
-                        <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="kiloToLb">kg to lb</a> -->
+                        <a onclick="lbToGrams(texMeasurement)" style="display: none;" id="lbToGrams">lb to Grams</a>
+                        <a onclick="gramsToLb(texMeasurement)" style="display: none;" id="GramsToLb">Grams to lb</a>
                     </div>
                 </div> 
                 <h2> Measurements: </h2>
@@ -150,11 +143,10 @@
                         const textMeasurement = '[{"number":2, "unit":" lb ", "ingredient":"Chicken breast", "sub":[{"number":2, "unit":" lb ", "ingredient":"Tofu"}]},  {"number":20, "unit":" grams ", "ingredient":"Honey","sub":""},  {"number":4, "unit":" ", "ingredient":"Garlic cloves", "sub":""},  {"number":2, "unit":" tsp ", "ingredient":"Soy Sauce", "sub":""}, {"number":0.5, "unit":" cup ", "ingredient":"Flour", "sub":[{"number":0.5, "unit":" cup ", "ingredient":"Rice flour"}]}, {"number":1, "unit":" tsp ", "ingredient":"Vinegar", "sub": [{"number":1.5, "unit":" tbsp ", "ingredient":"Apple cider vinegar"}]}]';
                         const MeasurementArr = JSON.parse(textMeasurement);
                         let divMeasurementParent=document.getElementById("overallMeasurements");
-
+                        printMeasurements();
+                    function printMeasurements(){
                         for(var i=0; i < MeasurementArr.length; i++){
                             var newDiv = document.createElement('div');
-                            // newDiv.id = "m"+i;
-
                             newDiv.className = "measurementPara";
                             let new_row = document.createElement("tr");
                 
@@ -207,6 +199,7 @@
 
                             }
                         }
+                    }
 
                         // for(var i=0; i<MeasurementArr.length; i++){
                             // console.log(" FOR DROP DOWN " + MeasurementArr[i].unit);
@@ -220,6 +213,8 @@
                                     cupsToGrams.style.display="block";
                                     cupsToMl.style.display="block";
                                     mlToCups.style.display="block";
+                                    GramsToLb.style.display="block";
+                                    lbToGrams.style.display="block";
                                 // }
                                 
                               
@@ -228,7 +223,6 @@
                     </script>
                 
             <h2> Instructions:</h2>
-                <!-- <nav> -->
                     <script>
                         const instructionJ='[{"instruction":"Cut chicken breast in half and season each side with salt and pepper", "image":""},{"instruction":"Place flour in a bowl and coat the chicken lightly with the flour", "image":"https://easychickenrecipes.com/wp-content/uploads/2022/10/How-To-pan-fried-chicken-4-of-6-300x300.jpg"}, {"instruction":"Heat up a pan and melt half of the butter over medium to high heat", "image":""}, {"instruction":"Lower the heat to medium and place the chicken on the pan. Let the chicken cook for 5 mins on each side till golden brown", "image":"https://i0.wp.com/fountainavenuekitchen.com/wp-content/uploads/2021/01/perfect-skillet-chicken-hp.jpg?fit=1170%2C758&ssl=1"}, {"instruction":"Once chicken is done cooking place it to the side", "image":""}, {"instruction":"In the same pan add in the garlic, the remaining butter and stir till butter fully melts", "image":""}, {"instruction":"Add soy sauce, Honey, and vinegar to the pan and let it simmer for one minute", "image":""}, {"instruction":"Add the cooked chicken in the pan to coat it with the sauce and turn off the heat ", "image":"https://healthyfitnessmeals.com/wp-content/uploads/2021/09/Honey-garlic-chicken-breast-8.jpg"}, {"instruction":"Plate the chicken and enjoy!", "image":"assets/honey_garlic_chicken.jpg"}]';
                         const instructionAr = JSON.parse(instructionJ);
@@ -239,13 +233,62 @@
                     </button>
                     <p class="start-button-text" style="vertical-align:middle; padding-bottom: 5px; padding-top: 10px;" id="startFollowText">
                         Start recipe follow along mode
+                        
                     </p>
+                <!-- TOOLTIP -->
+                    <div class="tooltip" id="startToolTip" style="display: block;">
+                        <img src="assets/followAlongToolIcon.png" style=" width: 30px; height: 30px; display: inline; padding-left: 60px; padding-top: 7px;"> 
+                        <span class="tooltiptext"> Here is how to use the 
+                            <p style="color: blueviolet;">
+                                Recipe Follow Along Mode
+                            </p>
+                            <p style="text-align: left; margin-bottom: 5px;">
+                                1.
+                                <img src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/play-button-green-icon.png" width="10px" height="10px">
+                                Press the start button
+                            </p>
+                            <p style="text-align: left; display: block;">2. After completing a step click the checkbox beside the step you have completed
+                                <img src="assets/checkbox.png" width=20px height="20px" style="padding-left: 100px; margin-bottom: 5px; display: block;">
+
+                            </p> 
+                            <div style="display: inline; float: left;">
+                                <p style="text-align: left; margin-bottom: 5px; display: inline;">3. Click <div class="endIcon" style="width: 10px; height: 10px; margin: 0; padding: 0;"></div>
+                                    to stop any time 
+                                </p>
+                            </div>
+                        </span>
+                    </div>
                 </div>   
                 <div style="align-content: center;  margin-bottom: 5px; padding-bottom: 10px; display: flex;">
                     <button class="endIcon" id="endFollowButton" style="display: none;" onclick="endFollowAlongClicked(instructionAr.length)"></button>
                     <p class="start-button-text" style="vertical-align:middle; padding-bottom: 5px; display:none;padding-top: 10px;" id="endFollowText" >
                         End recipe follow along mode
                     </p>
+                    <div class="tooltip" id="endToolTip" style="display: none;">
+                        <img src="assets/followAlongToolIcon.png" style=" width: 30px; height: 30px; display: inline; padding-left: 60px; padding-top: 7px;"> 
+                        <span class="tooltiptext"> Here is how to use the 
+                            <p style="color: blueviolet;">
+                                Recipe Follow Along Mode
+                            </p>
+                            <p style="text-align: left; margin-bottom: 5px;">
+                                1.
+                                <img src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/play-button-green-icon.png" width="10px" height="10px">
+                                Press the start button
+                            </p>
+                            <p style="text-align: left; display: block;">2. After completing a step click the checkbox beside the step you have completed
+                                <img src="assets/checkbox.png" width=20px height="20px" style="padding-left: 100px; margin-bottom: 5px; display: block;">
+
+                            </p> 
+                            
+
+                            
+                            <div style="display: inline; float: left;">
+                                <p style="text-align: left; margin-bottom: 5px; display: inline;">3. Click <div class="endIcon" style="width: 10px; height: 10px; margin: 0; padding: 0;"></div>
+                                    to stop any time 
+                                </p>
+                            </div>
+                        </span>
+                    </div>
                 </div>                  
                 <div>
                     <table id="instructionsTable">
@@ -320,10 +363,30 @@
 
                 </script>
                 
-                <p style="display: flex;justify-content: center; margin-bottom: 15px; font-size: 25px; font-family:cursive;">
-                    End Of Recipe
-                </p>
-  
+                <div style="margin-right:40px; margin-left: 90px; margin-bottom: 30px;">
+                    <p style="margin: 0.2em 0; font-size: 25px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; display: flex; justify-content: center; margin-bottom: 0;"> Rate this recipe?</p>
+                    <div style="padding-top:7px;  display: flex; justify-content: center; padding-right: 40px;">
+                        <img src="assets/unfilledStarRating.png"id="1"; onclick="changeStar(this.id)" width="30px" height="30px" style="display: block;">
+                        <img src="assets/filledStarRating.png" id="1star" onclick="changeStar(this.id)" width="30px" height="30px" style="display: none;">
+
+                        <img src="assets/unfilledStarRating.png"id="2"; onclick="changeStar(this.id)" width="30px" height="30px" style="display: block;">
+                        <img src="assets/filledStarRating.png" id="2star" onclick="changeStar(this.id)" width="30px" height="30px" style="display: none;">
+
+                        <img src="assets/unfilledStarRating.png"id="3"; onclick="changeStar(this.id)" width="30px" height="30px" style="display: block;">
+                        <img src="assets/filledStarRating.png" id="3star" onclick="changeStar(this.id)" width="30px" height="30px" style="display: none;">
+
+                        <img src="assets/unfilledStarRating.png"id="4"; onclick="changeStar(this.id)" width="30px" height="30px" style="display: block;">
+                        <img src="assets/filledStarRating.png" id="4star" onclick="changeStar(this.id)" width="30px" height="30px" style="display: none;">
+
+                        <img src="assets/unfilledStarRating.png"id="5"; onclick="changeStar(this.id)" width="30px" height="30px" style="display: block;">
+                        <img src="assets/filledStarRating.png" id="5star" onclick="changeStar(this.id)"width="30px" height="30px" style="display: none;">
+                        <button class="ratingDoneButton" id="ratingButton" onclick="submitRating()" style="display: none;">Submit Rating</button>
+                    </div>
+                    <p style="margin: 0.2em 0; font-size: 20px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; padding-left: 450px; margin-bottom: 0; color: red; display: none;" id="submitRatingError"> Please select atleast one star. </p>
+                    <p style="margin: 0.2em 0; font-size: 20px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; padding-left: 450px; margin-bottom: 0; color: rgb(0, 0, 0); display: none;" id="submitRatingDone"> Rating submitted</p>
+                    <p style="margin: 0.2em 0; font-size: 20px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; padding-left: 450px; margin-bottom: 0; color: rgb(0, 0, 0); display: none;" id="alredySubmittedRating"> Your rating has already been submitted </p>
+
+                </div>
             <div class="btn-group">
                 <button id="comment-button" onclick="CQButton(this.id)">Comments</button>
                 <button id="question-button" onclick="CQButton(this.id)">Questions</button>
@@ -338,7 +401,7 @@
                                 <td>
                                     <div class="comment-question-group">
                                         <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
-                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
+                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600);  background-size: cover;  background-repeat: no-repeat;"></div>
                                         <div class="alignTextBesidePFP">
                                         <div style="display:inline;"> Sam Baker: </div>
                                         </div>
@@ -356,7 +419,7 @@
                                             <h3> Replies </h3>
                                             <div class="reply-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://cdn-icons-png.flaticon.com/512/253/253503.png); background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Peter Parker: </div>
                                             </div>
@@ -370,7 +433,7 @@
                                         <div class="replyDiv" id="replyMj" style="display: none;  margin-bottom: 20px;">
                                             <div class="reply-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-outline-icons-mangsaabguru-/64/external-chinese-chinese-foods-outline-outline-icons-mangsaabguru--7.png); background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> MJ: </div>
                                             </div>
@@ -403,7 +466,7 @@
                                     <div class="comment-question-group">
                                         <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 29, 2023 </div>
 
-                                        <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2022/07/the-office-how-to-watch.jpg); background-size: contain;"></div>
+                                        <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2022/07/the-office-how-to-watch.jpg);  background-size: cover;  background-repeat: no-repeat;"></div>
                                         <div class="alignTextBesidePFP">
                                             <div style="display:inline;"> Michael Scott : </div>
                                         </div>
@@ -420,7 +483,7 @@
                                     <div class="comment-question-group">
                                         <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: December 1, 2023 </div>
 
-                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
+                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600);  background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display: inline; "> Jan Levinson: </div>
                                             </div>
@@ -443,7 +506,7 @@
                                         <div class="comment-question-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
                                             
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display: inline;"> Jan Levinson: </div>
                                             </div>
@@ -458,7 +521,7 @@
                                     <td>
                                         <div class="comment-question-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 27, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2023/07/rainn-wilson-the-office2.jpg); background-size: cover;  background-repeat: no-repeat; "></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Dwight Schrute: </div>  
                                             </div> 
@@ -472,26 +535,12 @@
                                     <td>
                                         <div class="comment-question-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; font-family: 'Inter', sans-serif;  margin: none; padding: none;"> Date: December 3, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-cooking-home-appliance-flaticons-lineal-color-flat-icons.png); background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Rachel Green: </div>  
                                             </div> 
                                             <div class="alignTextBesidePFP"> Question </div>
                                             <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px;  font-family: 'Inter', sans-serif; margin: none; padding: none;"> Date: December 3, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
-                                            <div class="alignTextBesidePFP">
-                                                <div style="display:inline;"> Rachel Green: </div>
-                                                
-                                            </div> 
-                                                <div class="alignTextBesidePFP">Question</div>  
-                                                <a onclick=""  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
                                 </tr>

@@ -179,7 +179,7 @@ function gramsToCupTest(textMeasurement){
             if(outerUnit.innerHTML== " gram " || outerUnit.innerHTML== " grams "){
                 console.log("REACHED");
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)/250;
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)/250).toFixed(2);
            
                 outerNumderDiv.innerHTML=conversionIs;
                 if(conversionIs>1){
@@ -209,7 +209,7 @@ function cupsToGrams(textMeasurement){
         if(outerUnit.innerHTML!=" "){
             if(outerUnit.innerHTML== " cup " || outerUnit.innerHTML== " cups "){
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)*250;
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)*250).toFixed(2);
                 outerNumderDiv.innerHTML=conversionIs;
                 if(conversionIs>1){
                     newUnit=" grams ";
@@ -240,7 +240,7 @@ function cupsToMl(textMeasurement){
             if(outerUnit.innerHTML== " cup " || outerUnit.innerHTML== " cups "){
                 console.log("REACHED");
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)*237;
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)*237).toFixed(2);
                 outerNumderDiv.innerHTML=conversionIs;
                
                     newUnit=" mL ";
@@ -253,8 +253,6 @@ function cupsToMl(textMeasurement){
 function mlToCups(textMeasurement){
     const MeasurementArr = JSON.parse(textMeasurement);
     for(var i=0; i < MeasurementArr.length; i++){
-        // var checkId = "m"+i;
-        // var newDiv = document.getElementById(checkId);
         var outerUnitId = "unit"+i;
         var outerNumderId = "number"+i;
         var outerNumderDiv = document.getElementById(outerNumderId);
@@ -267,7 +265,7 @@ function mlToCups(textMeasurement){
             if(outerUnit.innerHTML== " mL "){
                 console.log("REACHED");
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)/237;
+                var conversionIs =Number(parseFloat(outerNumderDiv.innerHTML)/237).toFixed(2);
                 outerNumderDiv.innerHTML=conversionIs;
                
                 if(conversionIs>1){
@@ -281,6 +279,61 @@ function mlToCups(textMeasurement){
         }
     }   
 }
+function lbToGrams(textMeasurement){
+    const MeasurementArr = JSON.parse(textMeasurement);
+    for(var i=0; i < MeasurementArr.length; i++){
+        var outerUnitId = "unit"+i;
+        var outerNumderId = "number"+i;
+        var outerNumderDiv = document.getElementById(outerNumderId);
+        var outerUnit=document.getElementById(outerUnitId);
+        console.log(outerUnitId);
+       
+        if(outerUnit.innerHTML!=" "){
+
+            if(outerUnit.innerHTML== " lb "){
+                console.log("REACHED");
+                
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)*454).toFixed(2);
+                outerNumderDiv.innerHTML=conversionIs;
+               
+                if(conversionIs>1){
+                    newUnit=" grams ";
+                }
+                else{
+                    newUnit=" gram ";
+                } 
+                outerUnit.innerHTML=newUnit;
+            }
+        }
+    }   
+}
+
+function gramsToLb(textMeasurement){
+    const MeasurementArr = JSON.parse(textMeasurement);
+    for(var i=0; i < MeasurementArr.length; i++){
+        var outerUnitId = "unit"+i;
+        var outerNumderId = "number"+i;
+        var outerNumderDiv = document.getElementById(outerNumderId);
+        var outerUnit=document.getElementById(outerUnitId);
+        console.log(outerUnitId);
+       
+        if(outerUnit.innerHTML!=" "){
+
+            if(outerUnit.innerHTML== " grams " || outerUnit.innerHTML== " gram "){
+                console.log("REACHED");
+                
+                var conversionIs = Number((parseFloat(outerNumderDiv.innerHTML)/454).toFixed(2));
+                outerNumderDiv.innerHTML=conversionIs;
+               
+                    newUnit=" lb ";
+               
+                outerUnit.innerHTML=newUnit;
+            }
+        }
+    }   
+}
+
+
 
 
 
@@ -343,10 +396,14 @@ function followAlongClicked(arrSize){
     var endText = document.getElementById("endFollowText");
     endButton.style.display="block";
     endText.style.display="block";
+    endToolTip.style.display="block";
+
     var startButton = document.getElementById("startFollowAlong");
     var startText = document.getElementById("startFollowText");
     startButton.style.display="none";
     startText.style.display="none";
+    startToolTip.style.display="none";
+
 
 }
 
@@ -361,10 +418,13 @@ function endFollowAlongClicked(arrSize){
     var endText = document.getElementById("endFollowText");
     endButton.style.display="none";
     endText.style.display="none";
+    endToolTip.style.display="none";
     var startButton = document.getElementById("startFollowAlong");
     var startText = document.getElementById("startFollowText");
     startButton.style.display="block";
     startText.style.display="block";
+    startToolTip.style.display="block";
+
 
 }
 function displayReply(){
@@ -378,4 +438,78 @@ function displayReply(){
         replyMj.style.display="none";
 
     }
+}
+
+function changeStar(idIs){
+
+    if(idIs == "1" || idIs == "2" || idIs =="3" || idIs == "4" || idIs == "5"){
+        console.log("reached");
+        let runFor=parseInt(idIs);
+        for(var i=1; i<=runFor; i++){
+            let stringId=i.toString();
+            let unfilled=document.getElementById(stringId);
+            if(unfilled.style.display=="block"){
+                let filledId=i + "star";
+    
+                let filled= document.getElementById(filledId);
+                unfilled.style.display="none";
+                filled.style.display="block";
+            }
+        }
+        submitRatingError.style.display="none";
+
+        ratingButton.style.display="block"; 
+    }
+    else{
+        console.log("reached else" + idIs);
+        let parsedStar = parseInt(idIs)
+        for(var i=parsedStar; i<=5; i++){
+            let filledId = i + "star";
+            let unfilled=document.getElementById(i.toString());
+            let filled= document.getElementById(filledId);
+            unfilled.style.display="block";
+            filled.style.display="none";
+        };
+    }
+}
+let submitting=new Boolean(false);
+let submittedTimes=0;
+function submitRating(){
+    let count=0;
+
+    for(var i=1; i<=5; i++){
+        let unfilled=document.getElementById(i.toString());
+        if(unfilled.style.display=="none"){
+            count=count+1;
+        }
+    }
+    console.log(count);
+    if((submitRatingDone.style.display=="block" || submitting==true || count==0)&& submittedTimes>1){
+        alredySubmittedRating.style.display="block";
+        submitRatingDone.style.display="none";
+        console.log("REACHED ");
+    }
+    if(count==0 && submitting==false){
+        submitRatingError.style.display="block";
+    }
+    else{
+        submitting=true;
+        submittedTimes+=1;
+        submitRatingDone.style.display="block";
+        updateRecipeRating(count);
+
+    }
+    if((submitRatingDone.style.display=="block" || submitting==true)&& submittedTimes>1){
+        console.log("REACHED ");
+
+        alredySubmittedRating.style.display="block";
+        submitRatingDone.style.display="none";
+    }
+}
+
+
+function updateRecipeRating(){
+
+
+
 }
