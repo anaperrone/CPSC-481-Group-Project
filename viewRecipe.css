@@ -21,7 +21,6 @@ h2 {
     margin-top: 25px;
     margin-bottom: 0;
     font-family: 'Inter', sans-serif;
-
 }
 
 .tags {
@@ -39,6 +38,11 @@ h2 {
     margin: 5px;
     width: fit-content;
 
+}
+
+#parent {
+    max-width: 850px;
+    vertical-align: top;
 }
 
 .outerbox {
@@ -88,7 +92,9 @@ h2 {
     padding-top: 10px;
 }
 
-
+#instructionsTable {
+    max-width: 1150px;
+}
 
 .forSubPara {
     font-size: 20px;
@@ -550,7 +556,7 @@ h2 {
     height: 30px;
     align-items: center;
     justify-content: center;
-    margin-right: 20px;
+    margin-right: 90px;
     border: 2px solid black;
 }
 
