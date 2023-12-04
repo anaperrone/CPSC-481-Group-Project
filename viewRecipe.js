@@ -529,7 +529,7 @@ function updateRecipeRating(){
 }
 
 
-function addToMainPage() {
+function addToFavouritesPage() {
     var button = document.getElementById("clickedBookmark");
     if(button.style.display=='none'){
         bookmark.style.display='none';
@@ -541,33 +541,46 @@ function addToMainPage() {
     
     }
 
-    var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
-    var selectedRestrictions = [];
-    dietaryRestrictions.forEach(function (checkbox) {
-        selectedRestrictions.push(checkbox.value);
-    });
-    const restrictions = selectedRestrictions.join(',');
+    // var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    // var selectedRestrictions = [];
+    // dietaryRestrictions.forEach(function (checkbox) {
+    //     selectedRestrictions.push(checkbox.value);
+    // });
+    // const restrictions = selectedRestrictions.join(',');
 
-    var categorySelect = document.getElementById('recipe-category-select');
-    var selectedOption = categorySelect.options[categorySelect.selectedIndex];
+    // var categorySelect = document.getElementById('recipe-category-select');
+    // var selectedOption = categorySelect.options[categorySelect.selectedIndex];
 
-    const title = document.getElementById("Recipe-title").value;
-    const category = selectedOption.value;
-    const author = document.getElementById("recipe-author").textContent;
+    const title = document.getElementById("viewRecipeName").text;
+
+    var category = document.querySelector('#tagParent > div:nth-child(2)').textContent;
+    if (category == "Main Dish"){
+        category = "MainDishes";
+    } else if (category == "Appetizer"){
+        category = "Appetizers";
+    } else{
+        category = "Desserts";
+    }
+
+    const author = document.getElementById("recipe-author").text;
     const href = (author + title).replace(/\s+/g, '') + ".html";
     const image = document.getElementById("uploaded-image").src;
-    //console.log(image);
 
-    const data = {"dietaryRestrictions":restrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
+    const data = {"dietaryRestrictions":"none", "title":title, "favourites":"True", "star":"4", "category":category, "image": image, "author": author, "href":href};
     
-    const card = createNewCard(data);
+    const url = "index_logged_in.html" +
+        "?dietaryRestrictions=" + encodeURIComponent(data.dietaryRestrictions) +
+        "&title=" + encodeURIComponent(data.title) +
+        "&favourites=" + encodeURIComponent(data.favourites) +
+        "&star=" + encodeURIComponent(data.star) +
+        "&category=" + encodeURIComponent(data.category) +
+        "&image=" + encodeURIComponent(data.image) +
+        "&author=" + encodeURIComponent(data.author) +
+        "&href=" + encodeURIComponent(data.href) + 
+        "&flag=1";
+
+        // Redirect to the constructed URL
+        window.location.href = url;
     
-    document.getElementById("home-button").click();
-    if(category == "Appetizers"){
-        document.getElementById('cards-container').getElementsByClassName('category-container')[0].appendChild(card);
-    } else if(category == "MainDishes"){
-        document.getElementById('cards-container').getElementsByClassName('category-container')[1].appendChild(card);
-    } else{
-        document.getElementById('cards-container').getElementsByClassName('category-container')[2].appendChild(card);
-    }
+    //window.location.href = "index_logged_in.html?dietaryRestrictions=none?title="+title+"?favourites=True?star=4?category="+category+"?image="+image+"?author="+author+"?href="+href;
 }

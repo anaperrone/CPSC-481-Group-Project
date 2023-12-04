@@ -14,7 +14,7 @@
            
         </head>
         <body style="background-color: whitesmoke;">
-            <title> Honey Garlic Chicken </title>
+            <title id="viewRecipeName"> Honey Garlic Chicken </title>
             <nav style="position: fixed; top:2px; left: 0; right: 0;">
                 <a onclick="window.history.go(-1); return false;" style="cursor: pointer;">
                     <img src ="assets/left arrow icon.png" alt="Go back" width="35px" height="35px"/>
@@ -85,7 +85,7 @@
                 <div id="tagParent" style="display: inline-block;">
                 </div>
                 <script>
-                    const tagText = '[ "Non-Vegetarian", "Main dish"]';
+                    const tagText = '[ "Non-Vegetarian", "Main Dish"]';
                     const tagArr = JSON.parse(tagText);
                     let divTagParent=document.getElementById("tagParent");
                     
@@ -573,8 +573,8 @@
 
             </div>
             <div style="display: flex; justify-content: center;">
-                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="addToMainPage()">
-                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="addToMainPage()">
+                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="addToFavouritesPage()">
+                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="addToFavouritesPage()">
             </div>
             <div id="recipe-category-select" style="display:none;">MainDishes</div>
         </div> 
