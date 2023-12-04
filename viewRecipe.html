@@ -28,16 +28,16 @@
                 
             </nav>
         <div class="outerbox">
-            <h1> Honey Garlic Chicken</h1>
+            <h1 id="Recipe-title"> Honey Garlic Chicken</h1>
             <div style="text-align: center; font-size: 23px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
                 <p style="display: inline;"> Author:</p>
-                <a href=""> David Johnson</a>
+                <a href="" id="recipe-author"> David Johnson</a>
             </div>
             <div style="text-align: center; font-size: 20px; font-family: 'Inter', sans-serif; margin-bottom: 20px;">
                 <p style="display: inline;"> Date Posted: November 25, 2023</p>
             </div>
             <!-- <img src="assets/spicy-honey-garlic-chicken.webp" alt= "Garlic Honey Chicken" width="500" height="400" class="center"> -->
-            <img src="assets/honey_garlic_chicken.jpg" alt= "Garlic Honey Chicken" width="800" height="400" class="center">
+            <img src="assets/honey_garlic_chicken.jpg" alt= "Garlic Honey Chicken" width="800" height="400" class="center" id="uploaded-image">
 
 
             <div id="cookTime">
@@ -85,7 +85,7 @@
                 <div id="tagParent" style="display: inline-block;">
                 </div>
                 <script>
-                    const tagText = '[ "Non-Vegetarian"]';
+                    const tagText = '[ "Non-Vegetarian", "Main dish"]';
                     const tagArr = JSON.parse(tagText);
                     let divTagParent=document.getElementById("tagParent");
                     
@@ -402,6 +402,7 @@
                     <div id="comments" >
                         <div class="scrollbar">
                             <table id="comment-table">
+                                <!-- <div id="noComments" style="font-size: 30px; vertical-align: middle;" style="display: none;"> No Comments currently...</div> -->
                                 <tr>
                                     <td>
                                         <div class="comment-question-group">
@@ -503,6 +504,7 @@
                     <div id="questions" style="display: none">
                         <div class="scrollbar">
                             <table id="question-table">
+                                <!-- <div id="noQuestions" style="font-size: 30px; vertical-align: middle;" style="display: none;"> No Questions currently...</div> -->
                                 <tr>
                                     <td>
                                         <div class="comment-question-group">
@@ -571,10 +573,11 @@
 
             </div>
             <div style="display: flex; justify-content: center;">
-                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="bookmarkClicked()">
-                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="bookmarkClicked()">
+                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="addToMainPage()">
+                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="addToMainPage()">
             </div>
+            <div id="recipe-category-select" style="display:none;">MainDishes</div>
         </div> 
         <script src="viewRecipe.js"></script>
     </body> 
-</html>
+</html> 

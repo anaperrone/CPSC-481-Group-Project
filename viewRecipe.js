@@ -107,6 +107,7 @@ function insert_result_comment(){
         cell1.appendChild(new_td);
         result_row.appendChild(new_row);
         inputField.value="";
+        noComments.style.display="none";
         errorCharMsg.style.display='none';
     }
     else{
@@ -168,6 +169,8 @@ function insert_result_question(){
         new_td.appendChild(new_div);
         cell1.appendChild(new_td);
         result_row_question.appendChild(new_row);
+        noQuestions.style.display="none";
+
         inputQuestionField.value="";
         errorCharMsgQuestion.style.display='none';
 
@@ -523,4 +526,48 @@ function updateRecipeRating(){
 
 
 
+}
+
+
+function addToMainPage() {
+    var button = document.getElementById("clickedBookmark");
+    if(button.style.display=='none'){
+        bookmark.style.display='none';
+        button.style.display='block';
+    }
+    else{
+        bookmark.style.display='block';
+        button.style.display='none';
+    
+    }
+
+    var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    var selectedRestrictions = [];
+    dietaryRestrictions.forEach(function (checkbox) {
+        selectedRestrictions.push(checkbox.value);
+    });
+    const restrictions = selectedRestrictions.join(',');
+
+    var categorySelect = document.getElementById('recipe-category-select');
+    var selectedOption = categorySelect.options[categorySelect.selectedIndex];
+
+    const title = document.getElementById("Recipe-title").value;
+    const category = selectedOption.value;
+    const author = document.getElementById("recipe-author").textContent;
+    const href = (author + title).replace(/\s+/g, '') + ".html";
+    const image = document.getElementById("uploaded-image").src;
+    //console.log(image);
+
+    const data = {"dietaryRestrictions":restrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
+    
+    const card = createNewCard(data);
+    
+    document.getElementById("home-button").click();
+    if(category == "Appetizers"){
+        document.getElementById('cards-container').getElementsByClassName('category-container')[0].appendChild(card);
+    } else if(category == "MainDishes"){
+        document.getElementById('cards-container').getElementsByClassName('category-container')[1].appendChild(card);
+    } else{
+        document.getElementById('cards-container').getElementsByClassName('category-container')[2].appendChild(card);
+    }
 }
