@@ -551,11 +551,13 @@
                 </div>     
             </div>
             <div>
-                <form style="display: flex;">
-                    <input type="text" id="input" placeholder="Type your comment here..." class="inputField"> 
-                    <button type="button" id="submit" onclick="insert_result_comment()" class="submit-button" ></button>
-                    <input type="text" id="inputQuestion" placeholder="Type your Question here..." class="inputField" style="display: none;">
-                    <button type="button" id="submitQuestion" onclick="insert_result_question()"class="submit-button"  style="display: none;"></button>
+                <form style="display: flex;" class="form-flex">
+                    <div class="input-container">
+                        <textarea type="text" id="input" placeholder="Type your comment here..." class="inputField"></textarea>
+                        <button type="button" id="submit" onclick="insert_result_comment()" class="submit-button" ></button>
+                        <textarea type="text" id="inputQuestion" placeholder="Type your Question here..." class="inputField" style="display: none;"></textarea>
+                        <button type="button" id="submitQuestion" onclick="insert_result_question()"class="submit-button"  style="display: none;"></button>
+                    </div>
                 </form>     <!-- </div> -->
                 <p id="errorCharMsg"; style=" color: brown; font-size: 20px; font-family: 'Inter', sans-serif; padding-left:250px; display: none;"> Comment must be more then 3 characters!</p>
                 <p id="errorCharMsgQuestion"; style=" color: brown; font-size: 20px;  font-family: 'Inter', sans-serif; padding-left:250px; display: none;"> Question must be more then 15 characters!</p>
