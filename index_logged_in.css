@@ -723,7 +723,8 @@ img {
 }
 
 .profile-content.active {
-    display: block;
+    display: flex;
+    flex-direction: row;
 }
 
 /* Here is all the content associated with the "Favorites" page/button */
