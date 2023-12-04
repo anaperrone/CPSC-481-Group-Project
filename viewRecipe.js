@@ -343,10 +343,14 @@ function followAlongClicked(arrSize){
     var endText = document.getElementById("endFollowText");
     endButton.style.display="block";
     endText.style.display="block";
+    endToolTip.style.display="block";
+
     var startButton = document.getElementById("startFollowAlong");
     var startText = document.getElementById("startFollowText");
     startButton.style.display="none";
     startText.style.display="none";
+    startToolTip.style.display="none";
+
 
 }
 
@@ -361,10 +365,13 @@ function endFollowAlongClicked(arrSize){
     var endText = document.getElementById("endFollowText");
     endButton.style.display="none";
     endText.style.display="none";
+    endToolTip.style.display="none";
     var startButton = document.getElementById("startFollowAlong");
     var startText = document.getElementById("startFollowText");
     startButton.style.display="block";
     startText.style.display="block";
+    startToolTip.style.display="block";
+
 
 }
 function displayReply(){
@@ -378,4 +385,77 @@ function displayReply(){
         replyMj.style.display="none";
 
     }
+}
+
+function changeStar(idIs){
+
+    if(idIs == "1" || idIs == "2" || idIs =="3" || idIs == "4" || idIs == "5"){
+        console.log("reached");
+        let runFor=parseInt(idIs);
+        for(var i=1; i<=runFor; i++){
+            let stringId=i.toString();
+            let unfilled=document.getElementById(stringId);
+            if(unfilled.style.display=="block"){
+                let filledId=i + "star";
+    
+                let filled= document.getElementById(filledId);
+                unfilled.style.display="none";
+                filled.style.display="block";
+            }
+        }
+        submitRatingError.style.display="none";
+
+        ratingButton.style.display="block"; 
+    }
+    else{
+        console.log("reached else" + idIs);
+        let parsedStar = parseInt(idIs)
+        for(var i=parsedStar; i<=5; i++){
+            let filledId = i + "star";
+            let unfilled=document.getElementById(i.toString());
+            let filled= document.getElementById(filledId);
+            unfilled.style.display="block";
+            filled.style.display="none";
+        };
+    }
+}
+let submitting=new Boolean(false);
+let submittedTimes=0;
+function submitRating(){
+    let count=0;
+
+    for(var i=1; i<=5; i++){
+        let unfilled=document.getElementById(i.toString());
+        if(unfilled.style.display=="none"){
+            count=count+1;
+        }
+    }
+    console.log(count);
+    if((submitRatingDone.style.display=="block" || submitting==true || count==0)&& submittedTimes>1){
+        alredySubmittedRating.style.display="block";
+        submitRatingDone.style.display="none";
+        console.log("REACHED ");
+    }
+    if(count==0 && submitting==false){
+        submitRatingError.style.display="block";
+    }
+    else{
+        submitting=true;
+        submittedTimes+=1;
+        submitRatingDone.style.display="block";
+        updateRecipeRating(count);
+
+    }
+    if((submitRatingDone.style.display=="block" || submitting==true)&& submittedTimes>1){
+        console.log("REACHED ");
+
+        alredySubmittedRating.style.display="block";
+        submitRatingDone.style.display="none";
+    }
+}
+
+function updateRecipeRating(){
+
+
+
 }
