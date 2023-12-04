@@ -453,16 +453,18 @@ h2 {
     background-size: 100% 100%;
     display: flex;
     vertical-align: middle;
-    object-fit: fill;
+    object-fit:fill;
     border-radius: 50%;
     overflow: hidden;
-    object-fit: contain;
+    /* object-fit: contain; */
     /*size of your image*/
     height: 32px;
     width: 32px;
 
     position: relative;
     top: 2px;
+
+    background-size: cover;  background-repeat: no-repeat;
 }
 .userCompleted {
     content: "";
@@ -472,7 +474,7 @@ h2 {
     background-size: 100% 100%;
     display: flex;
     vertical-align: middle;
-    object-fit: fill;
+/* object-fit: fill; */
     border-radius: 50%;
     overflow: hidden;
     height: 32px;

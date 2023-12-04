@@ -179,7 +179,7 @@ function gramsToCupTest(textMeasurement){
             if(outerUnit.innerHTML== " gram " || outerUnit.innerHTML== " grams "){
                 console.log("REACHED");
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)/250;
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)/250).toFixed(2);
            
                 outerNumderDiv.innerHTML=conversionIs;
                 if(conversionIs>1){
@@ -209,7 +209,7 @@ function cupsToGrams(textMeasurement){
         if(outerUnit.innerHTML!=" "){
             if(outerUnit.innerHTML== " cup " || outerUnit.innerHTML== " cups "){
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)*250;
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)*250).toFixed(2);
                 outerNumderDiv.innerHTML=conversionIs;
                 if(conversionIs>1){
                     newUnit=" grams ";
@@ -240,7 +240,7 @@ function cupsToMl(textMeasurement){
             if(outerUnit.innerHTML== " cup " || outerUnit.innerHTML== " cups "){
                 console.log("REACHED");
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)*237;
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)*237).toFixed(2);
                 outerNumderDiv.innerHTML=conversionIs;
                
                     newUnit=" mL ";
@@ -253,8 +253,6 @@ function cupsToMl(textMeasurement){
 function mlToCups(textMeasurement){
     const MeasurementArr = JSON.parse(textMeasurement);
     for(var i=0; i < MeasurementArr.length; i++){
-        // var checkId = "m"+i;
-        // var newDiv = document.getElementById(checkId);
         var outerUnitId = "unit"+i;
         var outerNumderId = "number"+i;
         var outerNumderDiv = document.getElementById(outerNumderId);
@@ -267,7 +265,7 @@ function mlToCups(textMeasurement){
             if(outerUnit.innerHTML== " mL "){
                 console.log("REACHED");
                 
-                var conversionIs = parseFloat(outerNumderDiv.innerHTML)/237;
+                var conversionIs =Number(parseFloat(outerNumderDiv.innerHTML)/237).toFixed(2);
                 outerNumderDiv.innerHTML=conversionIs;
                
                 if(conversionIs>1){
@@ -281,6 +279,61 @@ function mlToCups(textMeasurement){
         }
     }   
 }
+function lbToGrams(textMeasurement){
+    const MeasurementArr = JSON.parse(textMeasurement);
+    for(var i=0; i < MeasurementArr.length; i++){
+        var outerUnitId = "unit"+i;
+        var outerNumderId = "number"+i;
+        var outerNumderDiv = document.getElementById(outerNumderId);
+        var outerUnit=document.getElementById(outerUnitId);
+        console.log(outerUnitId);
+       
+        if(outerUnit.innerHTML!=" "){
+
+            if(outerUnit.innerHTML== " lb "){
+                console.log("REACHED");
+                
+                var conversionIs = Number(parseFloat(outerNumderDiv.innerHTML)*454).toFixed(2);
+                outerNumderDiv.innerHTML=conversionIs;
+               
+                if(conversionIs>1){
+                    newUnit=" grams ";
+                }
+                else{
+                    newUnit=" gram ";
+                } 
+                outerUnit.innerHTML=newUnit;
+            }
+        }
+    }   
+}
+
+function gramsToLb(textMeasurement){
+    const MeasurementArr = JSON.parse(textMeasurement);
+    for(var i=0; i < MeasurementArr.length; i++){
+        var outerUnitId = "unit"+i;
+        var outerNumderId = "number"+i;
+        var outerNumderDiv = document.getElementById(outerNumderId);
+        var outerUnit=document.getElementById(outerUnitId);
+        console.log(outerUnitId);
+       
+        if(outerUnit.innerHTML!=" "){
+
+            if(outerUnit.innerHTML== " grams " || outerUnit.innerHTML== " gram "){
+                console.log("REACHED");
+                
+                var conversionIs = Number((parseFloat(outerNumderDiv.innerHTML)/454).toFixed(2));
+                outerNumderDiv.innerHTML=conversionIs;
+               
+                    newUnit=" lb ";
+               
+                outerUnit.innerHTML=newUnit;
+            }
+        }
+    }   
+}
+
+
 
 
 
@@ -453,6 +506,7 @@ function submitRating(){
         submitRatingDone.style.display="none";
     }
 }
+
 
 function updateRecipeRating(){
 

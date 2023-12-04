@@ -76,18 +76,14 @@
 
             <div style="width: 800px; height: 100px; background-color: rgb(255, 255, 255); font-size: 20px; font-family: 'Inter', sans-serif;margin-top: 10px;" class="center">
 
-                <p> long paragraph long paragraph long paragraph long paragraph long paragraph long paragraphlong paragraphlong paragraphlong paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph long paragraph </p>
+                <p> A quick and easy dish. </p>
 
             </div>
-
-
-
-
             <h2>Tags: 
                 <div id="tagParent" style="display: inline-block;">
                 </div>
                 <script>
-                    const tagText = '[ "Non-Vegatarian"]';
+                    const tagText = '[ "Non-Vegetarian"]';
                     const tagArr = JSON.parse(tagText);
                     let divTagParent=document.getElementById("tagParent");
                     
@@ -134,10 +130,8 @@
                         <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="cupsToGrams">Cups to Grams</a>
                         <a onclick="cupsToMl(texMeasurement)" style="display: none;" id="cupsToMl">Cups to Milliliters</a>
                         <a onclick="mlToCups(texMeasurement)" style="display: none;" id="mlToCups">Milliliters to Cups</a>
-
-                        <!-- <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="lbToKilo">lb to kg</a>
-                        <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="kiloToLb">kg to lb</a>
-                        <a onclick="cupsToGrams(texMeasurement)" style="display: none;" id="kiloToLb">kg to lb</a> -->
+                        <a onclick="lbToGrams(texMeasurement)" style="display: none;" id="lbToGrams">lb to Grams</a>
+                        <a onclick="gramsToLb(texMeasurement)" style="display: none;" id="GramsToLb">Grams to lb</a>
                     </div>
                 </div> 
                 <h2> Measurements: </h2>
@@ -149,11 +143,10 @@
                         const textMeasurement = '[{"number":2, "unit":" lb ", "ingredient":"Chicken breast", "sub":[{"number":2, "unit":" lb ", "ingredient":"Tofu"}]},  {"number":20, "unit":" grams ", "ingredient":"Honey","sub":""},  {"number":4, "unit":" ", "ingredient":"Garlic cloves", "sub":""},  {"number":2, "unit":" tsp ", "ingredient":"Soy Sauce", "sub":""}, {"number":0.5, "unit":" cup ", "ingredient":"Flour", "sub":[{"number":0.5, "unit":" cup ", "ingredient":"Rice flour"}]}, {"number":1, "unit":" tsp ", "ingredient":"Vinegar", "sub": [{"number":1.5, "unit":" tbsp ", "ingredient":"Apple cider vinegar"}]}]';
                         const MeasurementArr = JSON.parse(textMeasurement);
                         let divMeasurementParent=document.getElementById("overallMeasurements");
-
+                        printMeasurements();
+                    function printMeasurements(){
                         for(var i=0; i < MeasurementArr.length; i++){
                             var newDiv = document.createElement('div');
-                            // newDiv.id = "m"+i;
-
                             newDiv.className = "measurementPara";
                             let new_row = document.createElement("tr");
                 
@@ -206,6 +199,7 @@
 
                             }
                         }
+                    }
 
                         // for(var i=0; i<MeasurementArr.length; i++){
                             // console.log(" FOR DROP DOWN " + MeasurementArr[i].unit);
@@ -219,6 +213,8 @@
                                     cupsToGrams.style.display="block";
                                     cupsToMl.style.display="block";
                                     mlToCups.style.display="block";
+                                    GramsToLb.style.display="block";
+                                    lbToGrams.style.display="block";
                                 // }
                                 
                               
@@ -227,7 +223,6 @@
                     </script>
                 
             <h2> Instructions:</h2>
-                <!-- <nav> -->
                     <script>
                         const instructionJ='[{"instruction":"Cut chicken breast in half and season each side with salt and pepper", "image":""},{"instruction":"Place flour in a bowl and coat the chicken lightly with the flour", "image":"https://easychickenrecipes.com/wp-content/uploads/2022/10/How-To-pan-fried-chicken-4-of-6-300x300.jpg"}, {"instruction":"Heat up a pan and melt half of the butter over medium to high heat", "image":""}, {"instruction":"Lower the heat to medium and place the chicken on the pan. Let the chicken cook for 5 mins on each side till golden brown", "image":"https://i0.wp.com/fountainavenuekitchen.com/wp-content/uploads/2021/01/perfect-skillet-chicken-hp.jpg?fit=1170%2C758&ssl=1"}, {"instruction":"Once chicken is done cooking place it to the side", "image":""}, {"instruction":"In the same pan add in the garlic, the remaining butter and stir till butter fully melts", "image":""}, {"instruction":"Add soy sauce, Honey, and vinegar to the pan and let it simmer for one minute", "image":""}, {"instruction":"Add the cooked chicken in the pan to coat it with the sauce and turn off the heat ", "image":"https://healthyfitnessmeals.com/wp-content/uploads/2021/09/Honey-garlic-chicken-breast-8.jpg"}, {"instruction":"Plate the chicken and enjoy!", "image":"assets/honey_garlic_chicken.jpg"}]';
                         const instructionAr = JSON.parse(instructionJ);
@@ -256,9 +251,6 @@
                                 <img src="assets/checkbox.png" width=20px height="20px" style="padding-left: 100px; margin-bottom: 5px; display: block;">
 
                             </p> 
-                            
-
-                            
                             <div style="display: inline; float: left;">
                                 <p style="text-align: left; margin-bottom: 5px; display: inline;">3. Click <div class="endIcon" style="width: 10px; height: 10px; margin: 0; padding: 0;"></div>
                                     to stop any time 
@@ -409,7 +401,7 @@
                                 <td>
                                     <div class="comment-question-group">
                                         <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
-                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
+                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600);  background-size: cover;  background-repeat: no-repeat;"></div>
                                         <div class="alignTextBesidePFP">
                                         <div style="display:inline;"> Sam Baker: </div>
                                         </div>
@@ -427,7 +419,7 @@
                                             <h3> Replies </h3>
                                             <div class="reply-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://cdn-icons-png.flaticon.com/512/253/253503.png); background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Peter Parker: </div>
                                             </div>
@@ -441,7 +433,7 @@
                                         <div class="replyDiv" id="replyMj" style="display: none;  margin-bottom: 20px;">
                                             <div class="reply-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-outline-icons-mangsaabguru-/64/external-chinese-chinese-foods-outline-outline-icons-mangsaabguru--7.png); background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> MJ: </div>
                                             </div>
@@ -474,7 +466,7 @@
                                     <div class="comment-question-group">
                                         <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 29, 2023 </div>
 
-                                        <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2022/07/the-office-how-to-watch.jpg); background-size: contain;"></div>
+                                        <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2022/07/the-office-how-to-watch.jpg);  background-size: cover;  background-repeat: no-repeat;"></div>
                                         <div class="alignTextBesidePFP">
                                             <div style="display:inline;"> Michael Scott : </div>
                                         </div>
@@ -491,7 +483,7 @@
                                     <div class="comment-question-group">
                                         <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: December 1, 2023 </div>
 
-                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
+                                        <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600);  background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display: inline; "> Jan Levinson: </div>
                                             </div>
@@ -514,7 +506,7 @@
                                         <div class="comment-question-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 26, 2023 </div>
                                             
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display: inline;"> Jan Levinson: </div>
                                             </div>
@@ -529,7 +521,7 @@
                                     <td>
                                         <div class="comment-question-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; margin: none; padding: none;"> Date: November 27, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2023/07/rainn-wilson-the-office2.jpg); background-size: cover;  background-repeat: no-repeat; "></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Dwight Schrute: </div>  
                                             </div> 
@@ -543,26 +535,12 @@
                                     <td>
                                         <div class="comment-question-group">
                                             <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px; font-family: 'Inter', sans-serif;  margin: none; padding: none;"> Date: December 3, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
+                                            <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-cooking-home-appliance-flaticons-lineal-color-flat-icons.png); background-size: cover;  background-repeat: no-repeat;"></div>
                                             <div class="alignTextBesidePFP">
                                                 <div style="display:inline;"> Rachel Green: </div>  
                                             </div> 
                                             <div class="alignTextBesidePFP"> Question </div>
                                             <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div style="position:inline; text-align: right; vertical-align:top; font-size: 15px;  font-family: 'Inter', sans-serif; margin: none; padding: none;"> Date: December 3, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://assets.pexels.com/photos/2182970/pexels-photo-2182970.jpeg); background-size: contain;"></div>
-                                            <div class="alignTextBesidePFP">
-                                                <div style="display:inline;"> Rachel Green: </div>
-                                                
-                                            </div> 
-                                                <div class="alignTextBesidePFP">Question</div>  
-                                                <a onclick=""  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
                                 </tr>
