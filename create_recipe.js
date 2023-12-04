@@ -154,6 +154,32 @@ function addToMainPage() {
     }
 }
 
+function addToProfilePage() {
+    var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    var selectedRestrictions = [];
+    dietaryRestrictions.forEach(function (checkbox) {
+        selectedRestrictions.push(checkbox.value);
+    });
+    const restrictions = selectedRestrictions.join(',');
+
+    var categorySelect = document.getElementById('recipe-category-select');
+    var selectedOption = categorySelect.options[categorySelect.selectedIndex];
+
+    const title = document.getElementById("recipe-title-input").value;
+    const category = "PersonalRecipe";
+    const author = document.getElementById("profile-h2").textContent;
+    const href = (author + title).replace(/\s+/g, '') + ".html";
+    const image = document.getElementById("uploaded-image").src;
+    //console.log(image);
+
+    const data = {"dietaryRestrictions":restrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
+    
+    const card = createNewCard(data);
+    
+    document.getElementById("profile-button").click();
+    document.getElementById('profile-private-recipes-content').appendChild(card);
+}
+
 
 
 
