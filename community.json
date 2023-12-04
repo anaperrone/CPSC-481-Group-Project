@@ -1,5 +1,7 @@
 [
     {"star":"5", "category": "Friend", "image": "assets/James.png","author": "James", "href": "https://www.facebook.com"},
-    {"star":"5", "category": "Friend", "image": "assets/James1.png","author": "James", "href": "https://www.facebook.com"},
-    {"star":"5", "category": "Friend", "image": "assets/ana.png","author": "John", "href": "https://www.facebook.com"}
+    {"star":"3", "category": "Friend", "image": "assets/James1.png","author": "James", "href": "https://www.facebook.com"},
+    {"star":"1", "category": "Friend", "image": "assets/hero.png","author": "Micheal", "href": "https://www.facebook.com"},
+    {"star":"5", "category": "Friend", "image": "assets/dwight.png","author": "Dwight", "href": "https://www.facebook.com"},
+    {"star":"5", "category": "Friend", "image": "assets/jim.png","author": "Jim", "href": "https://www.facebook.com"}
 ]
