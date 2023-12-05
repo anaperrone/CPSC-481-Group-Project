@@ -18,8 +18,8 @@ function toggleForm(form) {
 }
 
 var users = {
-  test1: "Asdf1234!",
-  test2: "Qwer0987@",
+  test1: { password: "Asdf1234!", fullName: "Test User 1" },
+  test2: { password: "Qwer0987@", fullName: "Test User 2" },
 };
 
 function handleEnter(event, action) {
@@ -51,7 +51,7 @@ function login(event) {
   }
 
   if (users.hasOwnProperty(username)) {
-    if (users[username] === password) {
+    if (users[username].password === password) {
       window.location.href = "index_logged_in.html";
     } else {
       passwordError.textContent = "Password is invalid";
@@ -67,40 +67,50 @@ function signup(event) {
   event.preventDefault();
   console.log("Signup function called");
 
+  // Retrieve values from the form
+  var fullname = document.getElementById("signup-fullname").value.trim();
   var username = document.getElementById("signup-username").value.trim();
   var password = document.getElementById("signup-password").value.trim();
   var reenterPassword = document
     .getElementById("signup-reenter-password")
     .value.trim();
+
+  // Get error elements
+  var fullnameError = document.getElementById("signup-fullname-error");
   var usernameError = document.getElementById("signup-username-error");
   var passwordError = document.getElementById("signup-password-error");
   var reenterPasswordError = document.getElementById(
     "signup-reenter-password-error"
-  ); // New error element for re-enter password
-  var isPasswordEmpty = !password || !reenterPassword;
+  );
 
   // Clear any previous errors
+  fullnameError.style.display = "none";
   usernameError.style.display = "none";
   passwordError.style.display = "none";
-  reenterPasswordError.style.display = "none"; // Hide previous errors if any
-  console.log("here");
+  reenterPasswordError.style.display = "none";
+
+  // Validate Full Name
+  if (!fullname) {
+    fullnameError.textContent = "Please enter your full name";
+    fullnameError.style.display = "block";
+    return;
+  }
+
   // Check if username is empty
   if (!username) {
-    console.log("here 2");
     usernameError.textContent = "Please enter username";
     usernameError.style.display = "block";
     return;
   }
-  console.log("here 3");
+
   // Check if the password is empty
+  var isPasswordEmpty = !password || !reenterPassword;
   if (isPasswordEmpty) {
-    console.log("here 4");
-    // Handle password empty error
     passwordError.textContent = "Please enter password";
     passwordError.style.display = "block";
     return;
   }
-  console.log("here 5");
+
   // Check password complexity requirements
   var passwordPattern =
     /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -113,13 +123,10 @@ function signup(event) {
 
   // Check if passwords match
   if (password !== reenterPassword) {
-    console.log("here 6");
-    // Handle password mismatch error
     reenterPasswordError.textContent = "Passwords don't match";
     reenterPasswordError.style.display = "block";
     return;
   }
-  console.log("here 7");
 
   // Check if the username is already taken
   if (users.hasOwnProperty(username)) {
@@ -127,11 +134,14 @@ function signup(event) {
     usernameError.style.display = "block";
     return;
   }
-  
-  users[username] = password;
+
+  // Store new user
+  users[username] = { password: password, fullName: fullname };
   localStorage.setItem("users", JSON.stringify(users));
-  window.location.href = "index_logged_in.html";
+
+  window.location.href = "sign-up-index.html";
   // Clear the form (or redirect the user, show a success message, etc.)
+  document.getElementById("signup-fullname").value = "";
   document.getElementById("signup-username").value = "";
   document.getElementById("signup-password").value = "";
   document.getElementById("signup-reenter-password").value = "";

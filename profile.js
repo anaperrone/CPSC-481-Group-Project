@@ -57,16 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function makeCards(MeasurementArr) {
     MeasurementArr.forEach((data) => {
-      const card = createCard(data, toggleCard);
+      const card = createCard(data);
       categories[data.category].appendChild(card);
       initializeCard(card, data.category);
     });
   }
 
-  function createCard(data, toggleCardCallback) {
+  function createCard(data) {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.setAttribute("data-category", data.category); // Set the initial category attribute
+    card.setAttribute("data-category", data.category);
 
     const cardLink = document.createElement("a");
     cardLink.href = data.href || "#";
@@ -90,32 +90,30 @@ document.addEventListener("DOMContentLoaded", function () {
     rating.classList.add("rating");
     rating.innerHTML = getStarRating(data.star);
 
-    const toggleContainer = document.createElement("label");
-    toggleContainer.classList.add("profile-switch");
+    if (data.category === "MyRecipe" || data.category === "PersonalRecipe") {
+      const toggleContainer = document.createElement("label");
+      toggleContainer.classList.add("profile-switch");
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.classList.add("profile-toggle-checkbox");
+      const sliderSpan = document.createElement("span");
+      sliderSpan.classList.add("profile-slider", "round");
 
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    input.classList.add("profile-toggle-checkbox");
+      toggleContainer.appendChild(input);
+      toggleContainer.appendChild(sliderSpan);
+      detailsContainer.appendChild(toggleContainer);
 
-    const sliderSpan = document.createElement("span");
-    sliderSpan.classList.add("profile-slider", "round");
-
-    toggleContainer.appendChild(input);
-    toggleContainer.appendChild(sliderSpan);
+      input.addEventListener("change", function () {
+        toggleCard(card, card.getAttribute("data-category"));
+      });
+    }
 
     detailsContainer.appendChild(author);
     detailsContainer.appendChild(rating);
-    detailsContainer.appendChild(toggleContainer);
 
     cardLink.appendChild(imageContainer);
     cardLink.appendChild(detailsContainer);
-
     card.appendChild(cardLink);
-
-    input.addEventListener("change", function () {
-      // Pass the current category from the card's data-category attribute
-      toggleCardCallback(card, card.getAttribute("data-category"));
-    });
 
     return card;
   }
@@ -128,41 +126,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeCard(card, initialCategory) {
     const checkbox = card.querySelector(".profile-toggle-checkbox");
-
-    checkbox.checked = initialCategory === "MyRecipe";
-
-    if (checkbox.checked) {
-      card.classList.add("active");
-    } else {
-      card.classList.remove("active");
+    if (checkbox) {
+      checkbox.checked = initialCategory === "MyRecipe";
+      card.classList.toggle("active", checkbox.checked);
+      updateToggleColor(checkbox);
     }
-
-    updateToggleColor(card);
   }
 
   function toggleCard(card, currentCategory) {
     const newCategory =
       currentCategory === "MyRecipe" ? "PersonalRecipe" : "MyRecipe";
-    card.setAttribute("data-category", newCategory); // Update the category attribute
-
+    card.setAttribute("data-category", newCategory);
     card.classList.toggle("active");
 
-    // Move the card to the target container
     const targetContainer = categories[newCategory];
     card.remove();
     targetContainer.appendChild(card);
 
-    updateToggleColor(card);
+    const checkbox = card.querySelector(".profile-toggle-checkbox");
+    if (checkbox) {
+      updateToggleColor(checkbox);
+    }
   }
 
-  function updateToggleColor(card) {
-    const checkbox = card.querySelector(".profile-toggle-checkbox");
-    const slider = card.querySelector(".profile-slider");
-
+  function updateToggleColor(checkbox) {
+    const slider = checkbox.nextElementSibling;
     if (checkbox.checked) {
-      slider.style.backgroundColor = "#9747FF"; // Color for 'My Recipe'
+      slider.style.backgroundColor = "#9747FF";
     } else {
-      slider.style.backgroundColor = "#ccc"; // Color for 'Private Recipe'
+      slider.style.backgroundColor = "#ccc";
     }
   }
 });

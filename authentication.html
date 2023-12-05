@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Let's Get Cooking! - Sign Up & Login</title>
         <link rel="stylesheet" href="authentication.css">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png"/>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
     </head>
 
     <body>
@@ -31,12 +31,13 @@
 
             <div id="signup-form" class="form-container">
                 <h2>SIGN UP</h2>
+                <input type="text" id="signup-fullname" placeholder="Full Name" onkeypress="handleEnter(event, signup)">
+                <div id="signup-fullname-error" class="error-message"></div>
                 <input type="text" id="signup-username" placeholder="Username" onkeypress="handleEnter(event, signup)">
                 <div id="signup-username-error" class="error-message"></div>
                 <input type="password" id="signup-password" placeholder="Password"
                     onkeypress="handleEnter(event, signup)">
                 <div id="signup-password-error" class="error-message"></div>
-
                 <input type="password" id="signup-reenter-password" placeholder="Re-Enter Password"
                     onkeypress="handleEnter(event, signup)">
                 <div id="signup-reenter-password-error" class="error-message"></div>
