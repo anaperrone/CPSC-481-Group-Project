@@ -130,7 +130,7 @@ function signup(event) {
   
   users[username] = password;
   localStorage.setItem("users", JSON.stringify(users));
-  window.location.href = "index_logged_in.html";
+  window.location.href = "sign_up_index.html";
   // Clear the form (or redirect the user, show a success message, etc.)
   document.getElementById("signup-username").value = "";
   document.getElementById("signup-password").value = "";
