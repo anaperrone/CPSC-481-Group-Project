@@ -14,7 +14,7 @@
            
         </head>
         <body style="background-color: whitesmoke;">
-            <title> Crepes </title>
+            <title id="viewRecipeName"> Crepes </title>
             <nav style="position: fixed; top:2px; left: 0; right: 0;">
                 <a onclick="window.history.go(-1); return false;" style="cursor: pointer;">
                     <img src ="assets/left arrow icon.png" alt="Go back" width="35px" height="35px"/>
@@ -28,7 +28,7 @@
                 
             </nav>
         <div class="outerbox">
-            <h1 id="Recipe-title"> Crepes </h1>
+            <h1 id="Recipe-title"> Crepes</h1>
             <div style="text-align: center; font-size: 23px; font-family: 'Inter', sans-serif; margin-bottom: 5px;">
                 <p style="display: inline;"> Author:</p>
                 <a href="" id="recipe-author"> Pam Beesly</a>
@@ -37,21 +37,19 @@
                 <p style="display: inline;"> Date Posted: December 15, 2023</p>
             </div>
             <!-- <img src="assets/spicy-honey-garlic-chicken.webp" alt= "Garlic Honey Chicken" width="500" height="400" class="center"> -->
-            <img src="https://hips.hearstapps.com/hmg-prod/images/crepes-index-64347419e3c7a.jpg?crop=0.503xw:1.00xh;0.234xw,0&resize=1200:*" alt= "Garlic Honey Chicken" width="600" height="400" class="center" id="uploaded-image">
-
-
+            <img src="https://hips.hearstapps.com/hmg-prod/images/crepes-index-64347419e3c7a.jpg?crop=0.503xw:1.00xh;0.234xw,0&resize=1200:*" alt= "Crepes" width="600" height="400" class="center" id="uploaded-image">
             <div id="cookTime">
                 <table style="display: flex; justify-content: center; margin-top: 20px;">
                     <td>
                         <div style="margin-right:40px; margin-left: 90px;">
                             <p style="margin: 0.2em 0; font-size: 25px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; display: flex; justify-content: center; margin-bottom: 0;"> Rating</p>
                             <div style="padding-top:7px;">
-                                <p style="display: inline-flex; vertical-align: middle; margin-bottom:22.5px; font-size: 20px; font-family: 'Inter'">(0)</p>
-                                <img src="assets/unfilledStarRating.png" width="30px" height="30px">
-                                <img src="assets/unfilledStarRating.png" width="30px" height="30px">
-                                <img src="assets/unfilledStarRating.png" width="30px" height="30px">
-                                <img src="assets/unfilledStarRating.png" width="30px" height="30px">
-                                <img src="assets/unfilledStarRating.png" width="30px" height="30px">
+                                <p style="display: inline-flex; vertical-align: middle; margin-bottom:22.5px; font-size: 20px; font-family: 'Inter'" id="rating">(0)</p>
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="1update">
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="2update">
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="3update">
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="4update">
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="5update">
                             </div>
                         </div>
                     </td>
@@ -105,7 +103,7 @@
 
                 </div>
                 <script>
-                    const text = '[ "All purpose flour", "Cornstarch", "Vegan butter","Granulated Sugar", "Almond Milk", " Canola oil", "Water"]';
+                    const text = '[ "All purpose flour", "Cornstarch", "Vegan butter","Granulated Sugar", "Almond Milk", " Canola oil", "Water"]';                   
                     const myArr = JSON.parse(text);
                     let divInstructionParent=document.getElementById("parent");
                     
@@ -120,8 +118,7 @@
                 </script>
             </h2>
                 <script>
-                        const texMeasurement='[{"number":1,"unit":" cup ","ingredient":"All purpose flour","sub":""},{"number":1,"unit":" tbsp ","ingredient":"Cornstarch","sub":""},{"number":3,"unit":" tbsp ","ingredient":"Vegan butter","sub":""},{"number":2,"unit":" tbsp ","ingredient":"Granulated sugar","sub":""},{"number":1,"unit":" cup ","ingredient":"Almond milk","sub":[{"number":1,"unit":" cup ","ingredient":"Soy milk"},{"number":1,"unit":" cup ","ingredient":"Oat milk"}]},{"number":0.25,"unit":" cup ","ingredient":"Canola oil","sub":[{"number":0.25,"unit":" cup ","ingredient":"Avocado oil"}]},{"number":1,"unit":" cup ","ingredient":"water","sub":""}]';
-                        // const texMeasurement = '[{"number":2, "unit":" lb ", "ingredient":"Chicken breast", "sub":[{"number":2, "unit":" lb ", "ingredient":"Tofu"}]},  {"number":20, "unit":" grams ", "ingredient":"Honey","sub":""},  {"number":4, "unit":" ", "ingredient":"Garlic cloves", "sub":""},  {"number":2, "unit":" tsp ", "ingredient":"Soy Sauce", "sub":""}, {"number":0.5, "unit":" cup ", "ingredient":"Flour", "sub":[{"number":0.5, "unit":" cup ", "ingredient":"Rice flour"}]}, {"number":1, "unit":" tsp ", "ingredient":"Vinegar", "sub": [{"number":1.5, "unit":" tbsp ", "ingredient":"Apple cider vinegar"}]}]';
+                        const texMeasurement='[{"number":1,"unit":" cup ","ingredient":"All purpose flour","sub":""},{"number":1,"unit":" tbsp ","ingredient":"Cornstarch","sub":""},{"number":3,"unit":" tbsp ","ingredient":"Vegan butter","sub":""},{"number":2,"unit":" tbsp ","ingredient":"Granulated sugar","sub":""},{"number":1,"unit":" cup ","ingredient":"Almond milk","sub":[{"number":1,"unit":" cup ","ingredient":"Soy milk"},{"number":1,"unit":" cup ","ingredient":"Oat milk"}]},{"number":0.25,"unit":" cup ","ingredient":"Canola oil","sub":[{"number":0.25,"unit":" cup ","ingredient":"Avocado oil"}]},{"number":1,"unit":" cup ","ingredient":"water","sub":""}]';                        
                 </script>
                 <!-- <div style="text-align: right;">(e.g. convert from cups to grams)</div> -->
 
@@ -146,7 +143,7 @@
 ]
                 </table>
                     <script>
-                        const textMeasurement='[{"number":1,"unit":" cup ","ingredient":"All purpose flour","sub":""},{"number":1,"unit":" tbsp ","ingredient":"Cornstarch","sub":""},{"number":3,"unit":" tbsp ","ingredient":"Vegan butter","sub":""},{"number":2,"unit":" tbsp ","ingredient":"Granulated sugar","sub":""},{"number":1,"unit":" cup ","ingredient":"Almond milk","sub":[{"number":1,"unit":" cup ","ingredient":"Soy milk"},{"number":1,"unit":" cup ","ingredient":"Oat milk"}]},{"number":0.25,"unit":" cup ","ingredient":"Canola oil","sub":[{"number":0.25,"unit":" cup ","ingredient":"Avocado oil"}]},{"number":1,"unit":" cup ","ingredient":"water","sub":""}]';
+                        const textMeasurement='[{"number":1,"unit":" cup ","ingredient":"All purpose flour","sub":""},{"number":1,"unit":" tbsp ","ingredient":"Cornstarch","sub":""},{"number":3,"unit":" tbsp ","ingredient":"Vegan butter","sub":""},{"number":2,"unit":" tbsp ","ingredient":"Granulated sugar","sub":""},{"number":1,"unit":" cup ","ingredient":"Almond milk","sub":[{"number":1,"unit":" cup ","ingredient":"Soy milk"},{"number":1,"unit":" cup ","ingredient":"Oat milk"}]},{"number":0.25,"unit":" cup ","ingredient":"Canola oil","sub":[{"number":0.25,"unit":" cup ","ingredient":"Avocado oil"}]},{"number":1,"unit":" cup ","ingredient":"water","sub":""}]';                        
                         const MeasurementArr = JSON.parse(textMeasurement);
                         let divMeasurementParent=document.getElementById("overallMeasurements");
                         printMeasurements();
@@ -207,30 +204,18 @@
                         }
                     }
 
-                        // for(var i=0; i<MeasurementArr.length; i++){
-                            // console.log(" FOR DROP DOWN " + MeasurementArr[i].unit);
-
-                            // for(var j=0; j<MeasurementArr[i].sub.length; j++){
-                                // if(MeasurementArr[i].unit==" grams " || MeasurementArr[i].sub[j].unit == " grams " || MeasurementArr[i].sub[j].unit == " gram " || MeasurementArr[i].unit==" gram "){
                                     gramToCups.style.display="block";
                                     cupsToGrams.style.display="block";
-                                // }
-                                // if(MeasurementArr[i].unit== " cups " || MeasurementArr[i].sub[j].unit == " cups "){
                                     cupsToGrams.style.display="block";
                                     cupsToMl.style.display="block";
                                     mlToCups.style.display="block";
                                     GramsToLb.style.display="block";
-                                    lbToGrams.style.display="block";
-                                // }
-                                
-                              
-                            // }
-                        // }        
+                                    lbToGrams.style.display="block"; 
                     </script>
                 
             <h2> Instructions:</h2>
                     <script>
-                    const instructionJ='[{"instruction":"Mix all dry ingredients together in a bowl","image":""},{"instruction":"Heat a pan to medium heat and add in butter to fully melt. ","image":""},{"instruction":"Add 1/3 cup of batter to a pan and move the pan around so batter is spread evenly. ","image":""},{"instruction":"Cook for 2 mins on one side and flip to let the other side cook for 30 seconds. Repeat the previous step for the rest of the batter.","image":"https://cdn.apartmenttherapy.info/image/upload/v1559159764/k/archive/7cf01ee554cbbef22c6e5fcfc693339b798d9b96.jpg"},{"instruction":"Serve the crepes with toppings of your choice","image":""}]';
+                        const instructionJ='[{"instruction":"Mix all dry ingredients together in a bowl","image":""},{"instruction":"Heat a pan to medium heat and add in butter to fully melt. ","image":""},{"instruction":"Add 1/3 cup of batter to a pan and move the pan around so batter is spread evenly. ","image":""},{"instruction":"Cook for 2 mins on one side and flip to let the other side cook for 30 seconds. Repeat the previous step for the rest of the batter.","image":"https://cdn.apartmenttherapy.info/image/upload/v1559159764/k/archive/7cf01ee554cbbef22c6e5fcfc693339b798d9b96.jpg"},{"instruction":"Serve the crepes with toppings of your choice","image":""}]';                        
                         const instructionAr = JSON.parse(instructionJ);
                     </script>
                 <div style="align-content: center; margin-bottom: 5px; margin-top: 15px; display: flex;" id="startFollowDiv">
@@ -302,7 +287,7 @@
                     </table>
                 </div>
                 <script>
-                    const instructionJson='[{"instruction":"Mix all dry ingredients together in a bowl","image":""},{"instruction":"Heat a pan to medium heat and add in butter to fully melt. ","image":""},{"instruction":"Add 1/3 cup of batter to a pan and move the pan around so batter is spread evenly. ","image":""},{"instruction":"Cook for 2 mins on one side and flip to let the other side cook for 30 seconds. Repeat the previous step for the rest of the batter.","image":"https://cdn.apartmenttherapy.info/image/upload/v1559159764/k/archive/7cf01ee554cbbef22c6e5fcfc693339b798d9b96.jpg"},{"instruction":"Serve the crepes with toppings of your choice","image":""}]';
+                        const instructionJson='[{"instruction":"Mix all dry ingredients together in a bowl","image":""},{"instruction":"Heat a pan to medium heat and add in butter to fully melt. ","image":""},{"instruction":"Add 1/3 cup of batter to a pan and move the pan around so batter is spread evenly. ","image":""},{"instruction":"Cook for 2 mins on one side and flip to let the other side cook for 30 seconds. Repeat the previous step for the rest of the batter.","image":"https://cdn.apartmenttherapy.info/image/upload/v1559159764/k/archive/7cf01ee554cbbef22c6e5fcfc693339b798d9b96.jpg"},{"instruction":"Serve the crepes with toppings of your choice","image":""}]';                        
                     const instructionArr = JSON.parse(instructionJson);
                     for (let i = 0; i < instructionArr.length; i++) {
                     // Create new row for each instruction
@@ -314,12 +299,14 @@
 
                     let checkbox = createCheckbox(); // Function to create checkbox
                     checkbox.className = 'instructionCheckbox'; // Apply necessary class for checkbox styling
-                    checkbox.id="checkbox" + i;
+                    checkbox.id=i+"checkbox";
                     checkbox.style.display='none';
+                    checkbox.setAttribute("onclick",`checkboxClicked(this.id)`);
                     let stepDiv = document.createElement('div');
                     stepDiv.className = 'stepDivWrapper'; // Apply a class to style the wrapper div
                     let inc = i + 1;
                     stepDiv.innerHTML = "Step " + inc; // Create label for step number
+                    stepDiv.id=i+"step";
                     stepDiv.insertBefore(checkbox, stepDiv.firstChild); // Insert checkbox before the step number
                     checkboxStepCell.appendChild(stepDiv);
                     instructionRow.appendChild(checkboxStepCell);
@@ -334,6 +321,7 @@
                     instructionCell.colSpan = 2; // Set the colspan to cover 2 columns for the instruction
                     instructionCell.innerHTML = instructionArr[i].instruction;
                     instructionCell.className = "instructionPara";
+                    instructionCell.id=i+"instruction";
                     instructionTextRow.appendChild(instructionCell);
 
                     instructionsTable.appendChild(instructionTextRow);
@@ -352,11 +340,6 @@
                     var checkbox = document.createElement('input');
                     checkbox.type = 'checkbox';
                     checkbox.style.display='inline';
-                    checkbox.addEventListener('keypress', function (event) {
-                        if (event.key === 'Enter') {
-                            this.checked = !this.checked;
-                        }
-                    });
                     return checkbox;
                 }
 
@@ -403,153 +386,16 @@
                     <div id="comments" >
                         <div class="scrollbar">
                             <table id="comment-table">
-                                <div id="noComments" style="font-size: 30px; vertical-align: middle;"> No comments currently...</div>
-                                <!-- <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: November 26, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600);  background-size: cover;  background-repeat: no-repeat;"></div>
-                                            <div class="alignTextBesidePFP">
-                                            <div style="display:inline;"> Sam Baker </div>
-                                            </div>
-                                            <div style="margin-top: 10px;">
-                                                A must try for dessert
-                                            </div>
-                                            <a onclick="displayReply()"  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                    <tr>
-                                        <td>
-                                            <div class="replyDiv" id="replySam" style="display: none;  height: 120px;  margin-top: 10px; border-top-right-radius: 15px; border-top-left-radius: 15px;">
-                                                <h3> Replies </h3>
-                                                <div class="reply-group">
-                                                    <div class="comment-question-dates"> Date: November 26, 2023 </div>
-                                                    <div class="user" style="display: inline-flex; background:url(https://static.vecteezy.com/system/resources/thumbnails/020/015/744/original/new-york-city-skyline-time-lapse-from-roof-top-with-urban-skyscrapers-new-york-usa-free-video.jpg); background-size: cover;  background-repeat: no-repeat;"></div>
-                                                    <div class="alignTextBesidePFP">
-                                                        <div style="display:inline;"> Peter Parker </div>
-                                                    </div>
-                                                    <div style="margin-top: 10px;">
-                                                    Same here!
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td> 
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="replyDiv" id="replyMj" style="display: none;  margin-bottom: 20px;">
-                                                <div class="reply-group">
-                                                <div class="comment-question-dates"> Date: November 26, 2023 </div>
-                                                <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-outline-icons-mangsaabguru-/64/external-chinese-chinese-foods-outline-outline-icons-mangsaabguru--7.png); background-size: cover;  background-repeat: no-repeat;"></div>
-                                                <div class="alignTextBesidePFP">
-                                                    <div style="display:inline;"> MJ </div>
-                                                </div>
-                                                <div style="margin-top: 10px;">
-                                                    Me too!
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </td> 
-                                    </tr>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: November 29, 2023 </div>
-    
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
-                                            <div class="alignTextBesidePFP">
-                                            <div style="display:inline;"> Emma Stone </div>
-                                            </div>
-                                            <div style=" margin-top: 10px;">
-                                                Super good with powedered sugar and strawberries on top   
-                                            </div> 
-                                                 <a onclick=""  class="replyLink">Replies</a>  
-                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: November 29, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2022/07/the-office-how-to-watch.jpg);  background-size: cover;  background-repeat: no-repeat;"></div>
-                                            <div class="alignTextBesidePFP">
-                                                <div style="display:inline;"> Michael Scott </div>
-                                            </div>
-                                            <div style="margin-top: 10px;">
-                                                Great. 
-                                            </div> 
-                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: December 1, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600);  background-size: cover;  background-repeat: no-repeat;"></div>
-                                                <div class="alignTextBesidePFP">
-                                                    <div style="display: inline;"> Jan Levinson </div>
-                                                </div>
-                                                <div style="margin-top: 10px;">
-                                                    I loved this Recipe!   
-                                                </div>  
-                                                <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr> -->
+                                <div id="noComments" style="font-size: 30px; vertical-align: middle;" style="display: none;"> No Comments currently...</div>
+                              
                             </table>
                         </div>
                     </div>
                     <div id="questions" style="display: none">
                         <div class="scrollbar">
                             <table id="question-table">
-                                <div id="noQuestions" style="font-size: 30px; vertical-align: middle;"> No Questions currently...</div>
-
-                                <!-- <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: November 26, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://images.pexels.com/photos/4098157/pexels-photo-4098157.jpeg?auto=compress&cs=tinysrgb&w=600); background-size: contain;"></div>
-                                            <div class="alignTextBesidePFP">
-                                                <div style="display: inline;"> Jan Levinson </div>
-                                            </div>
-                                            <div style="margin-top: 10px;">
-                                                What toppings do you recommen putting on top?
-                                            </div>
-                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: November 27, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://www.nbc.com/sites/nbcblog/files/2023/07/rainn-wilson-the-office2.jpg); background-size: cover;  background-repeat: no-repeat; "></div>
-                                            <div class="alignTextBesidePFP">
-                                                <div style="display:inline;"> Dwight Schrute </div>  
-                                            </div> 
-                                            <div style="margin-top: 10px;">
-                                                Does this go well with icecream?
-                                            </div>
-                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr> -->
-                                <!-- <tr>
-                                    <td>
-                                        <div class="comment-question-group">
-                                            <div class="comment-question-dates"> Date: December 3, 2023 </div>
-                                            <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-cooking-home-appliance-flaticons-lineal-color-flat-icons.png); background-size: cover;  background-repeat: no-repeat;"></div>
-                                            <div class="alignTextBesidePFP">
-                                                <div style="display:inline;"> Rachel Green </div>  
-                                            </div> 
-                                            <div style="margin-top: 10px;"> Question </div>
-                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
-                                        </div>
-                                    </td>
-                                </tr> -->
+                                <div id="noQuestions" style="font-size: 30px; vertical-align: middle;" style="display: none;"> No Questions currently...</div>
+                                
                             </table>
                         </div>
                     </div>
@@ -574,13 +420,16 @@
                 <p style="font-size: 30px;  font-family: 'Inter', sans-serif;">
                     Favourite This Recipe?
                 </p> 
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="favouritesBookmark()">
+                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="favouritesBookmark()">
+            </div>
+            <div style="display:flex; justify-content: center;">
+                <a id="linkToFavourites" onclick="addToFavouritesPage()" style=" margin-bottom: 30px; font-size: 20px; font-family: 'Inter', sans-serif; cursor: pointer; color: blueviolet; display: none;"> Click here to visit your favourites page </a>
+            </div>
+                <div id="recipe-category-select" style="display:none;">MainDishes</div>
 
-            </div>
-            <div style="display: flex; justify-content: center;">
-                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="addToMainPage()">
-                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="addToMainPage()">
-            </div>
-            <div id="recipe-category-select" style="display:none;">MainDishes</div>
         </div> 
         <script src="viewRecipe.js"></script>
     </body> 
