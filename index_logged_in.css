@@ -1531,3 +1531,55 @@ input:checked + .slider:before {
     border: none;
     border-radius: 15px;
 }
+
+.profile-switch {
+    position: relative;
+    left: 140px;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.profile-switch .profile-toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.profile-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color 0.4s;
+    border-radius: 20px;
+}
+
+.profile-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+}
+
+.profile-switch input:checked + .profile-slider {
+    background-color: #9747FF;
+}
+
+.profile-switch input:checked + .profile-slider:before {
+    transform: translateX(20px);
+}
+
+.card.active .profile-slider {
+    background-color: #9747FF;
+}

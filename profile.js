@@ -46,20 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
             makeCards(data1);
         });
 
+    const categories = {
+        "MyRecipe": cardsContainer1,
+        "PersonalRecipe": cardsContainer2,
+        "Friend": cardsContainer3
+    };
+
     function makeCards(MeasurementArr) {
-        const categories = {
-            "MyRecipe": cardsContainer1,
-            "PersonalRecipe": cardsContainer2,
-            "Friend": cardsContainer3
-        };
 
         MeasurementArr.forEach((data) => {
-            const card = createCard(data);
+            const card = createCard(data, toggleCard);
             categories[data.category].appendChild(card);
+            initializeCard(card, data.category);
         });
     }
 
-    function createCard(data) {
+    function createCard(data, toggleCardCallback) {
         const card = document.createElement('div');
         card.classList.add('card');
 
@@ -85,13 +87,31 @@ document.addEventListener('DOMContentLoaded', function () {
         rating.classList.add('rating');
         rating.innerHTML = getStarRating(data.star);
 
+        const toggleContainer = document.createElement("label");
+        toggleContainer.classList.add("profile-switch");
+
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.classList.add("profile-toggle-checkbox");
+
+        const sliderSpan = document.createElement("span");
+        sliderSpan.classList.add("profile-slider", "round");
+        
+        toggleContainer.appendChild(input);
+        toggleContainer.appendChild(sliderSpan);
+
         detailsContainer.appendChild(author);
         detailsContainer.appendChild(rating);
+        detailsContainer.appendChild(toggleContainer);
 
         cardLink.appendChild(imageContainer);
         cardLink.appendChild(detailsContainer);
 
         card.appendChild(cardLink);
+
+        input.addEventListener('change', function () {
+            toggleCardCallback(card, data.category);
+        });    
 
         return card;
     }
@@ -101,4 +121,45 @@ document.addEventListener('DOMContentLoaded', function () {
         const emptyStars = '☆'.repeat(5 - starValue);
         return filledStars + emptyStars;
     }
+
+    function initializeCard(card, initialCategory) {
+        const checkbox = card.querySelector(".profile-toggle-checkbox");
+    
+        checkbox.checked = initialCategory === "MyRecipe";
+    
+        if (checkbox.checked) {
+            card.classList.add("active");
+        }
+    
+        updateToggleColor(card);
+    }
+    
+    function toggleCard(card, currentCategory) {
+        const targetCategory = currentCategory === "MyRecipe" ? "PersonalRecipe" : "MyRecipe";
+        const targetContainer = categories[targetCategory];
+    
+        card.classList.toggle("active");
+    
+        // Remove the card from its current container
+        card.remove();
+    
+        // Append the card to the target container
+        targetContainer.appendChild(card);
+    
+        updateToggleColor(card);
+    }        
+    
+    function updateToggleColor(card) {
+        const checkbox = card.querySelector(".profile-toggle-checkbox");
+        const slider = card.querySelector(".profile-slider");
+    
+        const isActive = card.classList.contains("active");
+    
+        if (isActive) {
+            slider.style.backgroundColor = "#9747FF";
+        } else {
+            slider.style.backgroundColor = "#ccc";
+        }
+    }
+    
 });
