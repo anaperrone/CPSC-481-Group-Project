@@ -46,12 +46,12 @@
                         <div style="margin-right:40px; margin-left: 90px;">
                             <p style="margin: 0.2em 0; font-size: 25px; font-family: 'Inter', sans-serif; margin-right: 40px; font-weight:bold; margin-top: 11px; display: flex; justify-content: center; margin-bottom: 0;"> Rating</p>
                             <div style="padding-top:7px;">
-                                <p style="display: inline-flex; vertical-align: middle; margin-bottom:22.5px; font-size: 20px; font-family: 'Inter'">(20)</p>
-                                <img src="assets/filledStarRating.png" width="30px" height="30px">
-                                <img src="assets/filledStarRating.png" width="30px" height="30px">
-                                <img src="assets/filledStarRating.png" width="30px" height="30px">
-                                <img src="assets/filledStarRating.png" width="30px" height="30px">
-                                <img src="assets/unfilledStarRating.png" width="30px" height="30px">
+                                <p style="display: inline-flex; vertical-align: middle; margin-bottom:22.5px; font-size: 20px; font-family: 'Inter'" id="rating">(4)</p>
+                                <img src="assets/filledStarRating.png" width="30px" height="30px" id="1update">
+                                <img src="assets/filledStarRating.png" width="30px" height="30px"  id="2update">
+                                <img src="assets/filledStarRating.png" width="30px" height="30px"  id="3update">
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="4update">
+                                <img src="assets/unfilledStarRating.png" width="30px" height="30px"  id="5update">
                             </div>
                         </div>
                     </td>
@@ -313,12 +313,14 @@
 
                     let checkbox = createCheckbox(); // Function to create checkbox
                     checkbox.className = 'instructionCheckbox'; // Apply necessary class for checkbox styling
-                    checkbox.id="checkbox" + i;
+                    checkbox.id=i+"checkbox";
                     checkbox.style.display='none';
+                    checkbox.setAttribute("onclick",`checkboxClicked(this.id)`);
                     let stepDiv = document.createElement('div');
                     stepDiv.className = 'stepDivWrapper'; // Apply a class to style the wrapper div
                     let inc = i + 1;
                     stepDiv.innerHTML = "Step " + inc; // Create label for step number
+                    stepDiv.id=i+"step";
                     stepDiv.insertBefore(checkbox, stepDiv.firstChild); // Insert checkbox before the step number
                     checkboxStepCell.appendChild(stepDiv);
                     instructionRow.appendChild(checkboxStepCell);
@@ -333,6 +335,7 @@
                     instructionCell.colSpan = 2; // Set the colspan to cover 2 columns for the instruction
                     instructionCell.innerHTML = instructionArr[i].instruction;
                     instructionCell.className = "instructionPara";
+                    instructionCell.id=i+"instruction";
                     instructionTextRow.appendChild(instructionCell);
 
                     instructionsTable.appendChild(instructionTextRow);
@@ -436,7 +439,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="replyDiv" id="replyMj" style="display: none;  margin-bottom: 20px;">
+                                            <div class="replyDivMJ" id="replyMj" style="display: none;  margin-bottom: 20px;">
                                                 <div class="reply-group">
                                                 <div class="comment-question-dates"> Date: November 26, 2023 </div>
                                                 <div class="user" style="display: inline-flex; background:url(https://img.icons8.com/external-outline-icons-mangsaabguru-/64/external-chinese-chinese-foods-outline-outline-icons-mangsaabguru--7.png); background-size: cover;  background-repeat: no-repeat;"></div>
@@ -464,9 +467,17 @@
                                                 I loved this Recipe!   
                                             </div> 
                                             <!-- <a onclick=""  class="replyLink">Replies</a>   -->
-                                            <a onclick=""  class="replyLink">Replies/Reply</a>  
+                                            <a onclick="displayReplyNone()"  class="replyLink">Replies/Reply</a>  
                                         </div>
                                     </td>
+                                    <tr>
+                                        <td>
+                                            <div class="replyDiv" id="replies0" style="display: none;  height: 50px;  margin-top: 10px; border-top-right-radius: 15px; border-top-left-radius: 15px;">
+                                                <h3> This comment currently has 0 replies </h3>
+                                                </div>
+                                            </div>
+                                        </td> 
+                                    </tr>
                                 </tr>
                                 <tr>
                                     <td>
@@ -570,13 +581,16 @@
                 <p style="font-size: 30px;  font-family: 'Inter', sans-serif;">
                     Favourite This Recipe?
                 </p> 
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 10px;">
+                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="favouritesBookmark()">
+                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="favouritesBookmark()">
+            </div>
+            <div style="display:flex; justify-content: center;">
+                <a id="linkToFavourites" onclick="addToFavouritesPage()" style=" margin-bottom: 30px; font-size: 20px; font-family: 'Inter', sans-serif; cursor: pointer; color: blueviolet; display: none;"> Click here to visit your favourites page </a>
+            </div>
+                <div id="recipe-category-select" style="display:none;">MainDishes</div>
 
-            </div>
-            <div style="display: flex; justify-content: center;">
-                <img src="assets/bookmark.png" id="bookmark" style="width: 40px; height: 40px; margin-bottom: 30px;" onclick="addToFavouritesPage()">
-                <img src="assets/redBookmark.png" id="clickedBookmark" style="width: 40px; height: 40px; margin-bottom: 30px; display: none;" onclick="addToFavouritesPage()">
-            </div>
-            <div id="recipe-category-select" style="display:none;">MainDishes</div>
         </div> 
         <script src="viewRecipe.js"></script>
     </body> 

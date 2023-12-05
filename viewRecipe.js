@@ -141,6 +141,7 @@ function insert_result_question(){
         replyDiv.innerHTML="Replies/Reply";
         // replyDiv.style.bottom="10px";
 
+        inputQuestionField.value="";
 
         new_div.className='comment-question-group';
         dateDiv.className='comment-question-dates';
@@ -171,7 +172,6 @@ function insert_result_question(){
         result_row_question.appendChild(new_row);
         noQuestions.style.display="none";
 
-        inputQuestionField.value="";
         errorCharMsgQuestion.style.display='none';
 
     }
@@ -401,7 +401,7 @@ function MDropdownClicked(clicked, textMeasurement){
 function followAlongClicked(arrSize){
     console.log(arrSize);
     for(var i=0; i<arrSize; i++){
-        var checkID = "checkbox"+i;
+        var checkID = i + "checkbox";
         var checkButton=document.getElementById(checkID);
         checkButton.style.display='block';
 
@@ -423,7 +423,7 @@ function followAlongClicked(arrSize){
 
 function endFollowAlongClicked(arrSize){
     for(var i=0; i<arrSize; i++){
-        var checkID = "checkbox"+i;
+        var checkID = i + "checkbox";
         var checkButton=document.getElementById(checkID);
         checkButton.style.display='none';
 
@@ -522,24 +522,68 @@ function submitRating(){
 }
 
 
-function updateRecipeRating(){
+function updateRecipeRating(count){
+    console.log("oh");
+    var counting =0;
+    for(var i=1; i<=5; i++){
+        let updateStarId =i+"update";
+        let updateStar = document.getElementById(updateStarId);
+        if(updateStar.getAttribute('src')=='assets/filledStarRating.png'){
+            console.log("YAY");
+            counting++;
+        } 
+    }
+
+    let numberOfRatings = document.getElementById("rating");
+    let numRatingArr = numberOfRatings.innerHTML.split('(');
+    let numberInRating = parseInt(numRatingArr[1]);
+    console.log(numberInRating);
+
+    let newOne = (numberInRating/(numberInRating+1))*counting;
+    let otherOne = (1/(numberInRating+1))*count;
+    let rounded = Math.round(newOne+otherOne);
+    console.log("rounded is " + rounded);
+    if(rounded>counting){
+        for(var i=1; i<=rounded; i++){
+            let updateStarId =i+"update";
+            let updateStar = document.getElementById(updateStarId);
+            updateStar.src="assets/filledStarRating.png";
+        }
+    }
+    if(rounded<counting){
+        console.log("counting " + counting);
+
+        for(var i=rounded+1; i<=5; i++){
+            console.log("i " + i);
+
+            let updateStarId =i+"update";
+            let updateStar = document.getElementById(updateStarId);
+            updateStar.src="assets/unfilledStarRating.png";
+        }
+
+    }
 
 
 
 }
 
-
-function addToFavouritesPage() {
+function favouritesBookmark(){
     var button = document.getElementById("clickedBookmark");
     if(button.style.display=='none'){
         bookmark.style.display='none';
         button.style.display='block';
+        linkToFavourites.style.display="block";
     }
     else{
         bookmark.style.display='block';
         button.style.display='none';
-    
+        linkToFavourites.style.display="none";
+
+
     }
+}
+
+function addToFavouritesPage() {
 
     // var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
     // var selectedRestrictions = [];
@@ -581,6 +625,33 @@ function addToFavouritesPage() {
 
         // Redirect to the constructed URL
         window.location.href = url;
-    
-    //window.location.href = "index_logged_in.html?dietaryRestrictions=none?title="+title+"?favourites=True?star=4?category="+category+"?image="+image+"?author="+author+"?href="+href;
+}
+
+function checkboxClicked(checkboxID){
+
+    console.log("check clicked " + checkboxID);
+    let numId = parseInt(checkboxID);
+    let stepDiv = document.getElementById(numId+"step");
+    let instructionDiv = document.getElementById(numId+"instruction");
+
+    let strikeThrough=document.createElement("s");
+    if(stepDiv.style.textDecoration != 'line-through'){
+        stepDiv.style.textDecoration='line-through';
+        instructionDiv.style.textDecoration='line-through';
+
+    }
+    else{
+        stepDiv.style.textDecoration='none';
+        instructionDiv.style.textDecoration='none';
+    }
+}
+
+function displayReplyNone(){
+    let elem = document.getElementById("replies0");
+    if(elem.style.display=="none"){
+        elem.style.display="block";
+    }
+    else{
+        elem.style.display="none";
+    }
 }

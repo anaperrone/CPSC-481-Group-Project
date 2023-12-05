@@ -422,10 +422,19 @@ h2 {
     overflow-y: auto; 
     scroll-behavior: auto;
 }
+
 .replyDiv{
     background-color:whitesmoke; 
     width: 670px; 
     height: 90px; 
+    float: right;
+    box-shadow: 0px 0px 5px 5px rgba(230, 230, 230, 0.735); 
+}
+
+.replyDivMJ{
+    background-color:whitesmoke; 
+    width: 670px; 
+    height: 100px; 
     float: right;
     box-shadow: 0px 0px 5px 5px rgba(230, 230, 230, 0.735); 
 }
