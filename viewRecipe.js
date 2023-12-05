@@ -40,6 +40,36 @@ function CQButton(clicked) {
         }    
 } 
 
+function notLoggedCQButton(clicked) { 
+    var button = document.getElementById(clicked); 
+    var questionbtn = document.getElementById("question-button"); 
+ 
+        var comment=document.getElementById("comments");
+        if(questions.style.display=='none' && clicked=='question-button'){
+            questions.style.display='block';
+            inputQuestion.style.display='block';
+            comment.style.display='none';
+            input.style.display='none';
+            errorCharMsg.style.display='none';
+
+           // questionbtn.style.backgroundColor="rgb(190, 192, 190)";
+            // commentbtn.style.backgroundColor="white";
+            questionbtn.classList.add("active");
+            commentbtn.classList.remove("active");
+
+        }
+        if(clicked=='comment-button' && comments.style.display=='none'){
+            questions.style.display='none';
+            inputQuestion.style.display='none';
+            comment.style.display='block';
+            input.style.display='block';
+            errorCharMsgQuestion.style.display='none';
+            questionbtn.classList.remove("active");
+            commentbtn.classList.add("active");
+            // commentbtn.style.backgroundColor="rgb(190, 192, 190)";
+          //  questionbtn.style.backgroundColor="white";
+        }    
+} 
 const date = new Date();
 
 let day = date.getDate();
@@ -495,6 +525,15 @@ function changeStar(idIs){
         };
     }
 }
+
+function notLoggedChangeStar(idIs){
+
+   
+}
+function notLoggedFavourite(){
+    signlogMessage.style.display="block";
+}
+
 let submitting=new Boolean(false);
 let submittedTimes=0;
 function submitRating(){
