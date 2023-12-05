@@ -438,7 +438,16 @@ function endFollowAlongClicked(arrSize){
     startButton.style.display="block";
     startText.style.display="block";
     startToolTip.style.display="block";
+    
+    for(var i=0; i<arrSize; i++){
+        let stepDiv=document.getElementById(i+"step");
+        if(stepDiv.style.textDecoration=="line-through"){
+            checkboxClicked(i);
+        }
+        let checkDiv=document.getElementById(i+"checkbox");
+        checkDiv.checked=false;
 
+    }
 
 }
 function displayReply(){
@@ -562,6 +571,8 @@ function updateRecipeRating(count){
         }
 
     }
+    let adding = numberInRating+1;
+    numberOfRatings.innerHTML="(" +adding +")";
 
 
 
