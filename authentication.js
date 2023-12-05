@@ -7,13 +7,13 @@ function toggleForm(form) {
   if (form === "login") {
     loginForm.style.display = "block";
     signupForm.style.display = "none";
-    loginToggle.disabled = true;
-    signupToggle.disabled = false;
+    loginToggle.classList.add("active");
+    signupToggle.classList.remove("active");
   } else {
     loginForm.style.display = "none";
     signupForm.style.display = "block";
-    loginToggle.disabled = false;
-    signupToggle.disabled = true;
+    loginToggle.classList.remove("active");
+    signupToggle.classList.add("active");
   }
 }
 

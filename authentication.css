@@ -132,3 +132,8 @@ input[type="password"] {
     display: none;
     /* Hide by default */
 }
+
+.form-toggle button.active {
+    background: #9747FF;
+    color: white;
+}

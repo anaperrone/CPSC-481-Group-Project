@@ -172,7 +172,7 @@ function addToProfilePage() {
     const image = document.getElementById("uploaded-image").src;
     //console.log(image);
 
-    const data = {"dietaryRestrictions":restrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
+    const data = {"dietaryRestrictions":restrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
     
     const card = createNewCard(data);
     
