@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const cardLink = document.createElement('a');
         cardLink.href = data.href || '#'; // Set a default link if 'href' is not provided
-        cardLink.target = '_blank'; // Open the link in a new tab/window
+        cardLink.target = '_self'; // Open the link in a new tab/window
 
         // Image container
         const imageContainer = document.createElement('div');
