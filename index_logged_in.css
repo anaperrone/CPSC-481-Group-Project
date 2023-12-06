@@ -1371,6 +1371,7 @@ input:checked+.slider:before {
     flex-direction: column;
     align-content: center;
     align-items: center;
+    max-width: 1050px;
 }
 
 #community-h1 {
@@ -1388,41 +1389,26 @@ input:checked+.slider:before {
     left: 95px;
 }
 
-
-
-
 .category-container2 {
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    /* This will make sure all cards stretch to the same height */
+    flex-wrap: wrap; /* Allow the cards to wrap to the next line */
     justify-content: space-evenly;
-    /* This will add space between the cards horizontally */
-    gap: 20px;
-    /* This creates space between the flex items */
-    margin-top: 10rem;
+    align-items: center;
+    align-content: center;
+    margin-top: 160px; /* Adjust the spacing between rows */
+    gap: 30px;
+    margin-left: 35px;
 }
 
 .card-community {
-    display: flex;
-    flex-direction: column;
-    /* Arrange content from top to bottom */
-    justify-content: space-between;
-    /* This will push the content to top and bottom */
-    flex: 0 0 calc(25% - 20px);
-    /* Adjust the width to account for the margin */
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    /* Add some space between the rows */
-    margin-right: 10px;
-    /* Add some space to the right of each card */
+    font-family: 'Inter';
+    min-width: 190px;
+    min-height: 126px;
+    margin-right: 46px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 10px;
 }
-
-/* This ensures that the right margin is not applied to the last card in the row */
-.card-community:nth-child(4n) {
-    margin-right: 0;
-}
-
 
 .friend-search-container {
     position: relative;
@@ -1449,14 +1435,6 @@ input:checked+.slider:before {
     background-color: none;
     background: none;
 }
-
-/* .card-community {
-    width: 150px;
-    height: 110px;
-    margin: 20px;
-    overflow: hidden;
-    border-radius: 10px;
-} */
 
 .card-community:hover {
     border: 1px solid black;

@@ -225,37 +225,43 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="instructions-list">
             <div class="recipe-step-input-container">
                 <span>1.</span>
-                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Step 1: Preheat the oven">
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="In a large mixing bowl, combine flour, sugar, and salt for the crust. Add the cold, cubed butter to the flour mixture. Use a pastry cutter or your fingers to cut the butter into the flour until the mixture resembles coarse crumbs.">
                 <span>Attach image (optional):</span>
                 <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
             </div>
             <div class="recipe-step-input-container">
                 <span>2.</span>
-                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Step 2: Mix the ingredients">
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Gradually add ice water, one tablespoon at a time, and mix until the dough just comes together. Be careful not to over-mix.">
                 <span>Attach image (optional):</span>
                 <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
             </div>
             <div class="recipe-step-input-container">
                 <span>3.</span>
-                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Step 2: Mix the ingredients">
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Divide the dough into two equal portions, shape each into a disk, wrap in plastic wrap, and refrigerate for at least 1 hour.">
                 <span>Attach image (optional):</span>
                 <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
             </div>
             <div class="recipe-step-input-container">
                 <span>4.</span>
-                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Step 2: Mix the ingredients">
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Preheat your oven to 375°F (190°C).">
                 <span>Attach image (optional):</span>
                 <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
             </div>
             <div class="recipe-step-input-container">
                 <span>5.</span>
-                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Step 2: Mix the ingredients">
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="On a floured surface, roll out one disk of dough to fit your pie dish. Place it in the dish, pressing it gently against the bottom and sides.">
                 <span>Attach image (optional):</span>
                 <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
             </div>
             <div class="recipe-step-input-container">
                 <span>6.</span>
-                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Step 2: Mix the ingredients">
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="In a large bowl, combine the sliced apples, granulated sugar, brown sugar, cinnamon, nutmeg, flour, and lemon juice. Toss until the apples are evenly coated.">
+                <span>Attach image (optional):</span>
+                <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
+            </div>
+            <div class="recipe-step-input-container">
+                <span>7.</span>
+                <input type="text" class="recipe-step-input" placeholder="Enter recipe step here..." value="Fill the pie crust with the prepared apple mixture, mounding it slightly in the center.">
                 <span>Attach image (optional):</span>
                 <input type="file" class="recipe-step-image-input" accept="image/*" onchange="handleImageUpload(this)">
             </div>
@@ -318,18 +324,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="profile-content" class="content">
             <img id="profile-image" src="assets/another_user_img.png" alt="Profile Picture of Chef">
             <h2 id="profile-h2">Chef Fuego</h2>
-            <button id="edit-profile-button">
-                <svg id="edit-button-icon" width="15" height="15" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.2968 1.19876C16.9818 0.883725 16.6079 0.633826 16.1963 0.463329C15.7847 0.292832 15.3436 0.205078 14.8981 0.205078C14.4527 0.205078 14.0115 0.292832 13.6 0.463329C13.1884 0.633826 12.8145 0.883725 12.4995 1.19876L2.31227 11.386C1.82844 11.8701 1.48342 12.4753 1.31322 13.1382L0.187342 17.5201C0.159422 17.6291 0.160421 17.7435 0.190242 17.852C0.220063 17.9606 0.277673 18.0594 0.357384 18.1389C0.437096 18.2183 0.536151 18.2756 0.64477 18.3051C0.753389 18.3345 0.867815 18.3352 0.976749 18.3069L5.35731 17.1823C6.02039 17.0124 6.62559 16.6673 7.10954 16.1833L17.2968 5.99602C17.6118 5.68105 17.8617 5.30711 18.0322 4.89555C18.2027 4.48398 18.2905 4.04287 18.2905 3.59739C18.2905 3.15191 18.2027 2.71079 18.0322 2.29923C17.8617 1.88767 17.6118 1.51373 17.2968 1.19876ZM13.4144 2.11369C13.8079 1.72019 14.3416 1.49912 14.8981 1.49912C15.4546 1.49912 15.9883 1.72019 16.3818 2.11369C16.7753 2.50719 16.9964 3.0409 16.9964 3.59739C16.9964 4.15388 16.7753 4.68759 16.3818 5.08109L15.3737 6.0892L12.4063 3.1218L13.4144 2.11369ZM11.4914 4.03674L14.4588 7.00414L6.1946 15.2683C5.87415 15.5882 5.4737 15.8161 5.03508 15.9283L1.7131 16.7824L2.56721 13.4605C2.6786 13.0215 2.90665 12.6208 3.22721 12.3009L11.4914 4.03674Z" fill="black"/>
-                </svg>
-                <h5 id="edit-button-text">edit</h5>
-            </button>
             <h3 id="profile-h3">Cooking Level: MasterChef</h3>
             <div class="crown-icon">&#128081;</div>
-            <svg id="mail-icon" width="18" height="18" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.4375 3.90625H1.5625C1.1481 3.90625 0.750671 4.07087 0.457646 4.3639C0.16462 4.65692 0 5.05435 0 5.46875L0 19.5312C0 19.9457 0.16462 20.3431 0.457646 20.6361C0.750671 20.9291 1.1481 21.0938 1.5625 21.0938H23.4375C23.8519 21.0938 24.2493 20.9291 24.5424 20.6361C24.8354 20.3431 25 19.9457 25 19.5312V5.46875C25 5.05435 24.8354 4.65692 24.5424 4.3639C24.2493 4.07087 23.8519 3.90625 23.4375 3.90625ZM21.4062 5.85938L13.1562 13.375C12.9774 13.5397 12.7431 13.6311 12.5 13.6311C12.2569 13.6311 12.0226 13.5397 11.8438 13.375L3.59375 5.85938H21.4062ZM1.95312 19.1406V7L10.5312 14.8125C11.0678 15.3066 11.7706 15.5809 12.5 15.5809C13.2294 15.5809 13.9322 15.3066 14.4688 14.8125L23.0469 7V19.1406H1.95312Z" fill="black"/>
-            </svg>
-            <h4 id="profile-h4">fuegooooforever@gmail.com</h4>
             <div class="profile-toggle">
                 <div id="profile-my-recipes-button" class="profile-toggle-button active">
                     <svg id="my-recipes-icon" width="30" height="30" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">
