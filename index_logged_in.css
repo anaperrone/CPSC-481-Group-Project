@@ -698,6 +698,10 @@ img {
     stroke: white;
 }
 
+.hidden {
+    display: none;
+}
+
 .profile-toggle-button.active #my-private-recipes-icon path {
     fill: white;
 }
