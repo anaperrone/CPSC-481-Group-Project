@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleCard(card, card.getAttribute("data-category"));
       });
 
-      card.style.cursor = "pointer"; // Add pointer cursor to indicate clickability
-      card.addEventListener("click", function () {
+      image.style.cursor = "pointer"; 
+      image.addEventListener("click", function () {
         // Invoke the provided click callback with the card data
         clickCallback(data);
       });
@@ -164,15 +164,15 @@ document.addEventListener("DOMContentLoaded", function () {
         <h2 id="recipe-ingredients">Recipe Ingredients:</h2>
         <input type="text" id="recipe-ingredients-input" placeholder="Enter an ingredient then hit return, do this for all recipe ingredients...">
         <div id="ingredients-list">
-            <div class="ingredient-tag">Flour<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Eggs<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Salt<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Butter<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Shortening<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Apples<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Sugar<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Cinnamon<button class="remove-button"></button></div>
-            <div class="ingredient-tag">Water<button class="remove-button"></button></div>
+            <div class="ingredient-tag">Flour<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Eggs<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Salt<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Butter<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Shortening<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Apples<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Sugar<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Cinnamon<button class="remove-button">×</button></div>
+            <div class="ingredient-tag">Water<button class="remove-button">×</button></div>
         </div>
         <h2 id="recipe-measurements">Enter Recipe Measurements:</h2>
         <ul id="measurements-list">

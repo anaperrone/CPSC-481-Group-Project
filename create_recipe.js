@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         stepInput.classList.add("recipe-step-input-container");
     
         const stepNumberSpan = document.createElement("span");
-        stepNumberSpan.textContent = `${stepNumber}.`;
+        stepNumberSpan.textContent = `${calculateStepNumber()}.`;
     
         const inputField = document.createElement("input");
         inputField.type = "text";
@@ -100,18 +100,23 @@ document.addEventListener("DOMContentLoaded", function () {
         fileInput.addEventListener("change", function () {
             handleImageUpload(fileInput);
         });
+
+        const removeButton = document.createElement("button");
+        removeButton.classList.add("step-remove-button");
+        removeButton.innerHTML = "&times;"; // × symbol
+        removeButton.addEventListener("click", function () {
+            stepInput.remove();
+        });
     
         // Append step number, input field, and file input to the container
         stepInput.appendChild(stepNumberSpan);
         stepInput.appendChild(inputField);
+        stepInput.appendChild(removeButton);
         stepInput.appendChild(fileSpan);
         stepInput.appendChild(fileInput);
     
         // Insert the new step input above the button
         instructionsList.insertBefore(stepInput, addStepButton);
-    
-        // Increment the step number for the next step
-        stepNumber++;
     
         // Clear the input values for the next step
         inputField.value = "";
@@ -119,6 +124,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
         instructionsList.scrollTop = instructionsList.scrollHeight;
     }
+
+    function calculateStepNumber() {
+        const stepInputs = instructionsList.querySelectorAll('.recipe-step-input-container');
+        return stepInputs.length + 1;
+    }
+
+    function updateStepNumbers() {
+        const stepInputs = instructionsList.querySelectorAll('.recipe-step-input-container');
+        stepInputs.forEach((stepInput, index) => {
+            const stepNumberSpan = stepInput.querySelector('span');
+            if (stepNumberSpan) {
+                stepNumberSpan.textContent = `${index + 1}.`;
+            }
+        });
+    }
+    
+    instructionsList.addEventListener('click', function (event) {
+        const removeButton = event.target.closest('.step-remove-button');
+        if (removeButton) {
+            const stepInput = removeButton.closest('.recipe-step-input-container');
+            if (stepInput) {
+                stepInput.remove();
+                updateStepNumbers();
+            }
+        }
+    });
+    
     
 });
 

@@ -1173,9 +1173,19 @@ input:checked+.slider:before {
     width: 480px;
 }
 
-.recipe-image-input {
-    background-color: #FFFFFF;
-    border: #9747FF;
+.step-remove-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #ed0a0a;
+    font-weight: bold;
+    font-size: 25px;
+    top: 8px;
+    margin-right: 15px;
+}
+
+.recipe-step-image-input {
+    width: 200px;
 }
 
 #recipe-prep-time {
