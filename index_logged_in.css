@@ -306,7 +306,7 @@ body {
 #profile-button:hover,
 #favorites-button:hover,
 #create-recipe-button:hover,
-#about-button:hover, 
+#about-button:hover,
 #help-button:hover,
 #community-button:hover {
     background: linear-gradient(to bottom right, rgba(151, 71, 255, 0.3), rgba(5, 0, 255, 0.3));
@@ -341,7 +341,18 @@ body {
     top: 20px;
 }
 
-#moveLeftAppetizer, #moveRightAppetizer, #moveLeftMain, #moveRightMain, #moveLeftDessert, #moveRightDessert, #moveLeftAppetizer-favourites, #moveRightAppetizer-favourites, #moveLeftMain-favourites, #moveRightMain-favourites, #moveLeftDessert-favourites, #moveRightDessert-favourites {
+#moveLeftAppetizer,
+#moveRightAppetizer,
+#moveLeftMain,
+#moveRightMain,
+#moveLeftDessert,
+#moveRightDessert,
+#moveLeftAppetizer-favourites,
+#moveRightAppetizer-favourites,
+#moveLeftMain-favourites,
+#moveRightMain-favourites,
+#moveLeftDessert-favourites,
+#moveRightDessert-favourites {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -352,37 +363,37 @@ body {
     cursor: pointer;
     position: relative;
 }
-  
+
 #moveLeftAppetizer {
     top: 235px;
     left: 357px;
     z-index: 2;
 }
-  
+
 #moveRightAppetizer {
     top: 235px;
     left: 1267px;
     z-index: 2;
 }
-  
+
 #moveLeftMain {
     top: 404px;
     left: 257px;
     z-index: 2;
 }
-  
+
 #moveRightMain {
     top: 404px;
     left: 1167px;
     z-index: 2;
 }
-  
+
 #moveLeftDessert {
     top: 567px;
     left: 157px;
     z-index: 2;
 }
-  
+
 #moveRightDessert {
     top: 567px;
     left: 1067px;
@@ -393,33 +404,44 @@ body {
     top: -480px;
     left: -480px;
 }
-  
+
 #moveRightAppetizer-favourites {
     top: -530px;
     left: 507px;
 }
-  
+
 #moveLeftMain-favourites {
     top: -390px;
     left: -480px;
 }
-  
+
 #moveRightMain-favourites {
     top: -440px;
     left: 507px;
 }
-  
+
 #moveLeftDessert-favourites {
     top: -303px;
     left: -480px;
 }
-  
+
 #moveRightDessert-favourites {
     top: -355px;
     left: 507px;
 }
-  
-#moveLeftAppetizer::before, #moveRightAppetizer::before, #moveLeftMain::before, #moveRightMain::before, #moveLeftDessert::before, #moveRightDessert::before, #moveLeftAppetizer-favourites::before, #moveRightAppetizer-favourites::before, #moveLeftMain-favourites::before, #moveRightMain-favourites::before, #moveLeftDessert-favourites::before, #moveRightDessert-favourites::before {
+
+#moveLeftAppetizer::before,
+#moveRightAppetizer::before,
+#moveLeftMain::before,
+#moveRightMain::before,
+#moveLeftDessert::before,
+#moveRightDessert::before,
+#moveLeftAppetizer-favourites::before,
+#moveRightAppetizer-favourites::before,
+#moveLeftMain-favourites::before,
+#moveRightMain-favourites::before,
+#moveLeftDessert-favourites::before,
+#moveRightDessert-favourites::before {
     content: '<';
     position: absolute;
     top: 50%;
@@ -427,17 +449,22 @@ body {
     transform: translate(-50%, -50%);
     font-weight: bold;
 }
-  
-#moveRightAppetizer::before, #moveRightMain::before, #moveRightDessert::before, #moveRightAppetizer-favourites::before, #moveRightMain-favourites::before, #moveRightDessert-favourites::before {
+
+#moveRightAppetizer::before,
+#moveRightMain::before,
+#moveRightDessert::before,
+#moveRightAppetizer-favourites::before,
+#moveRightMain-favourites::before,
+#moveRightDessert-favourites::before {
     content: '>';
 }
-  
+
 .search-container {
     position: relative;
     margin-top: 80px;
     margin-right: 240px;
 }
-    
+
 .search-bar {
     font-family: 'Inter';
     padding: 10px;
@@ -446,7 +473,7 @@ body {
     font-size: 16px;
     width: 650px;
 }
-    
+
 .search-icon {
     position: absolute;
     top: 50%;
@@ -456,14 +483,14 @@ body {
     cursor: pointer;
     font-size: 18px;
 }
-  
+
 .dropdown-container {
     position: absolute;
     top: 50%;
     right: -250px;
     transform: translateY(-50%);
 }
-    
+
 .diet-dropdown {
     font-family: 'Inter';
     padding: 8px;
@@ -473,12 +500,12 @@ body {
     height: 47px;
     color: #9747FF;
 }
-    
+
 .diet-dropdown::after {
     content: '\25BC';
     margin-left: 8px;
 }
-  
+
 .card {
     font-family: 'Inter';
     min-width: 190px;
@@ -511,7 +538,7 @@ img {
     position: relative;
     background-color: #fff;
 }
-    
+
 .author {
     font-weight: bold;
     position: absolute;
@@ -533,7 +560,7 @@ img {
     top: 0;
     right: 0;
 }
-  
+
 #cards-container {
     margin: 0 auto;
     margin-top: -7px;
@@ -559,7 +586,7 @@ img {
     top: 293px;
     left: 30px;
 }
-  
+
 #Desserts {
     position: absolute;
     top: 469px;
@@ -578,7 +605,7 @@ img {
     filter: grayscale(100%);
 }
 
-#profile-image:hover{
+#profile-image:hover {
     filter: grayscale(0%);
 }
 
@@ -756,12 +783,12 @@ img {
     overflow: hidden;
     border-radius: 10px;
 }
-  
+
 .image-container-favourites {
     height: 110px;
     overflow: hidden;
 }
-  
+
 .details-container-favourites {
     padding: 8px;
     display: flex;
@@ -769,7 +796,7 @@ img {
     position: relative;
     background-color: #fff;
 }
-  
+
 .author-favourites {
     font-weight: bold;
     position: absolute;
@@ -784,7 +811,7 @@ img {
     margin-top: 10px;
     margin-left: -8px;
 }
-  
+
 .rating-favourites {
     color: #f1c40f;
     position: absolute;
@@ -795,7 +822,7 @@ img {
 .category-container-favourites {
     display: flex;
     margin-left: 90px;
-    margin-top: 36px; 
+    margin-top: 36px;
     overflow-x: scroll;
     overflow: hidden;
     width: 1000px;
@@ -896,11 +923,11 @@ img {
     border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #9747FF;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(26px);
 }
 
@@ -926,7 +953,7 @@ input:checked + .slider:before {
     font-family: 'Inter';
     font-weight: 700;
     font-size: 14px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     position: absolute;
     top: 225px;
     border-radius: 5px;
@@ -980,14 +1007,14 @@ input:checked + .slider:before {
     border: 1px solid black;
     border-radius: 10px;
     padding: 8px;
-    height:100px;
+    height: 100px;
     width: 605px;
     position: absolute;
     top: 465px;
     left: 350px;
     white-space: pre-wrap;
-    overflow-y: auto; 
-    resize: none; 
+    overflow-y: auto;
+    resize: none;
 }
 
 #recipe-category-question {
@@ -1148,7 +1175,7 @@ input:checked + .slider:before {
 
 .recipe-image-input {
     background-color: #FFFFFF;
-    border:#9747FF;
+    border: #9747FF;
 }
 
 #recipe-prep-time {
@@ -1253,7 +1280,7 @@ input:checked + .slider:before {
     left: 425px;
     width: 100px;
     height: 40px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-family: 'Inter';
     font-weight: 900;
     font-size: 16px;
@@ -1268,7 +1295,7 @@ input:checked + .slider:before {
     left: 545px;
     width: 100px;
     height: 40px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-family: 'Inter';
     font-weight: 900;
     font-size: 16px;
@@ -1278,7 +1305,7 @@ input:checked + .slider:before {
 }
 
 .spacer {
-    color:#FFFFFF;
+    color: #FFFFFF;
     height: 30px;
     position: absolute;
     top: 1880px;
@@ -1309,30 +1336,55 @@ input:checked + .slider:before {
     left: 95px;
 }
 
+
+
+
 .category-container2 {
     display: flex;
-    flex-direction: row;
-    overflow-y: scroll;
-    overflow: visible;
-    width: 800px;
-    margin-top: 140px;
-    transition: all 0.4s ease-in-out;
-    
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* This will make sure all cards stretch to the same height */
+    justify-content: space-evenly;
+    /* This will add space between the cards horizontally */
+    gap: 20px;
+    /* This creates space between the flex items */
+    margin-top: 10rem;
 }
+
+.card-community {
+    display: flex;
+    flex-direction: column;
+    /* Arrange content from top to bottom */
+    justify-content: space-between;
+    /* This will push the content to top and bottom */
+    flex: 0 0 calc(25% - 20px);
+    /* Adjust the width to account for the margin */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    /* Add some space between the rows */
+    margin-right: 10px;
+    /* Add some space to the right of each card */
+}
+
+/* This ensures that the right margin is not applied to the last card in the row */
+.card-community:nth-child(4n) {
+    margin-right: 0;
+}
+
 
 .friend-search-container {
     position: relative;
     top: 80px;
 }
-    
+
 .friend-search-bar {
     padding: 10px;
     border: 2px solid #9747FF;
-    border-radius: 20px; 
+    border-radius: 20px;
     font-size: 16px;
-    width: 870px; 
+    width: 870px;
 }
-    
+
 .friend-search-icon {
     position: absolute;
     top: 50%;
@@ -1346,13 +1398,13 @@ input:checked + .slider:before {
     background: none;
 }
 
-.card-community {
+/* .card-community {
     width: 150px;
     height: 110px;
     margin: 20px;
     overflow: hidden;
     border-radius: 10px;
-}
+} */
 
 .card-community:hover {
     border: 1px solid black;
@@ -1389,12 +1441,12 @@ input:checked + .slider:before {
 }
 
 #first-line {
-    position:absolute;
+    position: absolute;
     top: 175px;
     width: 900px;
     height: 1px;
-    border-width:0;
-    background-color:#000000;
+    border-width: 0;
+    background-color: #000000;
 }
 
 #about-h3 {
@@ -1408,18 +1460,18 @@ input:checked + .slider:before {
 }
 
 #second-line {
-    position:absolute;
+    position: absolute;
     top: 250px;
     width: 900px;
     height: 1px;
-    border-width:0;
-    background-color:#000000;
+    border-width: 0;
+    background-color: #000000;
 }
 
 #about-h4 {
     font-size: 18px;
     font-weight: 200;
-    position:absolute;
+    position: absolute;
     left: 98px;
     top: 285px;
     text-align: left;
@@ -1460,7 +1512,7 @@ input:checked + .slider:before {
     position: absolute;
     top: 20px;
 }
-  
+
 #help-p {
     font-weight: 200;
     color: #000000;
@@ -1489,7 +1541,8 @@ input:checked + .slider:before {
 
 #help-first-row {
     flex-direction: row;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
+    ;
 }
 
 #help-form-name {
@@ -1527,7 +1580,7 @@ input:checked + .slider:before {
     top: 700px;
     width: 150px;
     height: 40px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-family: 'Inter';
     font-weight: 900;
     font-size: 16px;
@@ -1576,11 +1629,11 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-.profile-switch input:checked + .profile-slider {
+.profile-switch input:checked+.profile-slider {
     background-color: #9747FF;
 }
 
-.profile-switch input:checked + .profile-slider:before {
+.profile-switch input:checked+.profile-slider:before {
     transform: translateX(20px);
 }
 
