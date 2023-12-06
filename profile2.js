@@ -41,13 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
     friendsButton.classList.add("active");
   });
 
-  // fetch("./data.json")
-  //   .then(function (resp) {
-  //     return resp.json();
-  //   })
-  //   .then(function (data1) {
-  //     makeCards(data1);
-  //   });
+  //   fetch("./data.json")
+  // .then(function (resp) {
+  //   return resp.json();
+  // })
+  // .then(function (data1) {
+  //   makeCards(data1);
+  // });
 
   const categories = {
     MyRecipe: cardsContainer1,
@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function createCard(data, toggleCardCallback) {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.setAttribute("data-category", data.category); // Set the initial category attribute
 
     const cardLink = document.createElement("a");
     cardLink.href = data.href || "#";
@@ -90,32 +89,35 @@ document.addEventListener("DOMContentLoaded", function () {
     rating.classList.add("rating");
     rating.innerHTML = getStarRating(data.star);
 
-    const toggleContainer = document.createElement("label");
-    toggleContainer.classList.add("profile-switch");
+    // Adding toggle functionality only for "MyRecipe" and "PersonalRecipe" categories
+    if (data.category !== "Friend") {
+      const toggleContainer = document.createElement("label");
+      toggleContainer.classList.add("profile-switch");
 
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    input.classList.add("profile-toggle-checkbox");
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.classList.add("profile-toggle-checkbox");
 
-    const sliderSpan = document.createElement("span");
-    sliderSpan.classList.add("profile-slider", "round");
+      const sliderSpan = document.createElement("span");
+      sliderSpan.classList.add("profile-slider", "round");
 
-    toggleContainer.appendChild(input);
-    toggleContainer.appendChild(sliderSpan);
+      toggleContainer.appendChild(input);
+      toggleContainer.appendChild(sliderSpan);
+
+      detailsContainer.appendChild(toggleContainer);
+
+      input.addEventListener("change", function () {
+        toggleCardCallback(card, data.category);
+      });
+    }
 
     detailsContainer.appendChild(author);
     detailsContainer.appendChild(rating);
-    detailsContainer.appendChild(toggleContainer);
 
     cardLink.appendChild(imageContainer);
     cardLink.appendChild(detailsContainer);
 
     card.appendChild(cardLink);
-
-    input.addEventListener("change", function () {
-      // Pass the current category from the card's data-category attribute
-      toggleCardCallback(card, card.getAttribute("data-category"));
-    });
 
     return card;
   }
@@ -128,41 +130,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initializeCard(card, initialCategory) {
     const checkbox = card.querySelector(".profile-toggle-checkbox");
+    if (checkbox) {
+      checkbox.checked = initialCategory === "MyRecipe";
+      if (checkbox.checked) {
+        card.classList.add("active");
+      }
+      updateToggleColor(card);
+    }
+  }
 
-    checkbox.checked = initialCategory === "MyRecipe";
+  function toggleCard(card, currentCategory) {
+    // Determine the target category based on the current state of the toggle
+    const checkbox = card.querySelector(".profile-toggle-checkbox");
+    const targetCategory = checkbox.checked ? "PersonalRecipe" : "MyRecipe";
+    const targetContainer = categories[targetCategory];
 
-    if (checkbox.checked) {
-      card.classList.add("active");
-    } else {
-      card.classList.remove("active");
+    // Check if the card is already in the right container
+    if (targetContainer !== card.parentNode) {
+      // Remove the card from its current container
+      card.remove();
+
+      // Append the card to the target container
+      targetContainer.appendChild(card);
     }
 
     updateToggleColor(card);
   }
-
-  function toggleCard(card, currentCategory) {
-    const newCategory =
-      currentCategory === "MyRecipe" ? "PersonalRecipe" : "MyRecipe";
-    card.setAttribute("data-category", newCategory); // Update the category attribute
-
-    card.classList.toggle("active");
-
-    // Move the card to the target container
-    const targetContainer = categories[newCategory];
-    card.remove();
-    targetContainer.appendChild(card);
-
-    updateToggleColor(card);
-  }
-
   function updateToggleColor(card) {
     const checkbox = card.querySelector(".profile-toggle-checkbox");
     const slider = card.querySelector(".profile-slider");
 
-    if (checkbox.checked) {
-      slider.style.backgroundColor = "#9747FF"; // Color for 'My Recipe'
-    } else {
-      slider.style.backgroundColor = "#ccc"; // Color for 'Private Recipe'
+    if (checkbox && slider) {
+      const isActive = card.classList.contains("active");
+      if (isActive) {
+        slider.style.backgroundColor = "#9747FF";
+      } else {
+        slider.style.backgroundColor = "#ccc";
+      }
     }
   }
 });

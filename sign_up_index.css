@@ -550,19 +550,19 @@ img {
 
 #Appetizers {
     position: absolute;
-    top: 124px;
+    top: 130px;
     left: 30px;
 }
 
 #MainDishes {
     position: absolute;
-    top: 293px;
+    top: 300px;
     left: 30px;
 }
   
 #Desserts {
     position: absolute;
-    top: 469px;
+    top: 475px;
     left: 30px;
 }
 
@@ -572,8 +572,8 @@ img {
     position: absolute;
     top: 60px;
     left: 60px;
-    width: 150px;
-    height: 150px;
+    width: 165px;
+    height: 165px;
     transition: all 0.4s ease-in-out;
     filter: grayscale(100%);
 }
@@ -594,7 +594,7 @@ img {
 #edit-profile-button {
     position: absolute;
     top: 90px;
-    left: 430px;
+    left: 445px;
     width: 50px;
     height: 25px;
     border-radius: 15px;
@@ -626,16 +626,16 @@ img {
     left: 235px;
 }
 
-.crown-icon {
+.seedling-icon {
     position: absolute;
     top: 128px;
-    left: 600px;
+    left: 555px;
     font-size: 29px;
 }
 
 #mail-icon {
     position: absolute;
-    top: 180px;
+    top: 178px;
     left: 235px;
 }
 
@@ -696,10 +696,6 @@ img {
 
 .profile-toggle-button.active #my-recipes-icon path {
     stroke: white;
-}
-
-.hidden {
-    display: none;
 }
 
 .profile-toggle-button.active #my-private-recipes-icon path {

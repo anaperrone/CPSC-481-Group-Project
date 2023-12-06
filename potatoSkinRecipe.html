@@ -13,7 +13,7 @@
                 <link rel="stylesheet" href="viewRecipe.css">         
         </head>
         <body style="background-color: whitesmoke;">
-            <title id="viewRecipeName"> Crepes </title>
+            <title id="viewRecipeName"> Potato Skins </title>
             <nav style="position: fixed; top:2px; left: 0; right: 0;">
                 <a onclick="window.history.go(-1); return false;" style="cursor: pointer;">
                     <img src ="assets/left arrow icon.png" alt="Go back" width="35px" height="35px"/>
@@ -60,20 +60,20 @@
                     <td>
                         <div style="margin-right:40px; margin-left: 40px;">
                             <p class="cookTimeAlign">Cook Time </p>
-                            <p class="cookTimeAlignInner">20 minutes</p>
+                            <p class="cookTimeAlignInner">125 minutes</p>
                         </div>
                     </td>
                     <td>
                         <div style="margin-right:80px; margin-left: 40px;">
                             <p class="cookTimeAlign">Total Time </p>
-                            <p class="cookTimeAlignInner">30 minutes</p>
+                            <p class="cookTimeAlignInner">135 minutes</p>
                         </div>
                     </td>
                 </table>
             </div>
 
             <div style="width: 800px; height: 100px; background-color: rgb(255, 255, 255); font-size: 20px; font-family: 'Inter', sans-serif;margin-top: 10px;" class="center">
-                <p> A quick and easy dish. </p>
+                <p> Embark on a culinary journey with our Ultimate Potato Skins Extravaganza, a tantalizing experience that brings together the humble potato and a symphony of flavors. These meticulously crafted potato skins are a culinary masterpiece, destined to be the star of your next gathering.</p>
             </div>
             <h2>Tags: 
                 <div id="tagParent" style="display: inline-block;">
@@ -198,15 +198,12 @@
                             }
                         }
                     }
-
                                     gramToCups.style.display="block";
-                                    cupsToGrams.style.display="block";
-                                    
+                                    cupsToGrams.style.display="block";      
                     </script>
-                
             <h2> Instructions:</h2>
                     <script>
-                        const instructionJ='[{"instruction":"Thoroughly wash the potatoes and use oven or microwave to cook them. If you are using a oven pierce ur potato a few times and rub with olive oil to bake at 350 degrees fahrenheit ","image":"https://www.seriouseats.com/thmb/LzxTtiSph4jdjlvCrKNBrUrmDIM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__10__20161004-baked-potato-vicky-wasik-3-1500x1125-5fae257054de4aedb5649c9b4ae79f85.jpg"},{"instruction":"Once potatoes have cooked cut them in half and let them cool. Once they have finished cooling scoop them out into a bowl to save for later","image":"https://www.allrecipes.com/thmb/WgKjs40vRgXHbsS-WH4uu9CWHvA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/24332-ultimate-twice-baked-potato-DDMFS-step-04-1603-24ea1395b2804e2da24fa1dd805c44df.jpg"},{"instruction":" Put the potatoes onto a baking rack and let them cook on each side for 10 mins in the oven for 400 degrees fahrenheit","image":""},{"instruction":" Once they have finished baking add ur cheese, season with salt and pepper and broil for 2 minutes. Feel free to use the potatoes you scooped out to be mixed with ur cheese and seasoning before stuffing the potato skins","image":""},{"instruction":"Serve the potatoes with sourcream and sliced green onion along with any of ur favourite toppings","image":""}]';                        
+                        const instructionJ='[{"instruction":"Thoroughly wash the potatoes and use oven or microwave to cook them. If you are using an oven pierce your potatoes a few times and rub with olive oil to bake at 350 degrees fahrenheit for 1 hour ","image":"https://www.seriouseats.com/thmb/LzxTtiSph4jdjlvCrKNBrUrmDIM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__10__20161004-baked-potato-vicky-wasik-3-1500x1125-5fae257054de4aedb5649c9b4ae79f85.jpg"},{"instruction":"Once potatoes have cooked cut them in half and let them cool. Once they have finished cooling scoop them out into a bowl to save for later","image":"https://www.allrecipes.com/thmb/WgKjs40vRgXHbsS-WH4uu9CWHvA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/24332-ultimate-twice-baked-potato-DDMFS-step-04-1603-24ea1395b2804e2da24fa1dd805c44df.jpg"},{"instruction":" Put the potatoes onto a baking rack and let them cook on each side for 10 mins in the oven for 400 degrees fahrenheit","image":""},{"instruction":" Once they have finished baking add ur cheese, season with salt and pepper and broil for 2 minutes. Feel free to use the potatoes you scooped out earlier to create a potato, cheese, and seasoning mixture before stuffing the potato skins","image":""},{"instruction":"Serve the potatoes with sour cream and sliced green onion along with any of ur favourite toppings","image":""}]';                        
                         const instructionAr = JSON.parse(instructionJ);
                     </script>
                 <div style="align-content: center; margin-bottom: 5px; margin-top: 15px; display: flex;" id="startFollowDiv">

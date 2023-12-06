@@ -138,8 +138,7 @@ function signup(event) {
   // Store new user
   users[username] = { password: password, fullName: fullname };
   localStorage.setItem("users", JSON.stringify(users));
-
-  window.location.href = "sign-up-index.html";
+  window.location.href = "sign_up_index.html";
   // Clear the form (or redirect the user, show a success message, etc.)
   document.getElementById("signup-fullname").value = "";
   document.getElementById("signup-username").value = "";

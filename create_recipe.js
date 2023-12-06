@@ -123,12 +123,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addToMainPage() {
-    var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
-    var selectedRestrictions = [];
-    dietaryRestrictions.forEach(function (checkbox) {
-        selectedRestrictions.push(checkbox.value);
-    });
-    const restrictions = selectedRestrictions.join(',');
+    var checkedBox = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    
+    var dietaryRestrictions = "none";
+    if(checkedBox.length > 0){
+        dietaryRestrictions = checkedBox[0].value;
+    }
+    // console.log(dietaryRestrictions);
+    // var selectedRestrictions = [];
+    // dietaryRestrictions.forEach(function (checkbox) {
+    //     selectedRestrictions.push(checkbox.value);
+    // });
+    // const restrictions = selectedRestrictions.join(',');
 
     var categorySelect = document.getElementById('recipe-category-select');
     var selectedOption = categorySelect.options[categorySelect.selectedIndex];
@@ -140,27 +146,43 @@ function addToMainPage() {
     const image = document.getElementById("uploaded-image").src;
     //console.log(image);
 
-    const data = {"dietaryRestrictions":restrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
+    
+    var isPublicRecipe = document.getElementById("toggleBtn").checked;
+
+    const data = {"private":!isPublicRecipe, "dietaryRestrictions":dietaryRestrictions, "title":title, "favourites":"False", "star":"0", "category":category, "image": image, "author": author, "href":href};
     
     const card = createNewCard(data);
     
-    document.getElementById("home-button").click();
-    if(category == "Appetizers"){
-        document.getElementById('cards-container').getElementsByClassName('category-container')[0].appendChild(card);
-    } else if(category == "MainDishes"){
-        document.getElementById('cards-container').getElementsByClassName('category-container')[1].appendChild(card);
+    if(isPublicRecipe){
+        document.getElementById("home-button").click();
+        if(category == "Appetizers"){
+            document.getElementById('cards-container').getElementsByClassName('category-container')[0].appendChild(card);
+        } else if(category == "MainDishes"){
+            document.getElementById('cards-container').getElementsByClassName('category-container')[1].appendChild(card);
+        } else{
+            document.getElementById('cards-container').getElementsByClassName('category-container')[2].appendChild(card);
+        }
+        addToProfilePageMyRecipes();
     } else{
-        document.getElementById('cards-container').getElementsByClassName('category-container')[2].appendChild(card);
+        addToProfilePage();
     }
 }
 
-function addToProfilePage() {
-    var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
-    var selectedRestrictions = [];
-    dietaryRestrictions.forEach(function (checkbox) {
-        selectedRestrictions.push(checkbox.value);
-    });
-    const restrictions = selectedRestrictions.join(',');
+function addToProfilePageMyRecipes() {
+
+    var checkedBox = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    
+    var dietaryRestrictions = "none";
+    if(checkedBox.length > 0){
+        dietaryRestrictions = checkedBox[0].value;
+    }
+
+    // var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    // var selectedRestrictions = [];
+    // dietaryRestrictions.forEach(function (checkbox) {
+    //     selectedRestrictions.push(checkbox.value);
+    // });
+    // const restrictions = selectedRestrictions.join(',');
 
     var categorySelect = document.getElementById('recipe-category-select');
     var selectedOption = categorySelect.options[categorySelect.selectedIndex];
@@ -172,7 +194,39 @@ function addToProfilePage() {
     const image = document.getElementById("uploaded-image").src;
     //console.log(image);
 
-    const data = {"dietaryRestrictions":restrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
+    const data = {"private":"false", "dietaryRestrictions":dietaryRestrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
+    
+    const card = createNewCard(data);
+    
+    document.getElementById('profile-my-recipes-content').appendChild(card);
+}
+
+function addToProfilePage() {
+    var checkedBox = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    
+    var dietaryRestrictions = "none";
+    if(checkedBox.length > 0){
+        dietaryRestrictions = checkedBox[0].value;
+    }
+    
+    // var dietaryRestrictions = document.querySelectorAll('input[name="recipe-restriction[]"]:checked');
+    // var selectedRestrictions = [];
+    // dietaryRestrictions.forEach(function (checkbox) {
+    //     selectedRestrictions.push(checkbox.value);
+    // });
+    // const restrictions = selectedRestrictions.join(',');
+
+    var categorySelect = document.getElementById('recipe-category-select');
+    var selectedOption = categorySelect.options[categorySelect.selectedIndex];
+
+    const title = document.getElementById("recipe-title-input").value;
+    const category = "PersonalRecipe";
+    const author = document.getElementById("profile-h2").textContent;
+    const href = (author + title).replace(/\s+/g, '') + ".html";
+    const image = document.getElementById("uploaded-image").src;
+    //console.log(image);
+
+    const data = {"private":"false", "dietaryRestrictions":dietaryRestrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
     
     const card = createNewCard(data);
     
