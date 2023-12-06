@@ -376,7 +376,54 @@ function gramsToLb(textMeasurement){
         }
     }   
 }
+function tbspToTsp(textMeasurement){
+    const MeasurementArr = JSON.parse(textMeasurement);
+    for(var i=0; i < MeasurementArr.length; i++){
+        var outerUnitId = "unit"+i;
+        var outerNumderId = "number"+i;
+        var outerNumderDiv = document.getElementById(outerNumderId);
+        var outerUnit=document.getElementById(outerUnitId);
+        console.log(outerUnitId);
+       
+        if(outerUnit.innerHTML!=" "){
 
+            if(outerUnit.innerHTML== " tbsp "){
+                console.log("REACHED");
+                
+                var conversionIs = Number((parseFloat(outerNumderDiv.innerHTML)*3).toFixed(2));
+                outerNumderDiv.innerHTML=conversionIs;
+               
+                    newUnit=" tsp ";
+               
+                outerUnit.innerHTML=newUnit;
+            }
+        }
+    }   
+}
+function tspToTbsp(textMeasurement){
+    const MeasurementArr = JSON.parse(textMeasurement);
+    for(var i=0; i < MeasurementArr.length; i++){
+        var outerUnitId = "unit"+i;
+        var outerNumderId = "number"+i;
+        var outerNumderDiv = document.getElementById(outerNumderId);
+        var outerUnit=document.getElementById(outerUnitId);
+        console.log(outerUnitId);
+       
+        if(outerUnit.innerHTML!=" "){
+
+            if(outerUnit.innerHTML== " tsp "){
+                console.log("REACHED");
+                
+                var conversionIs = Number((parseFloat(outerNumderDiv.innerHTML)/3).toFixed(2));
+                outerNumderDiv.innerHTML=conversionIs;
+               
+                    newUnit=" tbsp ";
+               
+                outerUnit.innerHTML=newUnit;
+            }
+        }
+    }   
+}
 
 
 
