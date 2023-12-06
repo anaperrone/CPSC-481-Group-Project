@@ -206,7 +206,7 @@
         <div id="create-recipe-content" class="content">
             <h1 id="create-recipe-h1">Create New Recipe</h1>
                 <h2 id="recipe-title">Recipe Title:</h2>
-                <input type="text" id="recipe-title-input" name="recipe-title" placeholder="Enter recipe title here..."><br>
+                <input type="text" id="recipe-title-input" name="recipe-title" placeholder="Enter recipe title here..." required><br>
                 <div class="visibility-toggle">
                     <label class="toggle">
                         <input type="checkbox" id="toggleBtn">
@@ -257,7 +257,7 @@
                         }
                 </script>
                 <h2 id="recipe-description">Recipe Description:</h2>
-                <textarea type="text" id="recipe-description-input" name="recipe-description" placeholder="Enter description here..."></textarea>
+                <textarea type="text" id="recipe-description-input" name="recipe-description" placeholder="Enter description here..." required></textarea>
                 <h2 id="recipe-category-question">How would you categorize your recipe?</h2>
                 <select id="recipe-category-select" name="recipe-category">
                     <option value="Appetizers">Appetizer</option>
@@ -291,33 +291,42 @@
                     <!-- Numbered recipe step inputs will be added here -->
                 </div>
                 <h2 id="recipe-prep-time">Enter Prep Time:</h2>
-                <input type="text" id="prep-time-input" placeholder="Enter prep time here...">
+                <input type="text" id="prep-time-input" placeholder="Enter prep time here..." required>
                 <h2 id="recipe-cook-time">Enter Cook Time:</h2>
                 <input type="text" id="cook-time-input" placeholder="Enter cook time here...">
                 <h2 id="recipe-total-time">Enter Total Recipe Time:</h2>
                 <input type="text" id="cook-total-input" placeholder="Enter total time here...">
                 <h2 id="recipe-restriction-question">Does your recipe satisfy any dietary restrictions?</h2>
                 <div id="recipe-restriction-checkboxes">
-                    <label>
+                    <label class="tooltip" for="restriction-option1">
                         <input type="checkbox" id="restriction-option1" name="recipe-restriction[]" value="lactose-free">
                         Lactose Free
+                        <img src="assets/followAlongToolIcon.png" style="width: 20px; height: 20px; display: inline; padding-left: 10px;">
+                        <span class="tooltiptext">Meals that do not contain lactose (the sugar found in milk and dairy)</span>
                     </label>
-                
-                    <label>
+                    
+                    <label class="tooltip" for="restriction-option2">
                         <input type="checkbox" id="restriction-option2" name="recipe-restriction[]" value="gluten-free">
                         Gluten Free
+                        <img src="assets/followAlongToolIcon.png" style="width: 20px; height: 20px; display: inline; padding-left: 10px;">
+                        <span class="tooltiptext">Meals that do not contain gluten, (proteins found in wheat and related grains, such as barley and rye)</span>
                     </label>
-                
-                    <label>
+                    
+                    <label class="tooltip" for="restriction-option3">
                         <input type="checkbox" id="restriction-option3" name="recipe-restriction[]" value="vegan">
                         Vegan
+                        <img src="assets/followAlongToolIcon.png" style="width: 20px; height: 20px; display: inline; padding-left: 10px;">
+                        <span class="tooltiptext">Plant-based meals that exclude all animal-derived ingredients, including meat, dairy, eggs, and honey.</span>
                     </label>
-                
-                    <label>
+                    
+                    <label class="tooltip" for="restriction-option4">
                         <input type="checkbox" id="restriction-option4" name="recipe-restriction[]" value="kosher">
                         Kosher
+                        <img src="assets/followAlongToolIcon.png" style="width: 20px; height: 20px; display: inline; padding-left: 10px;">
+                        <span class="tooltiptext">Meals that adhere to Jewish dietary laws (kashrut), e.g. cannot include pork or shellfish</span>
                     </label>
                 </div>
+                
                 <h2 id="recipe-restriction-message">Don't worry we will double check this for you!</h2>
                 <button id="draft-button" onclick="addToProfilePage()">Save Draft</button>
                 <button id="publish-button" onclick="addToMainPage()">PUBLISH</button>
