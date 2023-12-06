@@ -326,6 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <h2 id="profile-h2">Chef Fuego</h2>
             <h3 id="profile-h3">Cooking Level: MasterChef</h3>
             <div class="crown-icon">&#128081;</div>
+            <h4 id="profile-filled-h4">FOLLOWING</h4>
             <div class="profile-toggle">
                 <div id="profile-my-recipes-button" class="profile-toggle-button active">
                     <svg id="my-recipes-icon" width="30" height="30" viewBox="0 0 39 48" fill="none" xmlns="http://www.w3.org/2000/svg">

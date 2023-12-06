@@ -464,3 +464,19 @@ input:checked + .slider:before {
     top: 1880px;
     width: 100px;
 }
+
+#profile-filled-h4 {
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    top: 177px;
+    left: 240px;
+    color: white;
+    background-color: #9747FF;
+    border-radius: 10px;
+    width: 110px;
+    padding-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+
+}
