@@ -194,7 +194,7 @@ function addToProfilePageMyRecipes() {
     const image = document.getElementById("uploaded-image").src;
     //console.log(image);
 
-    const data = {"private":"false", "dietaryRestrictions":restrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
+    const data = {"private":"false", "dietaryRestrictions":dietaryRestrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
     
     const card = createNewCard(data);
     
@@ -226,7 +226,7 @@ function addToProfilePage() {
     const image = document.getElementById("uploaded-image").src;
     //console.log(image);
 
-    const data = {"private":"false", "dietaryRestrictions":restrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
+    const data = {"private":"false", "dietaryRestrictions":dietaryRestrictions, "title":"", "favourites":"False", "star":"0", "category":category, "image": image, "author": title, "href":href};
     
     const card = createNewCard(data);
     
