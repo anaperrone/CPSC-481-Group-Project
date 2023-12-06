@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title.classList.add('title');
         title.textContent = data.title;
 
-        // Star rating (you can customize this part based on your needs)
+        // Star rating 
         const rating = document.createElement('div');
         rating.classList.add('rating');
         rating.innerHTML = getNewStarRating(data.star); //'&#9733;&#9733;&#9733;&#9733;&#9733;';

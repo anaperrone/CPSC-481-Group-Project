@@ -59,7 +59,7 @@ function createCard(data) {
     title.classList.add('title-favourites');
     title.textContent = data.title;
 
-    // Star rating (you can customize this part based on your needs)
+    // Star rating
     const rating = document.createElement('div');
     rating.classList.add('rating-favourites');
     rating.innerHTML = getStarRating(data.star); //'&#9733;&#9733;&#9733;&#9733;&#9733;';
@@ -81,7 +81,7 @@ function createCard(data) {
 }
 
 function getStarRating(starValue) {
-    const filledStars = '★'.repeat(starValue); // Unicode character for a filled star
-    const emptyStars = '☆'.repeat(5 - starValue); // Unicode character for an empty star
+    const filledStars = '★'.repeat(starValue); 
+    const emptyStars = '☆'.repeat(5 - starValue); 
     return filledStars + emptyStars;
 }

@@ -32,9 +32,7 @@ h1 {
 .form-toggle button {
     background: none;
     border: 2px solid #9747FF;
-    /* Border color */
     color: #9747FF;
-    /* Text color */
     font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
@@ -46,7 +44,6 @@ h1 {
 .form-toggle button:disabled {
     color: white;
     background: #9747FF;
-    /* Button background color when active */
     cursor: default;
 }
 
@@ -57,7 +54,6 @@ h1 {
 
 .form-container {
     display: none;
-    /* Initially hide both forms */
 }
 
 .form-container h2 {
@@ -118,7 +114,6 @@ input[type="password"] {
     text-decoration: underline;
 }
 
-/* Initially active form */
 #signup-form {
     display: block;
 }
@@ -130,7 +125,6 @@ input[type="password"] {
     margin-top: -15px;
     margin-bottom: 10px;
     display: none;
-    /* Hide by default */
 }
 
 .form-toggle button.active {

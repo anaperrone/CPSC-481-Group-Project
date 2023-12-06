@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Target the container where you want to append the cards
+  // Target the container where we want to append the cards
   const cardsContainer = document.getElementById("cards-container-favourites");
 
   const textMeasurement =
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     title.classList.add("title-favourites");
     title.textContent = data.title;
 
-    // Star rating (you can customize this part based on your needs)
+    // Star rating
     const rating = document.createElement("div");
     rating.classList.add("rating-favourites");
     rating.innerHTML = getStarRating(data.star); //'&#9733;&#9733;&#9733;&#9733;&#9733;';
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getStarRating(starValue) {
-    const filledStars = "★".repeat(starValue); // Unicode character for a filled star
-    const emptyStars = "☆".repeat(5 - starValue); // Unicode character for an empty star
+    const filledStars = "★".repeat(starValue);
+    const emptyStars = "☆".repeat(5 - starValue);
     return filledStars + emptyStars;
   }
 });

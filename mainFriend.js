@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         author.classList.add('author');
         author.textContent = data.author;
 
-        // Star rating (you can customize this part based on your needs)
+        // Star rating 
         const rating = document.createElement('div');
         rating.classList.add('rating');
         rating.innerHTML = getStarRating(data.star); //'&#9733;&#9733;&#9733;&#9733;&#9733;';

@@ -124,11 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handleCardClick(data) {
-    // Update main-panel content or navigate to another section based on card data
+
     const mainPanel = document.getElementById("main-panel");
     const previousContent = mainPanel.innerHTML;
 
-    // Update main-panel content with the Recipe Detail Page
+
     mainPanel.innerHTML = `
         <link rel="stylesheet" type="text/css" href="create_recipe_filled_in.css">
         <button id="back-button">
@@ -287,11 +287,9 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     `;
 
-    // Add an event listener to the back button
     const backButton = document.getElementById("back-button");
     if (backButton) {
       backButton.addEventListener("click", function () {
-        // Restore the previous main-panel content
         mainPanel.innerHTML = previousContent;
         // Refresh the entire HTML page
         location.reload();

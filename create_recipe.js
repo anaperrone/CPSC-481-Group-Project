@@ -1,6 +1,7 @@
 const toggleBtn = document.getElementById('toggleBtn');
 const toggleText = document.getElementById('toggleText');
 
+// toggle button between public and private recipes
 toggleBtn.addEventListener('change', () => {
     toggleText.textContent = toggleBtn.checked ? 'Public recipe' : 'Private recipe';
 });
@@ -11,10 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const ingredientMeasurements = document.getElementById("measurements-list");
     const addStepButton = document.getElementById("add-step-button");
     const instructionsList = document.getElementById("instructions-list");
-    let stepNumber = 1; // Initialize step number
+    let stepNumber = 1;
 
     addDefaultIngredient();
 
+    // ingredient text bar that calls tag creator below it
     ingredientInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -30,11 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // example ingredients so there is not too much white space
     function addDefaultIngredient() {
         addIngredientTag("Example Ingredient");
         addIngredientMeasurement("Example Ingredient");
     }
 
+    // creating ingredient tags
     function addIngredientTag(ingredientName) {
         const tag = document.createElement("div");
         tag.classList.add("ingredient-tag");
@@ -52,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ingredientList.appendChild(tag);
     }
 
+    // creating measurement fields
     function addIngredientMeasurement(ingredientName) {
         const listItem = document.createElement("li");
         listItem.innerHTML = `
@@ -61,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ingredientMeasurements.appendChild(listItem);
     }
 
+    // function to remove measurements if tag is removed
     function removeIngredientMeasurement(ingredientName) {
         const items = ingredientMeasurements.getElementsByTagName("li");
         for (let i = 0; i < items.length; i++) {
@@ -74,10 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     addStepButton.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default form submission behavior
+        event.preventDefault();
         addRecipeStepInput();
     });
 
+    // function to create step inputs with necessary, step number, input field, remove button, and file input
     function addRecipeStepInput() {
         const stepInput = document.createElement("div");
         stepInput.classList.add("recipe-step-input-container");
@@ -108,28 +115,27 @@ document.addEventListener("DOMContentLoaded", function () {
             stepInput.remove();
         });
     
-        // Append step number, input field, and file input to the container
         stepInput.appendChild(stepNumberSpan);
         stepInput.appendChild(inputField);
         stepInput.appendChild(removeButton);
         stepInput.appendChild(fileSpan);
         stepInput.appendChild(fileInput);
     
-        // Insert the new step input above the button
         instructionsList.insertBefore(stepInput, addStepButton);
     
-        // Clear the input values for the next step
         inputField.value = "";
-        fileInput.value = ""; // Clear the file input value to ensure the change event triggers on the next selection
+        fileInput.value = "";
 
         instructionsList.scrollTop = instructionsList.scrollHeight;
     }
 
+    // function to calculate step number so that if a step is removed it will correctly calculate next step to be added
     function calculateStepNumber() {
         const stepInputs = instructionsList.querySelectorAll('.recipe-step-input-container');
         return stepInputs.length + 1;
     }
 
+    // function to update numbers if they are removed
     function updateStepNumbers() {
         const stepInputs = instructionsList.querySelectorAll('.recipe-step-input-container');
         stepInputs.forEach((stepInput, index) => {
@@ -140,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
+    // listening to all clicks on remove button
     instructionsList.addEventListener('click', function (event) {
         const removeButton = event.target.closest('.step-remove-button');
         if (removeButton) {
@@ -271,8 +278,8 @@ function addToProfilePage() {
 
 
     function getNewStarRating(starValue) {
-        const filledStars = '★'.repeat(starValue); // Unicode character for a filled star
-        const emptyStars = '☆'.repeat(5 - starValue); // Unicode character for an empty star
+        const filledStars = '★'.repeat(starValue);
+        const emptyStars = '☆'.repeat(5 - starValue);
         return filledStars + emptyStars;
     }
 
@@ -281,10 +288,9 @@ function addToProfilePage() {
         card.classList.add('card');
 
         const cardLink = document.createElement('a');
-        cardLink.href = data.href || '#'; // Set a default link if 'href' is not provided
-        cardLink.target = '_blank'; // Open the link in a new tab/window
+        cardLink.href = data.href || '#';
+        cardLink.target = '_blank';
 
-        // Image container
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('image-container');
         const image = document.createElement('img');
@@ -292,11 +298,9 @@ function addToProfilePage() {
         image.alt = 'Image';
         imageContainer.appendChild(image);
 
-        // Details container
         const detailsContainer = document.createElement('div');
         detailsContainer.classList.add('details-container');
 
-        // Author name
         const author = document.createElement('div');
         author.classList.add('author');
         author.textContent = data.author;
@@ -305,21 +309,17 @@ function addToProfilePage() {
         title.classList.add('title');
         title.textContent = data.title;
 
-        // Star rating (you can customize this part based on your needs)
         const rating = document.createElement('div');
         rating.classList.add('rating');
         rating.innerHTML = getNewStarRating(data.star); //'&#9733;&#9733;&#9733;&#9733;&#9733;';
 
-        // Append elements to the details container
         detailsContainer.appendChild(author);
         detailsContainer.appendChild(title);
         detailsContainer.appendChild(rating);
 
-        // Append image container and details container to the card link
         cardLink.appendChild(imageContainer);
         cardLink.appendChild(detailsContainer);
 
-        // Append the card link to the main card container
         card.appendChild(cardLink);
 
         return card;
