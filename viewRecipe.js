@@ -757,6 +757,6 @@ function getProfileElement(){
 
     // let thisRandom = document.getElementById("profile-content");
     // console.log(thisRandom.id);
-    const url = "index_logged_in.html";
+    const url = "index_logged_in.html?flag=2";
     window.location.href=url;
 }
